@@ -16,9 +16,9 @@ const LoginForm = () => {
 
   return (
     <form action="submit" onSubmit={handleSubmit}>
-    <h2>BIENVENUE CHEZ NOUS!</h2>
+    <h2>BIENVENUE CHEZ NOUS !</h2>
     <hr />
-    <h3>CONNECTEZ-VOUS!</h3>
+    <h3>CONNECTEZ-VOUS</h3>
     <div className='disp-col'>
       <input
         type="text"

@@ -1,0 +1,27 @@
+/* form{
+    text-align: center;
+}
+
+form .disp-col{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+input{
+    padding: 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+form hr{ 
+    background-color: #FF9E1C;
+    margin-bottom: 3rem;
+}
+
+form input[type=button]{
+    background-color: #FF9E1C;
+    color: whitesmoke;
+} */

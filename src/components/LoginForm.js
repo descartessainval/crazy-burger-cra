@@ -4,19 +4,18 @@ import './FormStyle.css'
 function LoginForm() {
 
 
-  const [form, setForm] = useState({
-    prenom: ""
-  });
+  const [prenom, setPrenom] = useState("");
 
 
   const handleSubmit = (e) => {
-
     // Prevent the browser from reloading the page
-    //  e.preventDefault(); 
-    alert(`Bonjour ${form.prenom}!`);
-
-
+     e.preventDefault(); 
+    alert(`Bonjour ${prenom}!`);
   };
+
+  const handleChange = (e) =>{
+    setPrenom(e.target.value);
+  }
 
   return (
     <form action="submit" onSubmit={handleSubmit}>
@@ -28,11 +27,7 @@ function LoginForm() {
           type="text"
           name="" id=""
           placeholder='Entrez votre prénom'
-          onChange={e => {
-            setForm({
-              prenom: e.target.value
-            });
-          } }
+          onChange={handleChange}
           required />
         <button>Accéder à votre espace</button>
       </div>

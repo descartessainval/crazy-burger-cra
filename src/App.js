@@ -1,25 +1,85 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import LoginPage from './components/pages/login/LoginPage'
+import './App.css'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Salut Descartes
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'> 
+     <LoginPage/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+
+// exo2
+// import React, { useState } from 'react'
+
+// const App = () => {
+// //state (Etat, données)
+// //----------------------
+// const [prenom, setPrenom] = useState("Arthur");
+// const[count, SetCount] = useState(1);
+
+// //Comportemens(s)
+// //-----------------
+
+// const handleClick =()=>{
+//   // alert("handleClick");
+//   SetCount(count + 1);
+// }
+
+// //Affichage (render)
+// //---------------------
+//   return (
+//   <div>
+//       <h1>Bonjour {prenom}</h1>
+//       <button onClick={handleClick}>Incrémenter</button>
+//   </div>
+//   )
+// }
+
+// export default App
+
+
+//Exo 1
+//import React, { useState} from 'react'
+
+// const App = () => {
+
+
+//     const [form, setForm] = useState({
+//       prenom: ""
+//     });
+
+
+//   const handleSubmit =(e) =>{
+   
+//     // Prevent the browser from reloading the page
+//     //  e.preventDefault(); 
+//      alert(`Bonjour ${form.prenom}!`);
+
+//   }
+//   return (
+//     <div className="App">
+//     <h1>Bienvenue chez nous!</h1>
+
+//     <h2>Connectez-vous</h2>
+//     <form action="submit" onSubmit={handleSubmit}>
+//         <input type="text" placeholder='Entrez votre prénom'  
+//         onChange={e => {
+//             setForm({
+//               prenom:  e.target.value 
+//             });
+//           }} 
+//           required
+//         />
+//         <button>Accédez à votre espace</button>
+//     </form>
+//     </div>
+//   )
+// }
+
+// // eslint-disable-next-line
+// export default App

@@ -1,0 +1,1 @@
+ctrl + P -> affiche une bar de recherche des différents fichiers du projet

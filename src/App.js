@@ -13,7 +13,7 @@ const App = () => {
       {/* <div className='App'>    */}
       {/* //page par défaut  qui est accéessible via la route par défaut  */}
           <Route exact path="/" element={<LoginPage/>}/> 
-          <Route path="/order" element={<OrderPage/>}/>
+          <Route path="/order/:username" element={<OrderPage/>}/>
           {/* c ma page error qu'on accède par la route par erreur */}
           <Route path="/*" element={<ErrorPage/>}/>
       {/* </div>  */}

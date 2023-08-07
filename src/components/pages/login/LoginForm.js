@@ -7,15 +7,11 @@ const LoginForm = () => {
 
   let navigate = useNavigate();
   const handleSubmit = (e) => {
-    // Prevent the browser from reloading the page
     e.preventDefault();
-    // alert(`Bonjour ${prenom}!`);
-    let path = `/order`
     if (prenom) {
-       navigate(path);
+       navigate(`/order/${prenom}`);
        localStorage.setItem("prenom", prenom);
     }
-
   };
 
   const handleChange = (e) => {

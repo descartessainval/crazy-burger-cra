@@ -1,10 +1,12 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import LoginPage from './components/pages/login/LoginPage'
 import './App.css'
 import OrderPage from './components/pages/order/OrderPage';
 import ErrorPage from './components/pages/error/ErrorPage';
 
+
+// system de routing
 const App = () => {
   return (
       <Routes>

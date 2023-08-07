@@ -1,1 +1,5 @@
 ctrl + P -> affiche une bar de recherche des différents fichiers du projet
+
+
+en cas d'erreur de node au lancement de l'application
+https://sebhastian.com/error-0308010c-digital-envelope-routines-unsupported/

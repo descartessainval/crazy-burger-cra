@@ -1,13 +1,21 @@
 import React, {useState} from 'react'
+import { useNavigate} from 'react-router-dom'
 
 const LoginForm = () => {
-    const [prenom, setPrenom] = useState("");
+  
+  const [prenom, setPrenom] = useState("");
 
-
+  let navigate = useNavigate();
   const handleSubmit = (e) => {
     // Prevent the browser from reloading the page
     e.preventDefault();
-    alert(`Bonjour ${prenom}!`);
+    // alert(`Bonjour ${prenom}!`);
+    let path = `/order`
+    if (prenom) {
+       navigate(path);
+       localStorage.setItem("prenom", prenom);
+    }
+
   };
 
   const handleChange = (e) => {
@@ -15,7 +23,7 @@ const LoginForm = () => {
   }
 
   return (
-    <form action="submit" onSubmit={handleSubmit}>
+    <form action="submit" >
     <h2>BIENVENUE CHEZ NOUS !</h2>
     <hr />
     <h3>CONNECTEZ-VOUS</h3>
@@ -26,7 +34,7 @@ const LoginForm = () => {
         placeholder='Entrez votre prénom'
         onChange={handleChange}
         required />
-      <button>Accéder à votre espace</button>
+      <button onClick={handleSubmit}>Accéder à votre espace</button>
     </div>
   </form>
   )

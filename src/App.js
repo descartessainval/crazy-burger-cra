@@ -1,12 +1,21 @@
 import React from 'react';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import LoginPage from './components/pages/login/LoginPage'
 import './App.css'
+import OrderPage from './components/pages/order/OrderPage';
+import ErrorPage from './components/pages/error/ErrorPage';
 
 const App = () => {
   return (
-    <div className='App'> 
-     <LoginPage/>
-    </div>
+      <Routes>
+      {/* <div className='App'>    */}
+      {/* //page par défaut  qui est accéessible via la route par défaut  */}
+          <Route exact path="/" element={<LoginPage/>}/> 
+          <Route path="/order" element={<OrderPage/>}/>
+          {/* c ma page error qu'on accède par la route par erreur */}
+          <Route path="/*" element={<ErrorPage/>}/>
+      {/* </div>  */}
+    </Routes>
   )
 }
 

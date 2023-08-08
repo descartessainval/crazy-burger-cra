@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {Routes, Route} from "react-router-dom";
 import LoginPage from './components/pages/login/LoginPage'
 import './App.css'
@@ -9,6 +9,7 @@ import ErrorPage from './components/pages/error/ErrorPage';
 // system de routing
 const App = () => {
   return (
+    <Fragment className='App'>
       <Routes>
       {/* <div className='App'>    */}
       {/* //page par défaut  qui est accéessible via la route par défaut  */}
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/*" element={<ErrorPage/>}/>
       {/* </div>  */}
     </Routes>
+    </Fragment>
   )
 }
 

@@ -1,7 +1,7 @@
-/* body {
+body {
     min-height: 80vh;
     width: 100%;
-    background-image: url("../src/media/burger.jpg") ;
+    /* background-image: url(`/images/F03_burger-background.jpg"); */
     background-repeat: no-repeat; 
     background-size: cover;
     background-attachment: fixed;
@@ -11,9 +11,9 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    min-height: 80vh;
+    min-height: 80vh; 
 }
 
 h1, h2, h3{
-    color: whitesmoke;
-} */
+    /* color: whitesmoke; */
+}

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Logo = () => {
     return (
-        <img src="./images/logo_burger.png" alt="" />
+        <img src="./images/F03_logo-orange.png" alt="" />
     )
 }
 

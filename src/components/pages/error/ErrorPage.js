@@ -3,9 +3,9 @@ import {useNavigate} from 'react-router-dom'
 
 const ErrorPage = () => {
     let navigate = useNavigate();
-    let path = "/"
     const handleClick =()=>{
-        navigate(path);
+        navigate("/");
+        localStorage.clear();
     }
     return (
         <div>

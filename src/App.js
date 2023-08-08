@@ -9,7 +9,9 @@ import ErrorPage from './components/pages/error/ErrorPage';
 // system de routing
 const App = () => {
   return (
-    <Fragment className='App'>
+    <div className='App'>
+      <div className="bg-img"></div>
+
       <Routes>
       {/* <div className='App'>    */}
       {/* //page par défaut  qui est accéessible via la route par défaut  */}
@@ -19,7 +21,7 @@ const App = () => {
           <Route path="/*" element={<ErrorPage/>}/>
       {/* </div>  */}
     </Routes>
-    </Fragment>
+    </div>
   )
 }
 

@@ -1,14 +1,25 @@
-/* form{
+.FormStyle{
+    /* border: yellow solid 1px; */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+  
     text-align: center;
+    z-index: 1;
+    width: 29rem;
+
 }
 
 form .disp-col{
     display: flex;
     flex-direction: column;
-    
 }
 
-input{
+input, button{
     padding: 1rem;
     margin: 0.5rem;
     cursor: pointer;
@@ -21,7 +32,7 @@ form hr{
     margin-bottom: 3rem;
 }
 
-form input[type=button]{
+form button{
     background-color: #FF9E1C;
     color: whitesmoke;
-} */
+}

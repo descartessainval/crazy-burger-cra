@@ -1,19 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 body {
-    min-height: 80vh;
-    width: 100%;
-    /* background-image: url(`/images/F03_burger-background.jpg"); */
+    min-height: 70vh;
+    min-width: 94.5rem /*1512px*/;
+}
+
+.bg-img{
+    background-image: url("./images/F03_burger-background.jpg") ;
+    filter: brightness(50%);
     background-repeat: no-repeat; 
     background-size: cover;
     background-attachment: fixed;
-}
-.App{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    min-height: 80vh; 
+    background-position: bottom;
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    z-index: -10;
 }
 
+h2{
+    font-size: 3rem;
+}
+h3{
+    font-size: 2.25rem;
+}
 h1, h2, h3{
-    /* color: whitesmoke; */
+    color: whitesmoke;
+    /* margin: 0; */
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+
 }

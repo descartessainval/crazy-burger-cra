@@ -7,8 +7,6 @@
     align-items: center;
 }
 
-
-
 h2{
     font-size: 3rem;
 }
@@ -41,6 +39,11 @@ form .disp-col {
 
 }
 
+.input-username input{
+    width: 22rem;
+    margin-bottom: 1rem;
+}
+
 input,
 button {
     padding: 18px 24px 18px 24px;
@@ -54,7 +57,7 @@ button {
 
 form hr {
     border-color: #FF9E1C;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     height: 0.188;
 }
 
@@ -63,6 +66,7 @@ form button {
     color: whitesmoke;
 }
 
+
 .bg-img {
     /* background-image: url("./images/F03_burger-background.jpg") ; */
     background-image: url("../../../images/F03_burger-background.jpg");
@@ -70,7 +74,7 @@ form button {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: bottom;
+    background-position:  bottom;
     position: absolute;
     min-height: 100vh;
     width: 100%;

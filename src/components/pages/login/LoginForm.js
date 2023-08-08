@@ -25,18 +25,21 @@ const LoginForm = () => {
     <div className='FormStyle'>
       <div className="bg-img"></div>
 
-      <Logo/>
+      <Logo />
       <form action="submit" >
         <h2>BIENVENUE CHEZ NOUS !</h2>
         <hr />
         <h3 className='mb'>CONNECTEZ-VOUS</h3>
         <div className='disp-col'>
-          <input
-            type="text"
-            name="" id=""
-            placeholder='Entrez votre prénom'
-            onChange={handleChange}
-            required />
+          <div className='input-username'>
+            <input
+              type="text"
+              name="" id=""
+              placeholder='Entrez votre prénom'
+              onChange={handleChange}
+              required />
+          </div>
+
           <button onClick={handleSubmit}>Accéder à votre espace</button>
         </div>
       </form>

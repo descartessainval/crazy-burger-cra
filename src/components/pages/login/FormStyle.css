@@ -2,12 +2,12 @@
     /* border: yellow solid 1px; */
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 form{
-  
     text-align: center;
     z-index: 1;
     width: 29rem;
@@ -35,4 +35,18 @@ form hr{
 form button{
     background-color: #FF9E1C;
     color: whitesmoke;
+}
+
+.bg-img{
+    /* background-image: url("./images/F03_burger-background.jpg") ; */
+    background-image: url("../../../images/F03_burger-background.jpg") ;
+    filter: brightness(50%);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    z-index: -10;
 }

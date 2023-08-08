@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./FormStyle.css"
+import Logo from '../Logo';
 
 
 const LoginForm = () => {
@@ -22,6 +23,9 @@ const LoginForm = () => {
 
   return (
     <div className='FormStyle'>
+      <div className="bg-img"></div>
+
+      <Logo/>
       <form action="submit" >
         <h2>BIENVENUE CHEZ NOUS !</h2>
         <hr />

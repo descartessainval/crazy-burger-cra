@@ -10,7 +10,7 @@ import ErrorPage from './components/pages/error/ErrorPage';
 const App = () => {
   return (
     <div className='App'>
-      <div className="bg-img"></div>
+      {/* <div className="bg-img"></div> */}
 
       <Routes>
       {/* <div className='App'>    */}

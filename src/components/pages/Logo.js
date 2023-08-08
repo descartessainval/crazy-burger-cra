@@ -1,9 +1,14 @@
 import React from 'react'
+import "./Logo.css"
 
 const Logo = () => {
     return (
-        <img src="./images/F03_logo-orange.png" alt="" />
-    )
+        <section className='Logo'>
+            <h1>CRAZEE</h1>
+            <img src="./images/F03_logo-orange.png" alt="" />
+            <h1>BURGER</h1>
+        </section>
+        )
 }
 
 export default Logo

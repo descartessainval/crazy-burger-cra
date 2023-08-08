@@ -1,4 +1,4 @@
-.FormStyle{
+.FormStyle {
     /* border: yellow solid 1px; */
     min-height: 100vh;
     display: flex;
@@ -7,41 +7,67 @@
     align-items: center;
 }
 
-form{
+
+
+h2{
+    font-size: 3rem;
+}
+h3{
+    font-size: 2.25rem;
+}
+h1, h2, h3{
+    color: whitesmoke;
+    /* margin: 0; */
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    
+
+}
+
+form {
     text-align: center;
     z-index: 1;
-    width: 29rem;
-
+    width: 25rem;
 }
 
-form .disp-col{
+.mb {
+    margin-bottom: .8rem;
+}
+
+form .disp-col {
     display: flex;
     flex-direction: column;
+    width: 25rem;
+
 }
 
-input, button{
-    padding: 1rem;
-    margin: 0.5rem;
+input,
+button {
+    padding: 18px 24px 18px 24px;
+    margin-bottom: 1rem;
     cursor: pointer;
     border-radius: 5px;
     border: none;
+    font-size: 0.938rem;
+
 }
 
-form hr{ 
-    background-color: #FF9E1C;
+form hr {
+    border-color: #FF9E1C;
     margin-bottom: 3rem;
+    height: 0.188;
 }
 
-form button{
+form button {
     background-color: #FF9E1C;
     color: whitesmoke;
 }
 
-.bg-img{
+.bg-img {
     /* background-image: url("./images/F03_burger-background.jpg") ; */
-    background-image: url("../../../images/F03_burger-background.jpg") ;
+    background-image: url("../../../images/F03_burger-background.jpg");
     filter: brightness(50%);
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: bottom;

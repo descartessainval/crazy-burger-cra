@@ -29,7 +29,7 @@ const LoginForm = () => {
       <form action="submit" >
         <h2>BIENVENUE CHEZ NOUS !</h2>
         <hr />
-        <h3>CONNECTEZ-VOUS</h3>
+        <h3 className='mb'>CONNECTEZ-VOUS</h3>
         <div className='disp-col'>
           <input
             type="text"

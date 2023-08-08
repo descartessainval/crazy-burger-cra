@@ -8,7 +8,7 @@ const Logo = () => {
             <img src="./images/F03_logo-orange.png" alt="" />
             <h1>BURGER</h1>
         </section>
-        )
+    )
 }
 
 export default Logo

@@ -17,8 +17,7 @@ h1, h2, h3{
     color: whitesmoke;
     /* margin: 0; */
     font-family: 'Amatic SC', cursive;
-    font-weight: 700;
-    
+    font-weight: 700;    
 
 }
 
@@ -51,8 +50,7 @@ button {
     cursor: pointer;
     border-radius: 5px;
     border: none;
-    font-size: 0.938rem;
-
+    font-size: 0.938rem;    
 }
 
 form hr {
@@ -61,11 +59,15 @@ form hr {
     height: 0.188;
 }
 
-form button {
+form button {       
     background-color: #FF9E1C;
     color: whitesmoke;
 }
 
+form button:hover {
+    background-color:  whitesmoke;
+    color: #FF9E1C;
+}
 
 .bg-img {
     /* background-image: url("./images/F03_burger-background.jpg") ; */

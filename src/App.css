@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
 html{
     width: 100%;
     margin:0;
@@ -7,7 +8,11 @@ body {
     min-height: 70vh;
     width:auto/*1512px*/;/* 94.5rem */
    /* border: 1px solid pink; */
+   font-family: 'Open Sans', sans-serif;
+
+   
 }
+
 
 /* .bg-img{
     background-image: url("./images/F03_burger-background.jpg") ;

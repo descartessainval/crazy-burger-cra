@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { VscAccount } from "react-icons/vsc"
 import "./FormStyle.css"
 import Logo from '../Logo';
 
@@ -32,6 +33,7 @@ const LoginForm = () => {
         <h3 className='mb'>CONNECTEZ-VOUS</h3>
         <div className='disp-col'>
           <div className='input-username'>
+            <i><VscAccount/></i>
             <input
               type="text"
               name="" id=""
@@ -40,7 +42,7 @@ const LoginForm = () => {
               required />
           </div>
 
-          <button onClick={handleSubmit}>Accéder à votre espace</button>
+          <button onClick={handleSubmit}>Accéder à mon espace</button>
         </div>
       </form>
     </div>

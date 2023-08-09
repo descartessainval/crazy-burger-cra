@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 .FormStyle {
     /* border: yellow solid 1px; */
     min-height: 100vh;
@@ -13,12 +15,11 @@ h2{
 h3{
     font-size: 2.25rem;
 }
-h1, h2, h3{
+.FormStyle  h1,.FormStyle  h2, .FormStyle h3{
     color: whitesmoke;
     /* margin: 0; */
     font-family: 'Amatic SC', cursive;
     font-weight: 700;    
-
 }
 
 form {
@@ -35,12 +36,26 @@ form .disp-col {
     display: flex;
     flex-direction: column;
     width: 25rem;
-
 }
 
+.input-username{
+    position: relative;
+}
+
+.input-username i{
+    position: absolute;
+    margin: 1rem;
+}
+
+
 .input-username input{
-    width: 22rem;
+    width: 20.5rem;
     margin-bottom: 1rem;
+    padding-left: 3rem ;
+}
+
+.input-username:focus{
+    outline: none; 
 }
 
 input,

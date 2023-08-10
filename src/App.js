@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {Routes, Route} from "react-router-dom";
 import LoginPage from './components/pages/login/LoginPage'
 import './App.css'

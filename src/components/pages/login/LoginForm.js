@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { BsPersonCircle, BsChevronRight } from "react-icons/bs";
-import Logo from '../Logo';
+// import Logo from '../../reusable-ui/Logo';
 import styled from 'styled-components'// ouimport styled from 'styled-components/macro' -> permet d'afficher les noms de class attribuer à nos balises
 import { theme } from '../../../themes';
 
@@ -25,8 +25,8 @@ const LoginForm = () => {
 
   return (
     <LoginFormStyled className='FormStyle'>
-      <div className="bg-img"></div>
-      <Logo />
+      {/* <div className="bg-img"></div>
+      <Logo /> */}
       <form action="submit" >
         <h2>BIENVENUE CHEZ NOUS !</h2>
         <hr />
@@ -55,7 +55,9 @@ const LoginForm = () => {
 //dans tous les projets en entreprise qui utilise styled components
 const LoginFormStyled = styled.div`
 
-  min-height: 100vh;
+  //before correction
+  /*
+   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,12 +69,12 @@ const LoginFormStyled = styled.div`
 
   }
   h2{
-    font-size: /*3rem*/ ${theme.fonts.P5};
+    font-size:  ${theme.fonts.P5};
     font-weight: ${theme.weights.bold};
   }
 
   h3{
-    font-size: /*2.25rem*/ ${theme.fonts.P4};
+    font-size: ${theme.fonts.P4};
   }
 
   h2, h3{
@@ -89,7 +91,7 @@ const LoginFormStyled = styled.div`
     width: 25rem;
 
     hr {
-      border-bottom: ${theme.colors.primary} .15rem solid;
+      border: ${theme.colors.primary_burger} 2px solid;
       margin: 0;
     }
 
@@ -121,7 +123,7 @@ const LoginFormStyled = styled.div`
   }
 
   .mb {
-    margin-bottom: /*.8rem*/ ${theme.spacing.sm};
+    margin-bottom:  ${theme.spacing.sm};
   }
 
   .input-username{
@@ -159,13 +161,13 @@ const LoginFormStyled = styled.div`
     padding: 18px 24px 18px 24px;
     margin-bottom: 1rem;
     cursor: pointer;
-    border-radius: /*5px*/ ${theme.borderRadius.round};
+    border-radius: ${theme.borderRadius.round};
     border: none;
-    font-size: /*0.938rem*/  ${theme.fonts.P0};    
+    font-size:  ${theme.fonts.P0};    
   }
 
   .bg-img {
-    background-image: url("../../../images/F03_burger-background.jpg");
+    background-image: url("/images/F03_burger-background.jpg");
     filter: brightness(50%);
     background-repeat: no-repeat;
     background-size: cover;
@@ -176,6 +178,6 @@ const LoginFormStyled = styled.div`
     width: 100%;
     z-index: -10; 
   }
-  
+   */
 `
 export default LoginForm

@@ -31,13 +31,13 @@ const LoginForm = () => {
         <h2>CONNECTEZ-VOUS</h2>
       </div>
       <div>
-          <i><BsPersonCircle /></i>
-          <input
-            type="text"
-            name="" id=""
-            placeholder='Entrez votre prénom'
-            onChange={handleChange}
-            required />
+        <i><BsPersonCircle /></i>
+        <input
+          type="text"
+          name="" id=""
+          placeholder='Entrez votre prénom'
+          onChange={handleChange}
+          required />
         <button onClick={handleSubmit}>
           Accéder à mon espace
           <i className='chevron'><BsChevronRight /></i>
@@ -52,7 +52,30 @@ const LoginForm = () => {
 const LoginFormStyled = styled.div`
 
   background: green;
+  text-align: center;
+  max-width: 500px;
+  min-width: 400px;
+  margin: 0px auto;
+  padding: 2.5rem 2rem;
+  border-radius: 5px;
+  font-family:  "Amatic SC", cursive;
+
+  hr{
+    border: 1.5px solid #f56a2c;
+    margin: 40px;
+  }
+
+  h1{
+    color: white;
+    font-size: 48px;
+  }
   
+  h2{
+    color: #8e8b8b;
+    margin: 20px 10px 10px;
+    color: white;
+    font-size: 48px;
+  }
 
   //before correction
   

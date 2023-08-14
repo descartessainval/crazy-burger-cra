@@ -24,29 +24,25 @@ const LoginForm = () => {
   }
 
   return (
-    <LoginFormStyled className='FormStyle'>
-      {/* <div className="bg-img"></div>
-      <Logo /> */}
-      <form action="submit" >
-        <h2>BIENVENUE CHEZ NOUS !</h2>
+    <LoginFormStyled action="submit">
+      <div>
+        <h1>BIENVENUE CHEZ NOUS !</h1>
         <hr />
-        <h3 className='mb'>CONNECTEZ-VOUS</h3>
-        <div className='disp-col'>
-          <div className='input-username'>
-            <i><BsPersonCircle /></i>
-            <input
-              type="text"
-              name="" id=""
-              placeholder='Entrez votre prénom'
-              onChange={handleChange}
-              required />
-          </div>
-          <button onClick={handleSubmit}>
-            Accéder à mon espace 
-            <i className='chevron'><BsChevronRight/></i>
-          </button>
-        </div>
-      </form>
+        <h2>CONNECTEZ-VOUS</h2>
+      </div>
+      <div>
+          <i><BsPersonCircle /></i>
+          <input
+            type="text"
+            name="" id=""
+            placeholder='Entrez votre prénom'
+            onChange={handleChange}
+            required />
+        <button onClick={handleSubmit}>
+          Accéder à mon espace
+          <i className='chevron'><BsChevronRight /></i>
+        </button>
+      </div>
     </LoginFormStyled>
 
   )
@@ -55,9 +51,12 @@ const LoginForm = () => {
 //dans tous les projets en entreprise qui utilise styled components
 const LoginFormStyled = styled.div`
 
+  background: green;
+  
+
   //before correction
-  /*
-   min-height: 100vh;
+  
+   /* min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,10 +163,10 @@ const LoginFormStyled = styled.div`
     border-radius: ${theme.borderRadius.round};
     border: none;
     font-size:  ${theme.fonts.P0};    
-  }
+  } */
 
   .bg-img {
-    background-image: url("/images/F03_burger-background.jpg");
+    /* background-image: url("/images/F03_burger-background.jpg");
     filter: brightness(50%);
     background-repeat: no-repeat;
     background-size: cover;
@@ -176,8 +175,41 @@ const LoginFormStyled = styled.div`
     position: absolute;
     min-height: 100vh;
     width: 100%;
-    z-index: -10; 
+    z-index: -10;  */
   }
-   */
+  
 `
+
+
+/*
+
+ <LoginFormStyled action="submit">
+
+         <div className="bg-img"></div>
+        <Logo />
+         <form action="submit" > 
+        <h2>BIENVENUE CHEZ NOUS !</h2>
+        <hr />
+        <h3 className='mb'>CONNECTEZ-VOUS</h3>
+        
+        <div className='disp-col'>
+          <div className='input-username'>
+            <i><BsPersonCircle /></i>
+            <input
+              type="text"
+              name="" id=""
+              placeholder='Entrez votre prénom'
+              onChange={handleChange}
+              required />
+          </div>
+          <button onClick={handleSubmit}>
+            Accéder à mon espace
+            <i className='chevron'><BsChevronRight/></i>
+          </button>
+          </form>
+        </div>
+    
+    
+  </LoginFormStyled>
+*/
 export default LoginForm

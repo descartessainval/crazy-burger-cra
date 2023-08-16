@@ -4,46 +4,38 @@ import { BsPersonCircle, BsChevronRight } from "react-icons/bs";
 // import Logo from '../../reusable-ui/Logo';
 import styled from 'styled-components'// ouimport styled from 'styled-components/macro' -> permet d'afficher les noms de class attribuer à nos balises
 import { theme } from '../../../themes';
+import Welcome from './Welcome';
+import InputForm from './InputForm';
 
 
 const LoginForm = () => {
 
-  const [prenom, setPrenom] = useState("");
+  const [username, setUsername] = useState("");
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (prenom) {
-      navigate(`/order/${prenom}`);
-      localStorage.setItem("prenom", prenom);
+    if (username) {
+      navigate(`/order/${username}`);
+      localStorage.setItem("username", username);
     }
   };
 
   const handleChange = (e) => {
-    setPrenom(e.target.value);
+    setUsername(e.target.value);
   }
 
   return (
     <LoginFormStyled action="submit">
-      <div>
-        <h1>BIENVENUE CHEZ NOUS !</h1>
-        <hr />
-        <h2>CONNECTEZ-VOUS</h2>
+      <Welcome />
+      <div className='input-width-icon'>
+        <BsPersonCircle className='icon' />
+        <InputForm username={handleChange} />
       </div>
-      <div>
-        <div className='input-width-icon'>
-          <BsPersonCircle  className='icon'/>  
-          <input
-            type="text"
-            name="" id=""
-            placeholder='Entrez votre prénom'
-            onChange={handleChange}
-            required />
-        </div>
-        <button onClick={handleSubmit}>
-          Accéder à mon espace
-          <i className='chevron'><BsChevronRight /></i>
-        </button>
+      <div className='button-wudth-icon'>
+        <button onClick={handleSubmit}>Accéder à mon espace</button>
+        <BsChevronRight />
       </div>
     </LoginFormStyled>
 
@@ -106,6 +98,38 @@ const LoginFormStyled = styled.div`
     }
   }
 
+  .button-width-icon{
+    width: 100%;
+    border: 1px solid red;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    text-decoration: none;
+    line-height: 1;
+
+    padding: 18px 24px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 800;
+    color: white;
+    background-color: #ff9f1b;
+    border: 1px solid #ff9f1b;
+
+    &:hover:not(:diseable){
+        background-color: white;
+        color: #ff9f1b;
+        border: #ff9f1b 1px solid;
+        transition: all 200ms ease-out;
+    }
+
+    &:disabled{
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  
   //before correction
   
    /* min-height: 100vh;
@@ -260,8 +284,7 @@ const LoginFormStyled = styled.div`
           </button>
           </form>
         </div>
-    
-    
+  
   </LoginFormStyled>
 */
 export default LoginForm

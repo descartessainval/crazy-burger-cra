@@ -6,6 +6,7 @@ import styled from 'styled-components'// ouimport styled from 'styled-components
 import { theme } from '../../../themes';
 import Welcome from './Welcome';
 import InputForm from './InputForm';
+import ButtonForm from './ButtonForm';
 
 
 const LoginForm = () => {
@@ -33,8 +34,8 @@ const LoginForm = () => {
         <BsPersonCircle className='icon' />
         <InputForm username={handleChange} />
       </div>
-      <div className='button-wudth-icon'>
-        <button onClick={handleSubmit}>Accéder à mon espace</button>
+      <div className='button-width-icon'>
+        <ButtonForm clicBtn={handleSubmit}/>
         <BsChevronRight />
       </div>
     </LoginFormStyled>
@@ -90,9 +91,11 @@ const LoginFormStyled = styled.div`
       border: none;
       font-size: 15px;
       color: #17161a;
+      /* width: 100%;
+      display: flex; */
     }
 
-    ::placeholder{
+    &::placeholder{
       background: white;
       color: lightgrey;
     }
@@ -124,9 +127,23 @@ const LoginFormStyled = styled.div`
         transition: all 200ms ease-out;
     }
 
+    &:active{
+      color: white;
+      background-color: #ff9f1b;
+      border: 1px solid #ff9f1b;
+    }
+
     &:disabled{
       opacity: 0.6;
       cursor: not-allowed;
+    }
+
+    .icon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      margin-left: 10px;
     }
   }
   

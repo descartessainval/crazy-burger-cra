@@ -1,25 +1,21 @@
 import React from 'react'
 import { styled } from 'styled-components'
 
-const TextInput = ({Icon, username, handleChange, ...extraProps}) => {
-  
+const TextInput = ({ Icon, value, handleChange, ...extraProps }) => {
+
   return (
-  <InputStyled >
+    <InputStyled >
       {/* si y 'a une icon alors, je mets une icon */}
       {Icon && Icon}
       <input
-        type="text"
-        name="" 
         onChange={handleChange}
         {...extraProps}
-       />
+      />
     </InputStyled>
   )
 }
 
-const InputStyled  = styled.div`
-
-
+const InputStyled = styled.div`
      /* border: 1px solid red; */
      background-color: #fff;
      border-radius: 5px;
@@ -38,7 +34,7 @@ const InputStyled  = styled.div`
       border: none;
       font-size: 15px;
       color: #17161a;
-      /* width: 100%; */
+      width: 100%;
       /* display: flex; */
     }
 
@@ -46,7 +42,5 @@ const InputStyled  = styled.div`
       background: white;
       color: lightgrey;
     }
-
 `
-
 export default TextInput

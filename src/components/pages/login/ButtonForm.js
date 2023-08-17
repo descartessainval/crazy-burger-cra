@@ -1,8 +1,13 @@
 import React from 'react'
+import { IoChevronForward } from "react-icons/io5";
 
-const ButtonForm = ({clicBtn}) => {
+
+const ButtonForm = ({addClick}) => {
   return (
-    <button onClick={clicBtn}>Accéder à mon espace</button>
+    <button  className='button-width-icon'  onSubmit={addClick}>
+      <span >Accéder à mon espace</span>
+      <IoChevronForward className='icon' />
+    </button>
   )
 }
 

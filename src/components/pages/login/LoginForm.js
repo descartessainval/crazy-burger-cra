@@ -6,7 +6,7 @@ import { IoChevronForward } from "react-icons/io5";
 import styled from 'styled-components'// ou import styled from 'styled-components/macro' -> permet d'afficher les noms de class attribuer à nos balises
 import { theme } from '../../../themes';
 import Welcome from './Welcome';
-import InputForm from './InputForm';
+import TextInput from './TextInput';
 import ButtonForm from './ButtonForm'
 
 
@@ -31,7 +31,7 @@ const LoginForm = () => {
   return (
     <LoginFormStyled action="submit" onSubmit={handleSubmit}>
       <Welcome />
-      <InputForm 
+      <TextInput 
             username={username} 
             handleChange={handleChange} 
             placeholder={'Entrez votre prénom'} 
@@ -45,7 +45,7 @@ const LoginForm = () => {
 }
 
 
-//dans tous les projets en entreprise qui utilise styled components
+//dans tous les projets en entrepr ise qui utilise styled components
 const LoginFormStyled = styled.form`
 
   text-align: center;

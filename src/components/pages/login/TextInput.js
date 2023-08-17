@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from 'styled-components'
 
-const InputForm = ({Icon, username, handleChange, ...extraProps}) => {
+const TextInput = ({Icon, username, handleChange, ...extraProps}) => {
   
   return (
   <InputStyled >
@@ -49,4 +49,4 @@ const InputStyled  = styled.div`
 
 `
 
-export default InputForm
+export default TextInput

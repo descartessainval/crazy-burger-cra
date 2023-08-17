@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { BsPersonCircle } from "react-icons/bs";
-import { IoChevronForward } from "react-icons/io5";
+// import { IoChevronForward } from "react-icons/io5";
 
 import styled from 'styled-components'// ou import styled from 'styled-components/macro' -> permet d'afficher les noms de class attribuer à nos balises
 import { theme } from '../../../themes';
 import Welcome from './Welcome';
 import InputForm from './InputForm';
-// import ButtonForm from './ButtonForm'
+import ButtonForm from './ButtonForm'
 
 const LoginForm = () => {
 
@@ -27,29 +27,23 @@ const LoginForm = () => {
     setUsername(e.target.value);
   }
 
-
-
   return (
-    <LoginFormStyled action="submit">
+    <LoginFormStyled action="submit" onSubmit={handleSubmit}>
       <Welcome />
       <div className='input-width-icon'>
         <BsPersonCircle className='icon' />
         <InputForm username={handleChange} />
       </div>
-      <button className='button-width-icon' onClick={handleSubmit}>
-        <span >Accéder à mon espace</span>
-        <IoChevronForward className='icon' />
-      </button>
-      {/* <ButtonForm  addClick={handleSubmit}/> */}
+      <ButtonForm  />
     </LoginFormStyled>
 
   )
 }
 
 //dans tous les projets en entreprise qui utilise styled components
-const LoginFormStyled = styled.div`
+const LoginFormStyled = styled.form`
 
-  background: green;
+  /* background: green; */
   text-align: center;
   max-width: 500px;
   min-width: 400px;
@@ -94,8 +88,8 @@ const LoginFormStyled = styled.div`
       border: none;
       font-size: 15px;
       color: #17161a;
-      /* width: 100%;
-      display: flex; */
+      /* width: 100%; */
+      /* display: flex; */
     }
 
     &::placeholder{

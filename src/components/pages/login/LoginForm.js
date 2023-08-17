@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { BsPersonCircle, BsChevronRight } from "react-icons/bs";
-// import Logo from '../../reusable-ui/Logo';
-import styled from 'styled-components'// ouimport styled from 'styled-components/macro' -> permet d'afficher les noms de class attribuer à nos balises
+import { BsPersonCircle } from "react-icons/bs";
+import { IoChevronForward } from "react-icons/io5";
+
+import styled from 'styled-components'// ou import styled from 'styled-components/macro' -> permet d'afficher les noms de class attribuer à nos balises
 import { theme } from '../../../themes';
 import Welcome from './Welcome';
 import InputForm from './InputForm';
-import ButtonForm from './ButtonForm';
-
+// import ButtonForm from './ButtonForm'
 
 const LoginForm = () => {
 
@@ -27,6 +27,8 @@ const LoginForm = () => {
     setUsername(e.target.value);
   }
 
+
+
   return (
     <LoginFormStyled action="submit">
       <Welcome />
@@ -34,10 +36,11 @@ const LoginForm = () => {
         <BsPersonCircle className='icon' />
         <InputForm username={handleChange} />
       </div>
-      <div className='button-width-icon'>
-        <ButtonForm clicBtn={handleSubmit}/>
-        <BsChevronRight />
-      </div>
+      <button className='button-width-icon' onClick={handleSubmit}>
+        <span >Accéder à mon espace</span>
+        <IoChevronForward className='icon' />
+      </button>
+      {/* <ButtonForm  addClick={handleSubmit}/> */}
     </LoginFormStyled>
 
   )
@@ -120,7 +123,7 @@ const LoginFormStyled = styled.div`
     background-color: #ff9f1b;
     border: 1px solid #ff9f1b;
 
-    &:hover:not(:diseable){
+    &:hover:not([diseable]){
         background-color: white;
         color: #ff9f1b;
         border: #ff9f1b 1px solid;

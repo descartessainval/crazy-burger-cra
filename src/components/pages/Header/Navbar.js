@@ -1,25 +1,44 @@
 import React from 'react'
 import Logo from '../reusable-ui/Logo'
 import { useNavigate } from 'react-router-dom';
+import { styled } from 'styled-components';
+import { BsPersonCircle } from 'react-icons/bs';
 
-const Navbar = ({username}) => {
+const Navbar = ({ username }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/");
     localStorage.clear();
-}
+  }
   return (
-    <div className='Navabar' style={{background:"red"}}>
-      <Logo />
-      <div>
-        <div className='right-side' style={{ background:"green"}}>
+    <NavbarStyled  >
+      <Logo className="left-side" />
+      <div className='right-side'>
+        <div  className='account-name'>
           <h2>Bonjour {username}</h2>
           <button type="submit" onClick={handleClick}>Déconnexion</button>
         </div>
+        <BsPersonCircle className='icon' />
       </div>
-    </div>
+    </NavbarStyled>
   )
 }
+
+const NavbarStyled = styled.header`
+
+    background: red ;
+    display: flex;
+    justify-content: space-between;
+    .right-side{
+      border: yellow 1px solid;
+      display: flex;
+    }
+    .account-name{
+      background: green
+    }
+
+
+`;
 
 export default Navbar

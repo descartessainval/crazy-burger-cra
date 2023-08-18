@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Navbar from '../Header/Navbar';
 import Main from '../reusable-ui/Main';
 

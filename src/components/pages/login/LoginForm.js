@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { BsPersonCircle } from "react-icons/bs";
 import { IoChevronForward } from "react-icons/io5";
-import { RiLockPasswordLine } from "react-icons/ri";
+// import { RiLockPasswordLine } from "react-icons/ri";
 
 import styled from 'styled-components'// ou import styled from 'styled-components/macro' -> permet d'afficher les noms de class attribuer à nos balises
-import { theme } from '../../../themes';
+// import { theme } from '../../../themes';
 import Welcome from './Welcome';
 import TextInput from '../reusable-ui/TextInput';
-import PrimaryButton from './PrimaryButton';
+import PrimaryButton from '../reusable-ui/PrimaryButton';
+import { theme } from '../../../themes';
 
 
 const LoginForm = () => {
@@ -18,7 +19,7 @@ const LoginForm = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit/* ou RedirectOrderPage */ = (e) => {
     e.preventDefault();
     if (username /*&& mdp == "1234"*/) {
       navigate(`/order/${username}`);
@@ -26,14 +27,14 @@ const LoginForm = () => {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange   = (e) => {
     setUsername(e.target.value);
   }
 
   return (
     <LoginFormStyled action="submit" onSubmit={handleSubmit}>
       <Welcome />
-      <TextInput
+      <TextInput 
         value={username}
         handleChange={handleChange}
         placeholder={'Entrez votre prénom'}
@@ -75,32 +76,31 @@ const LoginFormStyled = styled.form`
   max-width: 500px;
   min-width: 400px;
   margin: 0px auto;
-  padding: 2.5rem 2rem;
-  border-radius: 5px;
+  padding: /*2.5rem 2rem*/ 40px ${theme.spacing.lg};
+  border-radius: ${theme.borderRadius.round};
   font-family:  "Amatic SC", cursive;
 
   hr{
-    border: 1.5px solid #f56a2c;
-    margin: 40px;
+    border: 1.5px solid ${theme.colors.loginLine};
+    margin: ${theme.gridUnit * 5}px;
   }
 
   h1{
-    color: white;
-    font-size: 48px;
+    color: ${theme.colors.white};
+    font-size: ${theme.fonts.size.P5};
   }
   
   h2{
-    color: #8e8b8b;
     margin: 20px 10px 10px;
-    color: white;
-    font-size: 48px;
+    color: ${theme.colors.white};
+    font-size: ${theme.fonts.size.P4};
   }
 
   .icon{
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 15px;
+      font-size: ${theme.fonts.size.P0};
       margin-left: 10px;
     }  
 `

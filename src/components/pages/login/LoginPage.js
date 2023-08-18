@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import LoginForm from './LoginForm';
 import Logo from '../../reusable-ui/Logo';
-// import '../../reusable-ui/Logo.css'
 
 const LoginPage = () => {
   return (
@@ -14,8 +13,6 @@ const LoginPage = () => {
 }
 
 const LoginPageStyled = styled.div`
-/* background: red; */
-
   height: 100vh;
   display: flex;
   flex-direction: column;   

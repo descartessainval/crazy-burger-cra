@@ -1,14 +1,13 @@
 import React from 'react'
 import styled from "styled-components"
 import { theme } from '../../../themes';
-// import '../reusable-ui/Logo.css'
 
 const Logo = () => {
     return (
         <LogoStyled >
             <h1>CRAZEE</h1>
             <img src="/images/logo-orange.png" alt="log" />
-            <h1>BURGER</h1> 
+            <h1>BURGER</h1>
         </LogoStyled>
     )
 }
@@ -16,7 +15,7 @@ const Logo = () => {
 const LogoStyled = styled.div`
   display: flex;
   align-items: center;
-  transform: scale(2.5);
+  /* transform: scale(2.5); */
   background: none;
 
   h1{

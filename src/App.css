@@ -1,19 +1,10 @@
-/* body {
-    min-height: 80vh;
+html{
     width: 100%;
-    background-image: url("../src/media/burger.jpg") ;
-    background-repeat: no-repeat; 
-    background-size: cover;
-    background-attachment: fixed;
-}
-.App{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    min-height: 80vh;
+    margin:0;
 }
 
-h1, h2, h3{
-    color: whitesmoke;
-} */
+body {
+    min-height: 70vh;
+    width:auto;
+    font-family: 'Open Sans', sans-serif;
+}

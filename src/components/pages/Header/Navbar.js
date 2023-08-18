@@ -3,11 +3,14 @@ import Logo from '../reusable-ui/Logo'
 import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { BsPersonCircle } from 'react-icons/bs';
+import SecondaryButton from '../reusable-ui/SecondaryButton';
 
 const Navbar = ({ username }) => {
-  const navigate = useNavigate();
 
-  const handleClick = () => {
+  const navigate = useNavigate();
+  
+
+  const handleClick = () => { 
     navigate("/");
     localStorage.clear();
   }
@@ -16,15 +19,14 @@ const Navbar = ({ username }) => {
       <Logo className="left-side" />
       <div className='right-side'>
         <div  className='account-name'>
-          <h2>Bonjour {username}</h2>
-          <button type="submit" onClick={handleClick}>Déconnexion</button>
+          <p>Bonjour {username}</p>
+          <SecondaryButton type={"submit"} handleClick={handleClick}/>
         </div>
         <BsPersonCircle className='icon' />
       </div>
     </NavbarStyled>
   )
 }
-
 const NavbarStyled = styled.header`
 
     background: red ;

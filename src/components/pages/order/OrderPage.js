@@ -2,24 +2,25 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import Navbar from '../Header/Navbar';
 import Main from '../reusable-ui/Main';
+import { styled } from 'styled-components';
 
 const OrderPage = () => {
     //états 
     const { username } = useParams();
-
-    //comportements
-    // step 1
-    // prenom = localStorage.getItem("prenom");
-
-    
-
+    //comportement
     //vue
     return (
-        <div className='Container' style={{ minHeight:"88vh", background:"orange", padding:"50px"}}>
-            <Navbar  username={username} />
-            <Main/>
-        </div>
+        <OrderpageStyled >
+            <Navbar username={username} />
+            <Main />
+        </OrderpageStyled>
     )
 }
+
+const OrderpageStyled  = styled.div`
+  min-Height: 88vh;
+  background: orange;
+   padding: 50px ;
+`;
 
 export default OrderPage

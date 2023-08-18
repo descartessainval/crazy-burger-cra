@@ -37,8 +37,6 @@ const NavbarStyled = styled.header`
     .account-name{
       background: green
     }
-
-
 `;
 
 export default Navbar

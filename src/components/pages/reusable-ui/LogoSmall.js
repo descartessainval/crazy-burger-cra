@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 import { theme } from '../../../themes';
 
-const Logo = () => {
+const LogoSmall = () => {
     return (
         <LogoStyled >
             <h1>CRAZEE</h1>
@@ -15,7 +15,6 @@ const Logo = () => {
 const LogoStyled = styled.div`
   display: flex;
   align-items: center;
-  transform: scale(2.5);
   background: none;
 
   h1{
@@ -38,4 +37,4 @@ const LogoStyled = styled.div`
   }
 `;
 
-export default Logo
+export default LogoSmall

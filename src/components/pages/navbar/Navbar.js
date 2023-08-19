@@ -1,21 +1,27 @@
 import React from 'react'
-import Logo from '../reusable-ui/Logo'
 import { styled } from 'styled-components';
 import RightSideNavbar from './RightSideNavbar';
+import { Link } from 'react-router-dom';
+import LogoSmall from '../reusable-ui/LogoSmall';
 
 const Navbar = ({ username }) => {
   return (
-    <NavbarStyled  >
-      <Logo className="left-side" />
+    <NavbarStyled>
+      <Link to={"#"}><LogoSmall className="left-side" style={{}}/></Link>
       <RightSideNavbar username={username}/>
     </NavbarStyled>
   )
 }
+
 const NavbarStyled = styled.header`
 
     background: red ;
     display: flex;
     justify-content: space-between;
+
+    a{
+      text-decoration: none;
+    }
    
 `;
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
 import { theme } from '../../../themes';
-// import '../reusable-ui/Logo.css'
 
 const Logo = () => {
     return (

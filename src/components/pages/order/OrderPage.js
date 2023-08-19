@@ -1,27 +1,38 @@
 import React from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import Navbar from '../navbar/Navbar';
+import Main from '../reusable-ui/Main';
+import { styled } from 'styled-components';
+import { theme } from '../../../themes';
+
 
 const OrderPage = () => {
     //états 
     const { username } = useParams();
-    let navigate = useNavigate();
-
-    //comportements
-    // step 1
-    // prenom = localStorage.getItem("prenom");
-
-    const handleClick = () => {
-        navigate("/");
-        localStorage.clear();
-    }
-
+    //comportement
     //vue
     return (
-        <div>
-            <h2>Bonjour {username}</h2>
-            <button type="submit" onClick={handleClick}>Déconnexion</button>
-        </div>
+        <OrderPageStyled >
+            <Navbar username={username} />
+            <Main />
+        </OrderPageStyled>
     )
 }
+
+const OrderPageStyled = styled.div`
+    min-width:  87.5rem;
+    min-height: 100vh;
+    background: ${theme.colors.primary};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    padding:25px 56px;
+
+
+    @media only screen and(max-width: 1400px) {
+        padding:25px;
+    }
+`;
 
 export default OrderPage

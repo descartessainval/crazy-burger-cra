@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
 import { theme } from '../../themes';
-// import '../reusable-ui/Logo.css'
 
 const Logo = () => {
     return (
@@ -16,7 +15,7 @@ const Logo = () => {
 const LogoStyled = styled.div`
   display: flex;
   align-items: center;
-  transform: scale(2.5);
+  /* transform: scale(2.5); */
   background: none;
 
   h1{

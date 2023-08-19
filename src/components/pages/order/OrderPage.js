@@ -10,14 +10,14 @@ const OrderPage = () => {
     //comportement
     //vue
     return (
-        <OrderpageStyled >
+        <OrderPageStyled >
             <Navbar username={username} />
             <Main />
-        </OrderpageStyled>
+        </OrderPageStyled>
     )
 }
 
-const OrderpageStyled  = styled.div`
+const OrderPageStyled  = styled.div`
   min-Height: 88vh;
   background: orange;
    padding: 50px ;

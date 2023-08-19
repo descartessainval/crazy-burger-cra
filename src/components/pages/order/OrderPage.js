@@ -20,13 +20,19 @@ const OrderPage = () => {
 }
 
 const OrderPageStyled = styled.div`
-    min-width: 1900px;
+    min-width:  87.5rem;
     min-height: 100vh;
     background: ${theme.colors.primary};
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;   
+    align-items: center;  
+    padding:25px 56px;
+
+
+    @media only screen and(max-width: 1400px) {
+        padding:25px;
+    }
 `;
 
 export default OrderPage

@@ -7,22 +7,21 @@ import LogoSmall from '../reusable-ui/LogoSmall';
 const Navbar = ({ username }) => {
   return (
     <NavbarStyled>
-      <Link to={"#"}><LogoSmall className="left-side" style={{}}/></Link>
+      <Link to={"#"}><LogoSmall className="left-side" /></Link>
       <RightSideNavbar username={username}/>
     </NavbarStyled>
   )
 }
 
 const NavbarStyled = styled.header`
-
     background: red ;
     display: flex;
     justify-content: space-between;
+    width: 1400px;
 
     a{
       text-decoration: none;
     }
-   
 `;
 
 export default Navbar

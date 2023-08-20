@@ -14,7 +14,7 @@ const Navbar = ({ username }) => {
   )
 }
 
-const NavbarStyled = styled.header`
+const NavbarStyled = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;

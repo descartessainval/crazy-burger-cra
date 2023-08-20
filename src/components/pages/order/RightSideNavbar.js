@@ -34,7 +34,6 @@ const RightSideNavbarStyled = styled.div`
     .icon{
         width: 36px;
         min-height: 36px ;
-        margin: 31.09px 70px 31.09px 0;
     }
 
     h1, a{

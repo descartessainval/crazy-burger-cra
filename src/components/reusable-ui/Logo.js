@@ -2,9 +2,12 @@ import React from 'react'
 import styled from "styled-components"
 import { theme } from '../../themes';
 
-const Logo = () => {
+const Logo = ({className}) => {
+
+
+
     return (
-        <LogoStyled >
+        <LogoStyled className={className}>
             <h1>CRAZEE</h1>
             <img src="/images/logo-orange.png" alt="log" />
             <h1>BURGER</h1> 
@@ -15,7 +18,6 @@ const Logo = () => {
 const LogoStyled = styled.div`
   display: flex;
   align-items: center;
-  /* transform: scale(2.5); */
   background: none;
 
   h1{

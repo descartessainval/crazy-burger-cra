@@ -13,25 +13,33 @@ const OrderPage = () => {
     //vue
     return (
         <OrderPageStyled >
-            <Navbar username={username} />
-            <Main />
+            <div className='container'>
+                <Navbar username={username} />
+                <Main />
+            </div>
         </OrderPageStyled>
     )
 }
 
 const OrderPageStyled = styled.div`
-    min-width:  87.5rem;
     min-height: 94.6vh;
     background: ${theme.colors.primary};
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;  
+
     padding:25px 56px;
 
+    .container{
+        min-height: 94.6vh;
+        min-width:  87.5rem;
+        display: flex;
+        flex-direction: column;
+    }
 
     @media only screen and(max-width: 1400px) {
-        padding:25px;
+        padding:1.563rem;
     }
 `;
 

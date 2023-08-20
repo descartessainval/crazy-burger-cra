@@ -3,12 +3,13 @@ import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { theme } from '../../../themes';
 import RightSideNavbar from './RightSideNavbar';
-import LogoSmall from '../reusable-ui/LogoSmall';
+import Logo from '../reusable-ui/Logo';
+// import LogoSmall from '../reusable-ui/LogoSmall';
 
 const Navbar = ({ username }) => {
   return (
     <NavbarStyled>
-      <Link to={"#"}><LogoSmall className="left-side" /></Link>
+      <Link to={"#"}><Logo/></Link>
       <RightSideNavbar username={username}/>
     </NavbarStyled>
   )
@@ -19,14 +20,18 @@ const NavbarStyled = styled.nav`
     justify-content: space-between;
     align-items: center;
 
-    width: /*1400px*/87.5rem;
     height: /*98.19px*/ 10vh;
     border-radius:  15px 15px 0 0;
     background: ${theme.colors.white};
 
+    padding: 0 20px;
+
+
     a{
       text-decoration: none;
     }
+
+    
 `;
 
 export default Navbar

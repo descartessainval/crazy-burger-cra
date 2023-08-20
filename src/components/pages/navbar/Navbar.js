@@ -20,7 +20,7 @@ const NavbarStyled = styled.header`
     align-items: center;
 
     width: /*1400px*/87.5rem;
-    height: /*98.19px*/ 6.137rem ;
+    height: /*98.19px*/ 10vh;
     border-radius:  15px 15px 0 0;
     background: ${theme.colors.white};
 

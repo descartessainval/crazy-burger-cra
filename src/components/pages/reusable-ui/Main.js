@@ -8,7 +8,8 @@ const Main = () => {
 }
 
 const  MainStyled= styled.main`
-  min-Height: /*908.66px;*/56.791rem;
+  /*min-Height: 908.66px;56.791rem*/
+  flex: 1;
   width: 87.5rem;
   background: #F5F5F7;
   box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset ;

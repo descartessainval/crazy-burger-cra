@@ -70,3 +70,10 @@ c'est ensemble de doc de réf qui va être décidé par l'équipe business, l'é
 pour définir l'identité visuelle de l'application. 
 
 
+-------------------F04 -> correction
+
+ASTUCES
+-------
+flex: 1; -> permet à l'enfant de s'étendre dans la place qui reste dans le parent
+dasn la même optique -> height: calc(95vh - 10vh) ; calcule la taille restante entre la taille du parent et d'un/des enfant(s) 
+

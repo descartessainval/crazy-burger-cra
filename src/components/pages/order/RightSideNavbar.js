@@ -19,7 +19,6 @@ const RightSideNavbar = ({username}) => {
 
 const RightSideNavbarStyled = styled.div`
     display: flex;
-    justify-content: center;
     align-items: center;
     color: ${theme.colors.greyMedium};
 
@@ -29,7 +28,7 @@ const RightSideNavbarStyled = styled.div`
     */
     .icon{
         width: 36px;
-        min-height: 36px ;
+        min-height: 36px;
         padding-right: 50px;
     }
 `;

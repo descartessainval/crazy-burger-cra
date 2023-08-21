@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import Navbar from './Navbar';
-import Main from '../reusable-ui/Main';
+import Main from '../../reusable-ui/Main';
 import { styled } from 'styled-components';
 import { theme } from '../../../themes';
 
@@ -38,7 +38,7 @@ const OrderPageStyled = styled.div`
         border-radius: ${theme.borderRadius.extraRoundd};
     }
 
-    @media only screen and(min-width: 1400px) {
+    @media only screen and (max-width: 1400px) {
         padding: 1.563rem;
     }
 `;

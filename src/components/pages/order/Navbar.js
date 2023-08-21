@@ -12,19 +12,18 @@ const Navbar = ({ username }) => {
       <Logo onClick={RefreshPage} className={"logo-order-page"} />
       <RightSideNavbar username={username} />
     </NavbarStyled>
-  )
-}
+  )}
 
 const NavbarStyled = styled.nav`
 
-    height:10vh;     
+    background: ${theme.colors.white};
+    height:10vh;
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
     
     border-top-right-radius: ${theme.borderRadius.extraRound};
     border-top-left-radius: ${theme.borderRadius.extraRound};
-    background: ${theme.colors.white};
 
     .logo-order-page{
       cursor: pointer;

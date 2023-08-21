@@ -3,18 +3,16 @@ import { Link} from 'react-router-dom';
 import { BsPersonCircle } from 'react-icons/bs';
 import { styled } from 'styled-components';
 import { theme } from '../../../themes';
+import Profil from './Profil';
 
-const RightSideNavbar = ({ username}) => {
+const RightSideNavbar = ({username}) => {
     
-    const deleteLocal =()=>{
-        localStorage.clear() 
-    }
     return (
         <RightSideNavbarStyled >
-            <div className='account-name'>
-                <h1>Hey, <span>{username}</span></h1>
-                <Link to={"/"} onClick={deleteLocal}  >Se déconnecter</Link>
-            </div>
+            {/* TICKET F05 */}
+            {/* <div className='admin_btn'>ADMIN BUTTON</div> */}
+    
+            <Profil name_profil={username} />
             <BsPersonCircle className='icon' />
         </RightSideNavbarStyled>
     )
@@ -26,32 +24,14 @@ const RightSideNavbarStyled = styled.div`
     align-items: center;
     color: ${theme.colors.greyMedium};
 
-    .account-name{
-      color: ${theme.colors.white};
-      margin: 1rem;
+    .admin_btn{
+        background: orange;
     }
-
+   
     .icon{
         width: 36px;
         min-height: 36px ;
-    }
-
-    h1, a{
-        font-weight: ${theme.fonts.weights.regular};
-        color: ${theme.colors.greyMedium};
-    }
-
-    h1{
-        margin: 0;
-        font-size: ${theme.fonts.size.P0};
-    }
-
-    h1 span{
-       color: ${theme.colors.primary};
-    }
-
-    a:hover{
-        border-bottom: 1px solid ;
+        padding-right: 50px;
     }
 `;
 

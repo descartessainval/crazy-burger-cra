@@ -23,6 +23,7 @@ const OrderPage = () => {
 
 const OrderPageStyled = styled.div`
     min-height: 94.6vh;
+    min-width:  87.5rem;
     background: ${theme.colors.primary};
     display: flex;
     flex-direction: column;
@@ -33,7 +34,6 @@ const OrderPageStyled = styled.div`
 
     .container{
         min-height: 94.6vh;
-        min-width:  87.5rem;
         display: flex;
         flex-direction: column;
     }

@@ -20,11 +20,11 @@ const NavbarStyled = styled.nav`
     justify-content: space-between;
     align-items: center;
 
-    height: /*98.19px*/ 10vh;
+    min-height: /*98.19px*/ 10vh;     
     border-radius:  15px 15px 0 0;
     background: ${theme.colors.white};
 
-    padding: 0 20px;
+    padding: 0 1.25rem /**20px */;
 
 
     a{

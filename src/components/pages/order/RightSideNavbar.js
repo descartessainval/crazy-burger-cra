@@ -23,10 +23,10 @@ const RightSideNavbarStyled = styled.div`
     align-items: center;
     color: ${theme.colors.greyMedium};
 
-    .admin_btn{
+    /* .admin_btn{
         background: orange;
     }
-   
+    */
     .icon{
         width: 36px;
         min-height: 36px ;

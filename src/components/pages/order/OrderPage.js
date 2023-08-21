@@ -22,7 +22,7 @@ const OrderPage = () => {
 }
 
 const OrderPageStyled = styled.div`
-    min-height: 94.6vh;
+    height: 94.6vh;
     min-width:  87.5rem;
     background: ${theme.colors.primary};
     display: flex;
@@ -33,16 +33,16 @@ const OrderPageStyled = styled.div`
     padding:25px 56px;
 
     .container{
-        min-height: 94.6vh;
+        height: 94.6vh;
         width:  87.5rem;
-
         display: flex;
         flex-direction: column;
+        justify-content: center;
         border-radius: ${theme.borderRadius.extraRoundd};
     }
 
     @media only screen and(max-width: 1400px) {
-        padding:1.563rem;
+        padding: 1.563rem;
     }
 `;
 

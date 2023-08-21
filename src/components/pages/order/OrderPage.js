@@ -34,9 +34,11 @@ const OrderPageStyled = styled.div`
 
     .container{
         min-height: 94.6vh;
+        width:  87.5rem;
+
         display: flex;
         flex-direction: column;
-        border-radius: ${theme.borderRadius.extraRound};
+        border-radius: ${theme.borderRadius.extraRoundd};
     }
 
     @media only screen and(max-width: 1400px) {

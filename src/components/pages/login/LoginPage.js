@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import LoginForm from './LoginForm';
-import Logo from '../reusable-ui/Logo';
+import Logo from '../../reusable-ui/Logo';
 
 const LoginPage = () => {
+
   return (
-    <LoginPageStyled>
-      <Logo/>
+    <LoginPageStyled >
+      <Logo className={"logo-login-page"}/>
       <LoginForm />
     </LoginPageStyled>
   );
@@ -34,6 +35,9 @@ const LoginPageStyled = styled.div`
     z-index: -1; 
   }
  
+  .logo-login-page{
+    transform: scale(2.5);
+  }
 `;
 
 export default LoginPage

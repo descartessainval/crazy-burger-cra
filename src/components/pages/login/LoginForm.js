@@ -7,8 +7,8 @@ import { IoChevronForward } from "react-icons/io5";
 import styled from 'styled-components'// ou import styled from 'styled-components/macro' -> permet d'afficher les noms de class attribuer à nos balises
 // import { theme } from '../../../themes';
 import Welcome from './Welcome';
-import TextInput from '../reusable-ui/TextInput';
-import PrimaryButton from '../reusable-ui/PrimaryButton';
+import TextInput from '../../reusable-ui/TextInput';
+import PrimaryButton from '../../reusable-ui/PrimaryButton';
 import { theme } from '../../../themes';
 
 
@@ -34,7 +34,7 @@ const LoginForm = () => {
   return (
     <LoginFormStyled action="submit" onSubmit={handleSubmit}>
       <Welcome />
-      <TextInput 
+      <TextInput
         value={username}
         handleChange={handleChange}
         placeholder={'Entrez votre prénom'}

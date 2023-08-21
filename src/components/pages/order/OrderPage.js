@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import Navbar from '../navbar/Navbar';
+import Navbar from './Navbar';
 import Main from '../reusable-ui/Main';
 import { styled } from 'styled-components';
 import { theme } from '../../../themes';
@@ -13,25 +13,33 @@ const OrderPage = () => {
     //vue
     return (
         <OrderPageStyled >
-            <Navbar username={username} />
-            <Main />
+            <div className='container'>
+                <Navbar username={username} />
+                <Main />
+            </div>
         </OrderPageStyled>
     )
 }
 
 const OrderPageStyled = styled.div`
-    min-width:  87.5rem;
-    min-height: 100vh;
+    height: 94.6vh;
     background: ${theme.colors.primary};
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;  
-    padding:25px 56px;
 
+    padding: 1.563rem 3.5rem;
 
-    @media only screen and(max-width: 1400px) {
-        padding:25px;
+    .container{
+        height: 94.6vh;
+        width:  87.5rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: ${theme.borderRadius.extraRoundd};
+    }
+
+    @media only screen and(min-width: 1400px) {
+        padding: 1.563rem;
     }
 `;
 

@@ -36,6 +36,7 @@ const OrderPageStyled = styled.div`
         min-height: 94.6vh;
         display: flex;
         flex-direction: column;
+        border-radius: ${theme.borderRadius.extraRound};
     }
 
     @media only screen and(max-width: 1400px) {

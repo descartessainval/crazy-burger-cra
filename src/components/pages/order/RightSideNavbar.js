@@ -12,7 +12,7 @@ const RightSideNavbar = ({username}) => {
             {/* TICKET F05 */}
             {/* <div className='admin_btn'>ADMIN BUTTON</div> */}
     
-            <Profil name_profil={username} />
+            <Profil username={username} />
             <BsPersonCircle className='icon' />
         </RightSideNavbarStyled>
     )

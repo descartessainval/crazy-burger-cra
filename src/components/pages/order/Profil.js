@@ -4,13 +4,13 @@ import { styled } from 'styled-components';
 import { theme } from '../../../themes';
 
 
-const Profil = ({ name_profil }) => {
+const Profil = ({ username }) => {
     const deleteLocalStorage = () => {
         localStorage.clear()
     }
     return (
         <ProfilStyles className='profile'>
-            <p>Hey, <b>{name_profil}</b></p>
+            <p>Hey, <b>{username}</b></p>
             <Link to={"/"} onClick={deleteLocalStorage}  ><small>Se déconnecter</small></Link>
         </ProfilStyles>
     )

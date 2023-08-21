@@ -21,7 +21,8 @@ const NavbarStyled = styled.nav`
     align-items: center;
 
     min-height: /*98.19px*/ 10vh;     
-    border-radius:  15px 15px 0 0;
+    border-top-right-radius: ${theme.borderRadius.extraRound};
+    border-top-left-radius: ${theme.borderRadius.extraRound};
     background: ${theme.colors.white};
 
     padding: 0 1.25rem /**20px */;

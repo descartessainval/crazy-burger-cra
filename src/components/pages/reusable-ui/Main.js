@@ -1,5 +1,6 @@
 import React from 'react'
 import { styled } from 'styled-components';
+import { theme } from '../../../themes';
 
 const Main = () => {
   return (
@@ -11,9 +12,10 @@ const  MainStyled= styled.main`
   /*min-Height: 908.66px;56.791rem*/
   flex: 1;
   min-width: 87.5rem;
-  background: #F5F5F7;
+  background: ${theme.colors.background_white};
   box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset ;
-  border-radius: 0 0 15px 15px;
+  border-bottom-right-radius:${theme.borderRadius.extraRound};
+  border-bottom-left-radius: ${theme.borderRadius.extraRound};
 `;
 
 export default Main

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { styled } from 'styled-components';
 import { fakeMenu2 } from "../../../fakeData/fakeMenu";
+import Card from './Card';
 
 const Cards = () => {
     const [products, setProducts] = useState({ fakeMenu2 });
@@ -10,16 +11,7 @@ const Cards = () => {
         <CardsStyled className="list-products">
             <ul>
                 {products.fakeMenu2.map((product) => (
-                    <li key={product.id}>
-                        <div className="product">
-                            <div className='img-container'><img src={`${product.imageSource}`} alt=""  /></div>
-                            <h3>{product.title}</h3>
-                            <div className="info_product">
-                                <p>{product.price}</p> 
-                                <button >Ajouter</button>
-                            </div>
-                        </div>
-                    </li>
+                    <Card product={product} />
                 ))}
             </ul>
         </CardsStyled>
@@ -59,28 +51,6 @@ ul li{
   justify-content: center;
 }
 
-.img-container{
-    width: 200px;
-    height: 145px;
-    border : pink solid 1px ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.product img{
-    width: 10rem;
-    height: 11.75vh;
-}
-
-.info_product{
-    display: flex;
-    justify-content: space-between;
-    width: 12rem;
-}
-.product h3{
-    text-overflow: ellipsis;
-}
 `;
 
 export default Cards

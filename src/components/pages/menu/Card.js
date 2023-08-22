@@ -1,5 +1,6 @@
 import React from 'react'
 import { styled } from 'styled-components';
+import {formatPrice} from '../../../utils/maths'
 
 const Card = ({ product }) => {
     return (
@@ -8,7 +9,7 @@ const Card = ({ product }) => {
                 <div className='img-container'><img src={`${product.imageSource}`} alt="" /></div>
                 <h3>{product.title}</h3>
                 <div className="info_product">
-                    <p>{product.price}</p>
+                    <p>{formatPrice(product.price)}</p>
                     <button >Ajouter</button>
                 </div>
             </div>

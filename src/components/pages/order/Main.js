@@ -1,11 +1,14 @@
 import React from 'react'
 import { styled } from 'styled-components';
 import { theme } from '../../../themes';
+import Cards from '../products/Cards';
 
 
 const Main = () => {
   return (
-    <MainStyled ></MainStyled>
+    <MainStyled >
+        <Cards/>
+    </MainStyled>
   )
 }
 

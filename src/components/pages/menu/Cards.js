@@ -5,24 +5,25 @@ import Card from './Card';
 
 const Cards = () => {
     const [products, setProducts] = useState({ fakeMenu2 });
-
+    
+    //eslint-disable-next-line
 
     return (
         <CardsStyled className="list-products">
             <ul>
                 {products.fakeMenu2.map((product) => (
-                    <Card product={product} />
+                    <Card product={product} key={product.id} />
                 ))}
             </ul>
         </CardsStyled>
     )
 }
 const CardsStyled = styled.div`
-
+/* 
 padding: 0;
 width: 70rem;
 margin: 2rem auto;
-border: 1px solid purple;
+border: 1px solid purple; */
 
 
 ul{

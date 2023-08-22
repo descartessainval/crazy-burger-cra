@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 
 const Card = ({ product }) => {
     return (
-        <CardStyled key={product.id}>
+        <CardStyled >
             <div className="product">
                 <div className='img-container'><img src={`${product.imageSource}`} alt="" /></div>
                 <h3>{product.title}</h3>

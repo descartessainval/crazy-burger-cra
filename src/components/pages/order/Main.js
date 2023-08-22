@@ -18,7 +18,17 @@ const  MainStyled= styled.main`
   box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset ;
   border-bottom-right-radius:${theme.borderRadius.extraRound};
   border-bottom-left-radius: ${theme.borderRadius.extraRound};
-  
+  overflow: auto;
+ 
+  -ms-overflow-style: none;  
+  scrollbar-width: none;    
+
+  //Hide scrollbar for Chrome, Safari and Opera */
+ &::-webkit-scrollbar {
+  display: none;
+ }
+
+
 `;
 
 export default Main

@@ -21,7 +21,7 @@ const LogoStyled = styled.div`
     display: inline;
     text-align: center;
     color: ${theme.colors.primary};
-    font-size: ${theme.fonts.size.P4}px;
+    font-size: ${theme.fonts.size.P4};
     line-height: 1em;
     font-weight: ${theme.fonts.weights.bold};
     text-transform:uppercase;

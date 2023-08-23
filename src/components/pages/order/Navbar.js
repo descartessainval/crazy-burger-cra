@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import { theme } from '../../../themes';
 import RightSideNavbar from './RightSideNavbar';
 import Logo from '../../reusable-ui/Logo';
-import { RefreshPage } from '../../utils/window';
+import { RefreshPage } from '../../../utils/window';
 
 const Navbar = ({ username }) => {
 
@@ -29,9 +29,9 @@ const NavbarStyled = styled.nav`
       cursor: pointer;
     }
 
-      a{
-        text-decoration: none;
-      }     
+    a{
+      text-decoration: none;
+    }     
 `;
 
 export default Navbar

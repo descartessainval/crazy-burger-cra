@@ -17,24 +17,21 @@ const Cards = () => {
     )
 }
 const CardsStyled = styled.ul`
-
-/* ul{ */
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Crée 4 colonnes de largeur égale */
     gap: 20px; /* Ajoute un espacement de 20 pixels entre les éléments du grid */
     list-style-type:none;
 
-    width: 70rem;
-    height: 525px;
+    width: 1400px;
 
     background: #F5F5F7;
     box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
     grid-row-gap: 60px;
 
 
-    padding: 50px 50px 150px;
+    padding: 50px;
 
-    margin: 1rem 1rem 10rem 1rem;
 
     overflow: auto;
 

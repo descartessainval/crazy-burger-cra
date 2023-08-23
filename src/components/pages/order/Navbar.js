@@ -29,9 +29,9 @@ const NavbarStyled = styled.nav`
       cursor: pointer;
     }
 
-      a{
-        text-decoration: none;
-      }     
+    a{
+      text-decoration: none;
+    }     
 `;
 
 export default Navbar

@@ -24,17 +24,18 @@ const CardsStyled = styled.ul`
     list-style-type:none;
     justify-items: center;
     
-    width: /*1400px*/ 100%;
+    width: 100%;
 
     background: #F5F5F7;
     box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
     grid-row-gap: 60px;
     
-    padding: 33px;
+    padding: 33px 60px;
     
     overflow: auto;
     -ms-overflow-style: none;  
     scrollbar-width: none;    
+    
     //Hide scrollbar for Chrome, Safari and Opera */
     &::-webkit-scrollbar {
       display: none;

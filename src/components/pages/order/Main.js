@@ -8,7 +8,7 @@ import Basket from '../menu/Basket';
 const Main = () => {
   return (
     <MainStyled >
-      <Basket />
+      {/* <Basket /> */}
       <Cards />
     </MainStyled>
   )

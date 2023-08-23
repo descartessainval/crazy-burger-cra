@@ -110,4 +110,5 @@ export const fakeMenu2 = [
     isAvailable: true,
     isAdvertised: false,
   },
+  
 ]

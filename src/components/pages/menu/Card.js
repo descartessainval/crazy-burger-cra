@@ -1,31 +1,25 @@
 import React from 'react'
 import { styled } from 'styled-components';
-import { formatPrice } from '../../../utils/maths'
-import { theme } from '../../../themes';
-import PrimaryButton from '../../reusable-ui/PrimaryButton';
+
+import ImgSource from './ImgSource';
+import Description from './Description';
 
 const Card = ({ product }) => {
 
-
+    //test handel's button  
     const handleClic = () => {
         console.log(`j'ai cliqué sur ${product.id}`);
     }
 
     return (
         <CardStyled onClick={handleClic}>
-            <div className='img-container'><img src={`${product.imageSource}`} alt="" /></div>
-            <div className="info_product">
-                <h2>{product.title}</h2>
-                <div className='flex-render'>
-                    <p>{formatPrice(product.price)}</p>
-                    <PrimaryButton label={"Ajouter"}/>
-                </div>
-            </div>
+            <ImgSource product={product}/>
+            <Description product={product} />
         </CardStyled>
     )
 }
-const CardStyled = styled.li`
-   
+
+const CardStyled = styled.li`   
     border-radius: 20px;
     width: 240px;
     height: 330px;
@@ -37,63 +31,6 @@ const CardStyled = styled.li`
     align-items: center;
     justify-content: center;
     justify-items: end; 
-
-   
-.img-container{
-
-    width: 200px;
-    height: 145px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    margin-top: 1rem;
-}
-
- img{
-    height: 120px;;
-}
-
-.info_product, .flex-render{
-    width: 190px;
-}
-.info_product{
-    width: 200px;
-    padding: 10.5px; 
-    margin-top: 1rem;
-}
-
-.info_product h2{
-    font-family:  "Amatic SC", cursive;
-    font-size: 2.2rem;
-    margin: 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.flex-render{
-    display: flex;
-    justify-content: space-between;
-    color: ${theme.colors.primary};
-}
-
-button{
-    margin: 6px 0px;
-    padding: 0px 30px;
-    border-radius: 5px;
-    border: 0;
-    background: ${theme.colors.primary}; 
-    color: white;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
-
-button:hover{
-    background: ${theme.colors.white}; 
-    border: ${theme.colors.primary} solid 1px;
-    color: ${theme.colors.primary};
-}
 
 `;
 export default Card

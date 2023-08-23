@@ -2,16 +2,23 @@ import React from 'react'
 import { styled } from 'styled-components';
 import { formatPrice } from '../../../utils/maths'
 import { theme } from '../../../themes';
+import PrimaryButton from '../../reusable-ui/PrimaryButton';
 
 const Card = ({ product }) => {
+
+
+    const handleClic = () => {
+        console.log(`j'ai cliqué sur ${product.id}`);
+    }
+
     return (
-        <CardStyled>
+        <CardStyled onClick={handleClic}>
             <div className='img-container'><img src={`${product.imageSource}`} alt="" /></div>
             <div className="info_product">
                 <h2>{product.title}</h2>
                 <div className='flex-render'>
                     <p>{formatPrice(product.price)}</p>
-                    <button >Ajouter</button>
+                    <PrimaryButton label={"Ajouter"}/>
                 </div>
             </div>
         </CardStyled>

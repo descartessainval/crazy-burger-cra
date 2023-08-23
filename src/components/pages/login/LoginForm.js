@@ -43,6 +43,7 @@ const LoginForm = () => {
         Icon={<BsPersonCircle className='icon' />}
       />
       <PrimaryButton 
+         className={'btn-form'}
          Icon={<IoChevronForward className='icon' />}  
          label={<span >Accéder à mon espace</span>}
       />
@@ -103,6 +104,14 @@ const LoginFormStyled = styled.form`
       font-size: ${theme.fonts.size.P0};
       margin-left: 10px;
     }  
+
+  //these properties are specific to the loginForm button
+  .btn-form{
+    width: 100%; 
+    padding: 18px 24px;
+    font-size: ${theme.fonts.size.P0};
+    font-weight: ${theme.fonts.weights.heavy};
+  }
 `
 
 export default LoginForm

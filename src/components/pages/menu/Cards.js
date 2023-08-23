@@ -22,45 +22,31 @@ const CardsStyled = styled.ul`
     grid-template-columns: repeat(4, 1fr); /* Crée 4 colonnes de largeur égale */
     gap: 20px; /* Ajoute un espacement de 20 pixels entre les éléments du grid */
     list-style-type:none;
-
-    width: 1400px;
+    justify-items: center;
+    
+    width: /*1400px*/ 100%;
 
     background: #F5F5F7;
     box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
     grid-row-gap: 60px;
-
-
-    padding: 50px;
-
-
+    
+    padding: 33px;
+    
     overflow: auto;
-
     -ms-overflow-style: none;  
-     scrollbar-width: none;    
+    scrollbar-width: none;    
     //Hide scrollbar for Chrome, Safari and Opera */
     &::-webkit-scrollbar {
       display: none;
     }
 
-/* } */
-
-ul li .product{
-    background: grey;
-    width: 240px;
-    height: 330px;
-    border: 1px solid red;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+@media screen and  (max-width: 1120px){
+    grid-template-columns: repeat(2, 1fr)
 }
 
-ul li{
-  display: flex;
-  justify-content: center;
+@media screen and  (max-width: 580px){
+    grid-template-columns: repeat(1, 1fr)
 }
-
 `;
 
 export default Cards

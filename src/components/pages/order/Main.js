@@ -1,15 +1,15 @@
 import React from 'react'
 import { styled } from 'styled-components';
 import { theme } from '../../../themes';
-import Cards from '../menu/Cards';
+import Menu from '../menu/Menu';
 import Basket from '../menu/Basket';
 
 
 const Main = () => {
   return (
     <MainStyled >
-      {/* <Basket /> */}
-      <Cards />
+      {/* <Basket />*/}
+      <Menu />
     </MainStyled>
   )
 }
@@ -26,6 +26,7 @@ const MainStyled = styled.main`
 
   -ms-overflow-style: none;  
      scrollbar-width: none;    
+
     //Hide scrollbar for Chrome, Safari and Opera */
     &::-webkit-scrollbar {
       display: none;

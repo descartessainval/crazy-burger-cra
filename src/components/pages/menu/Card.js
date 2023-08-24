@@ -3,6 +3,7 @@ import { styled } from 'styled-components';
 
 import ImgSource from './ImgSource';
 import Description from './Description';
+import { theme } from '../../../themes';
 
 const Card = ({ product }) => {
 
@@ -25,7 +26,7 @@ const CardStyled = styled.li`
     height: 330px;
 
     box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
-    background: white;
+    background:  ${theme.colors.white};
     display: flex;
     flex-direction: column;
     align-items: center;

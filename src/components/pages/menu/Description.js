@@ -18,37 +18,36 @@ const Description = ({ product }) => {
 }
 
 const DescriptionStyled = styled.div`
-      width: 200px;
-      padding: 10.5px; 
-      margin-top: 1rem;
+    width: 200px;
+    padding: 10.5px; 
+    /* margin-top: 1rem; */
 
   &, .flex-render{
-    width: 190px;
-}
+        width: 190px;
+    }
 
+    .flex-render{
+        display: flex;
+        justify-content: space-between;
+        color: ${theme.colors.primary};
+    }
 
-.flex-render{
-    display: flex;
-    justify-content: space-between;
-    color: ${theme.colors.primary};
-}
+    button{
+        margin: 6px 0px;
+        padding: 0px 30px;
+        border-radius: ${theme.borderRadius.round};
+        border: 0;
+        background: ${theme.colors.primary}; 
+        color: white;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
 
-button{
-    margin: 6px 0px;
-    padding: 0px 30px;
-    border-radius: 5px;
-    border: 0;
-    background: ${theme.colors.primary}; 
-    color: white;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
-
-button:hover{
-    background: ${theme.colors.white}; 
-    border: ${theme.colors.primary} solid 1px;
-    color: ${theme.colors.primary};
-}
+    button:hover{
+        background: ${theme.colors.white}; 
+        border: ${theme.colors.primary} solid 1px;
+        color: ${theme.colors.primary};
+    }
 
 `;
 export default Description

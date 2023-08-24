@@ -18,7 +18,7 @@ margin-top: 1rem;
 
 
 img{
-height: 120px;;
+    height: 120px;;
 }
 
   

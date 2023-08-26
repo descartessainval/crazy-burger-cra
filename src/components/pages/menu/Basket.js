@@ -9,8 +9,8 @@ const Basket = () => {
 
 const BasketStyled = styled.div`
   background: red ;
-  height: 1;
-  width: 200px;
+  /* height: 1;
+  width: 200px; */
 `;
 
 export default Basket

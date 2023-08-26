@@ -17,6 +17,7 @@ const Navbar = ({ username }) => {
 const NavbarStyled = styled.nav`
 
     background: ${theme.colors.white};
+
     height:10vh;
     display: flex;
     justify-content: space-between;
@@ -24,6 +25,7 @@ const NavbarStyled = styled.nav`
     
     border-top-right-radius: ${theme.borderRadius.extraRound};
     border-top-left-radius: ${theme.borderRadius.extraRound};
+    border-bottom: 1px solid ${theme.colors.greyLight};
 
     .logo-order-page{
       cursor: pointer;

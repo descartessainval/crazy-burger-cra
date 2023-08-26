@@ -7,7 +7,6 @@ const ImgSource = ({ product }) => {
     )
 }
 const ImgSourceStyled = styled.div`
-
 width: 200px;
 height: 145px;
 display: flex;
@@ -15,12 +14,8 @@ flex-direction: column;
 align-items: center;
 justify-content: end;
 margin-top: 1rem;
-
-
 img{
     height: 120px;;
-}
-
-  
+}  
 `;
 export default ImgSource

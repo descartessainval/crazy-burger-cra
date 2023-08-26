@@ -2,10 +2,10 @@ import React from 'react'
 import { styled } from 'styled-components';
 import { theme } from '../../../themes';
 
-const TitleH2 = ({product}) => {
+const TitleH2 = ({title}) => {
 
     return(
-      <TitleH2Styled>{product.title}</TitleH2Styled>
+      <TitleH2Styled>{title}</TitleH2Styled>
     )
 }  
 

@@ -5,12 +5,12 @@ import { theme } from '../../../themes';
 import PrimaryButton from '../../reusable-ui/PrimaryButton';
 import TitleH2 from './TitleH2';
 
-const Description = ({ product }) => {
+const Description = ({ title, price }) => {
     return (
         <DescriptionStyled className="info_product">
-            <TitleH2 product={product}/>
+            <TitleH2 title={title}/>
             <div className='flex-render'>
-                <p>{formatPrice(product.price)}</p>
+                <p>{formatPrice(price)}</p>
                 <PrimaryButton label={"Ajouter"} />
             </div>
         </DescriptionStyled>

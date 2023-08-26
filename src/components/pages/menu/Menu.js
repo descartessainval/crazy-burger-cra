@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
 import { styled } from 'styled-components';
 import { fakeMenu2 } from "../../../fakeData/fakeMenu";
-import Card from './Card';
+
+import Product from './Product';
 
 const Menu = () => {
     const [products, setProducts] = useState(fakeMenu2);
     return (
-            <MenuStyled>
-                {products.map((product) => (
-                    <Card product={product} key={product.id} />
-                ))}
-            </MenuStyled>
+        <MenuStyled>
+            {products.map((product) => (
+                <Product imgSrc={product.imageSource} key={product.id}  infoId={product.id} title={product.title} price={product.price}/>
+                // <Products title={product.title} imgSource={product.imageSource} price={product.price}/>
+            ))}
+        </MenuStyled>
     )
 }
 

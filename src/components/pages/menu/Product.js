@@ -5,22 +5,22 @@ import ImgSource from './ImgSource';
 import Description from './Description';
 import { theme } from '../../../themes';
 
-const Card = ({ product }) => {
+const Product = ({ infoId, imgSrc, title, price }) => {
 
     //test handel's button  
     const handleClic = () => {
-        console.log(`j'ai cliqué sur ${product.id}`);
+        console.log(`j'ai cliqué sur ${infoId}`);
     }
 
     return (
-        <CardStyled onClick={handleClic}>
-            <ImgSource product={product}/>
-            <Description product={product} />
-        </CardStyled>
+        <ProductStyled onClick={handleClic}>
+            <ImgSource imgSrc={imgSrc}/>
+            <Description title={title} price={price} />
+        </ProductStyled>
     )
 }
 
-const CardStyled = styled.li`   
+const ProductStyled = styled.li`   
     border-radius: 20px;
     width: 240px;
     height: 330px;
@@ -34,4 +34,4 @@ const CardStyled = styled.li`
     justify-items: end; 
 
 `;
-export default Card
+export default Product

@@ -1,9 +1,9 @@
 import React from 'react'
 import { styled } from 'styled-components';
 
-const ImgSource = ({ product }) => {
+const ImgSource = ({ imgSrc }) => {
     return (
-        <ImgSourceStyled className='img-container'><img src={`${product.imageSource}`} alt="" /></ImgSourceStyled>
+        <ImgSourceStyled className='img-container'><img src={`${imgSrc}`} alt="" /></ImgSourceStyled>
     )
 }
 const ImgSourceStyled = styled.div`
@@ -14,6 +14,7 @@ flex-direction: column;
 align-items: center;
 justify-content: end;
 margin-top: 1rem;
+
 img{
     height: 120px;;
 }  

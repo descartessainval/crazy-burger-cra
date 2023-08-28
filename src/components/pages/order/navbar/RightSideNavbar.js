@@ -1,16 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BsPersonCircle } from 'react-icons/bs';
 import { styled } from 'styled-components';
 import { theme } from '../../../../themes';
 import Profil from './Profil';
+import ToggleButton from './ToggleButton';
 
 const RightSideNavbar = ({username}) => {
     
+    const [isChecked, setIsChecked] = useState(false);
+    const [labelIfChecked,setLabelIfChecked ] = useState(false);
+    const [labelIfUnchecked, setLabelIfUnchecked] = useState(false);
+
+    // feature variables
+    // isChecked
+    // onToggle
+    // labelIfChecked 
+    // labelIfUnchecked
+
+    // comportement
+    const onToggle = () =>{
+
+        // logic
+        //si ischecked == false alors isChecked = false
+        //si non, isChecked == false alors isCheck = true
+
+        if(isChecked == false)  {
+            setIsChecked(true);
+            //
+            console.log("mode admin activé ")
+        }
+        else {
+            setIsChecked(false);
+            console.log("mode admin desactivé ")
+        }
+    }
+
+    // view
     return (
         <RightSideNavbarStyled >
-            {/* TICKET F05 */}
-            {/* <div className='admin_btn'>ADMIN BUTTON</div> */}
-    
+            <ToggleButton  onToggle={onToggle}/>
             <Profil username={username} />
             <BsPersonCircle className='icon' />
         </RightSideNavbarStyled>

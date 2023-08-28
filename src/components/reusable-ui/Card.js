@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from 'styled-components';
-import { theme } from '../../../../themes';
-import PrimaryButton from '../../../reusable-ui/PrimaryButton';
+import { theme } from '../../themes/index';
+import PrimaryButton from '../reusable-ui/PrimaryButton';
 
 const Card = ({ infoId, imageSource, title, leftDescription }) => {
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsPersonCircle } from 'react-icons/bs';
 import { styled } from 'styled-components';
-import { theme } from '../../../themes';
+import { theme } from '../../../../themes';
 import Profil from './Profil';
 
 const RightSideNavbar = ({username}) => {

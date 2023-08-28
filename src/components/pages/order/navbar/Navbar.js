@@ -1,9 +1,9 @@
 import React from 'react'
 import { styled } from 'styled-components';
-import { theme } from '../../../themes';
+import { theme } from '../../../../themes';
 import RightSideNavbar from './RightSideNavbar';
-import Logo from '../../reusable-ui/Logo';
-import { RefreshPage } from '../../../utils/window';
+import Logo from '../../../reusable-ui/Logo';
+import { RefreshPage } from '../../../../utils/window';
 
 const Navbar = ({ username }) => {
 

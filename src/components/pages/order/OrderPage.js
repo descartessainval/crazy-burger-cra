@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import Navbar from './Navbar';
-import Main from './Main';
+import Navbar from '../order/navbar/Navbar';
+import Main from '../order/main/Main';
 import { styled } from 'styled-components';
 import { theme } from '../../../themes';
 

@@ -1,5 +1,5 @@
 export function formatPrice(priceToFormat) {
-  let price = priceToFormat
+  let price = priceToFormat //price prends un prix 
 
   // @TODO: perhaps change this to if(!price) return 0
   if (!price) return "0,00 €"

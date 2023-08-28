@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import { styled } from 'styled-components';
-import { fakeMenu2 } from "../../../fakeData/fakeMenu";
+import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
+import { formatPrice } from '../../../../utils/maths'
 
-import Product from './Product';
+import Card from './Card';
 
 const Menu = () => {
     const [products, setProducts] = useState(fakeMenu2);
     return (
         <MenuStyled>
-            {products.map((product) => (
-                <Product imgSrc={product.imageSource} key={product.id}  infoId={product.id} title={product.title} price={product.price}/>
-                // <Products title={product.title} imgSource={product.imageSource} price={product.price}/>
+            {products.map(({id, title, imageSource, price}) => (
+                <Card imageSource={imageSource} key={id}  infoId={id} title={title} leftDescription={formatPrice(price)} /*j'utilise le spread opérator dans ce cas on préférera la premièr eméthode {...product}*//>
             ))}
         </MenuStyled>
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
-import { theme } from '../../../themes';
+import { theme } from '../../../../themes';
 
 
 const Profil = ({ username }) => {

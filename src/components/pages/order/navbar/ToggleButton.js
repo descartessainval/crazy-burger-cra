@@ -1,29 +1,30 @@
 import React from 'react'
-import { styled } from 'styled-components'
 import { theme } from '../../../../themes'
+import { styled } from 'styled-components'
+
 
 const ToggleButton = ({
-    isChecked,
-    onToggle,
-    labelIfChecked = "DÉSACTIVER LE MODE ADMIN",
-    labelIfUnchecked = "ACTIVER LE MODE ADMIN",
-}) => {
+  isChecked,
+  onToggle,
+  labelIfChecked = "Fermer",
+  labelIfUnchecked = "Ouvrir",
+}) =>{
   return (
     <ToggleButtonStyled>
-    <input
-      type="checkbox"
-      className="toggle"
-      id="rounded"
-      checked={isChecked}
-      onClick={onToggle}
-    />
-    <label
-      htmlFor="rounded"
-      className="rounded"
-      data-checked={labelIfChecked}
-      data-unchecked={labelIfUnchecked}
-    ></label>
-  </ToggleButtonStyled>
+      <input
+        type="checkbox"
+        className="toggle"
+        id="rounded"
+        checked={isChecked}
+        onChange={onToggle}
+      />
+      <label
+        htmlFor="rounded"
+        className="rounded"
+        data-checked={labelIfChecked}
+        data-unchecked={labelIfUnchecked}
+      ></label>
+    </ToggleButtonStyled>
   )
 }
 
@@ -31,7 +32,7 @@ const ToggleButtonStyled = styled.div`
   /* border: 1px solid red; */
 
   display: flex;
-  margin-right: 50px;
+  margin-right: 10px;
   input[type="checkbox"] {
     // Hides the square box but keeps the core "toggle functionality"
     &.toggle {
@@ -132,6 +133,4 @@ const ToggleButtonStyled = styled.div`
     }
   }
 `
-
-
 export default ToggleButton

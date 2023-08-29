@@ -7,14 +7,14 @@ import ToggleButton from './ToggleButton';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const RightSideNavbar = ({username}) => {
     
     const [isChecked, setIsChecked] = useState(false);
-
-
+ 
     // comportement
     const onToggle = () =>{
-        if(isChecked == false)  {
+        if(isChecked === false)  {
             setIsChecked(true);
             toast.info(
                 "Mode admin activé", 
@@ -36,10 +36,10 @@ const RightSideNavbar = ({username}) => {
     // view
     return (
         <RightSideNavbarStyled >
-            <ToggleButton  onToggle={onToggle}/>
+            <ToggleButton  onToggle={onToggle} labelIfUnchecked={"activer le mode admin" } labelIfChecked={ "désactiver le mode admin"}/>
             <Profil username={username} />
             <BsPersonCircle className='icon' />
-            <ToastContainer  />
+            <ToastContainer /> 
         </RightSideNavbarStyled>
     )
 }
@@ -49,16 +49,11 @@ const RightSideNavbarStyled = styled.div`
     align-items: center;
     color: ${theme.colors.greyMedium};
 
-    /* .admin_btn{
-        background: orange;
-    }
-    */
     .icon{
         width: 36px;
         min-height: 36px;
         padding-right: 50px;
     }
-
 
 `;
 

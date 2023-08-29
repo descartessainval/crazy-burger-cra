@@ -23,6 +23,7 @@ const ToggleButton = ({
         className="rounded"
         data-checked={labelIfChecked}
         data-unchecked={labelIfUnchecked}
+        
       ></label>
     </ToggleButtonStyled>
   )
@@ -90,7 +91,7 @@ const ToggleButtonStyled = styled.div`
     }
 
     &.toggle:not(:checked) + label {
-      background-color: ${theme.colors.background_dark};
+      background-color: ${theme.colors.background_dark}
       /* text-align: right; */
     }
 

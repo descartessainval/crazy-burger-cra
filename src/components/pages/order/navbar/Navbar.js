@@ -6,7 +6,6 @@ import Logo from '../../../reusable-ui/Logo';
 import { RefreshPage } from '../../../../utils/window';
 
 const Navbar = ({ username }) => {
-
   return (
     <NavbarStyled>
       <Logo onClick={RefreshPage} className={"logo-order-page"} />

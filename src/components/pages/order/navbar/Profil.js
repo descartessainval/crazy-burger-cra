@@ -9,7 +9,7 @@ const Profil = ({ username }) => {
         localStorage.clear()
     }
     return (
-        <ProfilStyles className='profile'>
+        <ProfilStyles >
             <p>Hey, <b>{username}</b></p>
             <Link to={"/"} onClick={deleteLocalStorage}  ><small>Se déconnecter</small></Link>
         </ProfilStyles>
@@ -19,6 +19,7 @@ const Profil = ({ username }) => {
 const ProfilStyles = styled.div`
     color: ${theme.colors.white};
     margin: 1rem;
+    padding-left: 50px;
 
     p, a{
         font-weight: ${theme.fonts.weights.regular};

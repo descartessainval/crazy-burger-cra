@@ -5,7 +5,7 @@ import { theme } from '../../../../themes';
 import Profil from './Profil';
 import ToggleButton from './ToggleButton';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import ToastAdmin from './ToastAdmin';
 
 const RightSideNavbar = ({username}) => {
     
@@ -43,7 +43,7 @@ const RightSideNavbar = ({username}) => {
             />
             <Profil username={username} />
             <BsPersonCircle className='icon' />
-            <ToastContainer  className="toaster" bodyClassName="body-toast"/> 
+            <ToastAdmin/>
         </RightSideNavbarStyled>
     )
 }
@@ -58,25 +58,6 @@ const RightSideNavbarStyled = styled.div`
         min-height: 36px;
         padding-right: 50px;
     }
-
-    .toaster {
-    max-width: 300px;
-  }
-
-  .Toastify__toast.Toastify__toast-theme--dark.Toastify__toast--info {
-    background: ${theme.colors.background_dark};
-  }
-
-  .body-toast {
-    .Toastify__toast-icon.Toastify--animate-icon.Toastify__zoom-enter {
-      margin-right: 20px;
-      margin-left: 5px;
-    }
-    div {
-      line-height: 1.3em;
-    }
-  }
-
 `;
 
 export default RightSideNavbar

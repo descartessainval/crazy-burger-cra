@@ -4,34 +4,32 @@ import { styled } from 'styled-components';
 import { theme } from '../../../../themes';
 import Profil from './Profil';
 import ToggleButton from './ToggleButton';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RightSideNavbar = ({username}) => {
     
     const [isChecked, setIsChecked] = useState(false);
-    const [labelIfChecked,setLabelIfChecked ] = useState(false);
-    const [labelIfUnchecked, setLabelIfUnchecked] = useState(false);
 
-    // feature variables
-    // isChecked
-    // onToggle
-    // labelIfChecked 
-    // labelIfUnchecked
 
     // comportement
     const onToggle = () =>{
-
-        // logic
-        //si ischecked == false alors isChecked = false
-        //si non, isChecked == false alors isCheck = true
-
         if(isChecked == false)  {
             setIsChecked(true);
-            //
-            console.log("mode admin activé ")
-        }
-        else {
+            toast.info(
+                "Mode admin activé", 
+                {
+                theme: "dark",
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+              })
+        }else{
             setIsChecked(false);
-            console.log("mode admin desactivé ")
         }
     }
 
@@ -41,6 +39,7 @@ const RightSideNavbar = ({username}) => {
             <ToggleButton  onToggle={onToggle}/>
             <Profil username={username} />
             <BsPersonCircle className='icon' />
+            <ToastContainer  />
         </RightSideNavbarStyled>
     )
 }
@@ -59,6 +58,8 @@ const RightSideNavbarStyled = styled.div`
         min-height: 36px;
         padding-right: 50px;
     }
+
+
 `;
 
 export default RightSideNavbar

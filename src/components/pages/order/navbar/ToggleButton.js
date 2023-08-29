@@ -15,7 +15,7 @@ const ToggleButton = ({
       className="toggle"
       id="rounded"
       checked={isChecked}
-      onChange={onToggle}
+      onClick={onToggle}
     />
     <label
       htmlFor="rounded"

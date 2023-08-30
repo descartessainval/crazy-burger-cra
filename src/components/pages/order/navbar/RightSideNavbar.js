@@ -5,6 +5,7 @@ import { theme } from '../../../../themes';
 import Profil from './Profil';
 import ToggleButton from './ToggleButton';
 import { toast } from 'react-toastify';
+
 import ToastAdmin from './ToastAdmin';
 
 const RightSideNavbar = ({username}) => {

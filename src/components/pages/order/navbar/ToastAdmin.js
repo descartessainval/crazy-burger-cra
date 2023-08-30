@@ -6,7 +6,6 @@ import { theme } from '../../../../themes';
 
 
 
-
 const ToastAdmin = () => {
   return (
     <ToastAdminStyled>

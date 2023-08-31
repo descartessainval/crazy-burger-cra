@@ -103,3 +103,27 @@ RAPPEL
 HEAD* => ma position
 git reset => revenir à un nombre de certains commits en arrière à partir de la où je suis
 --amend => corriger/modifier le dernier commit
+
+
+
+----------------------------ASTUCE AVANT DE PULL----------------------------
+-> je crée une branche à partir de la main 
+-> gc -b "F07-test" 
+        --> si je fais un glo 
+
+
+RAPPEL 
+git fetch -> permet d'update une branche. En gros, je récupère les états de toutes les branches existantes
+    si je souhaite updater la main -> git fetch origin main
+    je veux intégrer les changt de la main origin dans ma branche "test" -> git rebase origin/main
+                                                                            je rappatrie les changements de main origin vars la branche test 
+
+
+ main origin et main local sont des branches différentes 
+
+ pour observer une compraison dans git
+ git diff main..origin/main
+
+
+vérifier un rebase ?
+git diff F07..origin/main

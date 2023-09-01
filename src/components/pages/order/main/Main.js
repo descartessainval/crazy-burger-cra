@@ -3,6 +3,7 @@ import { styled } from 'styled-components';
 import { theme } from '../../../../themes';
 import Menu from './Menu';
 import Basket from './Basket';
+import Panel from '../panel/Panel';
 
 
 const Main = () => {
@@ -10,13 +11,13 @@ const Main = () => {
     <MainStyled >
       {/* <Basket />  */}
       <Menu />
+      <Panel/>  
     </MainStyled>
   )
 }
 
 const MainStyled = styled.main`
   flex: 1;
- 
   background: ${theme.colors.background_white};
   border-bottom-right-radius:${theme.borderRadius.extraRound};
   border-bottom-left-radius: ${theme.borderRadius.extraRound}; 
@@ -34,6 +35,8 @@ const MainStyled = styled.main`
     background: ${theme.colors.greyMedium};
     border-radius: ${theme.borderRadius.round};
   }
+
+  
 `;
 
 export default Main

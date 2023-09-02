@@ -31,6 +31,7 @@ const OrderPageStyled = styled.div`
     padding: 1.563rem 3.5rem;
 
     .container{
+        position: relative;
         height: 94.6vh;
         width:  87.5rem;
         display: flex;

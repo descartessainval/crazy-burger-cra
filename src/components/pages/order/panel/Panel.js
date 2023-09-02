@@ -21,65 +21,55 @@ const Panel = () => {
     
     return (
         <PanelStyled>
-            <div className="fixed-block">
-                <div className="absolute">
-                    <div className="tabs">
-                        <div style={{ paddingLeft: "10rem" }}></div>
-                        <div onClick={() => {clicklink(1); togglePanel();}} className={`${state === 1 ? "tab active-tab" : "tab"}`} >
+                <div className="container-height">
+                    <ul className="tabs">
+                        <li style={{ paddingLeft: "10rem" }}></li>
+                        <li onClick={() => {clicklink(1); togglePanel();}} className={`${state === 1 ? "tab active-tab" : "tab"}`} >
                            {isPanelOpen  ?  <FiChevronDown/> : <FiChevronUp/>}
-                        </div>
-                        <div onClick={() => clicklink(2)} className={`${state === 2 ? "tab active-tab" : "tab"}`}>
-                            <AiOutlinePlus/> 
-                            <p>Ajouter un produit</p> 
-                        </div>
-                        <div onClick={() => clicklink(3)} className={`${state === 3 ? "tab active-tab" : "tab"}`}>
+                        </li>
+                        <li onClick={() => clicklink(2)} className={`${state === 2 ? "tab active-tab" : "tab"}`}>
+                                <AiOutlinePlus/> 
+                                <a href='#'>Ajouter un produit</a> 
+                        </li>
+                        <li onClick={() => clicklink(3)} className={`${state === 3 ? "tab active-tab" : "tab"}`}>
                             <MdModeEditOutline/>
-                            <p>Modifier un produit</p>
-                        </div>
-                    </div>
+                            <a href='#'>Modifier un produit</a>
+                        </li>
+                    </ul>
                     <div className="contents">
                         <div className={`${state ===  1? "content active-content" : "content"}`}>
                         </div>
                         <div className={`${state === 2 ? "content active-content" : "content"}`}>
-                            <i></i>
                             <p>Ajouter un produit </p>
                         </div>
                         <div className={`${state === 3 ? "content active-content" : "content"}`}>
-                            <i></i>
                             <p>Modifier un produit </p>
                         </div>
                     </div>
                 </div>
-            </div>
         </PanelStyled>
     )
 }
 
 const PanelStyled = styled.div`
-position:relative;
-margin: 0 auto;
+position: absolute;
 color: black;
-align-self: flex-end;
+top: 492px;
+width: 100%;
+min-height: 31.906825568797398vh;
+
 border-bottom-left-radius: 10px;
 border-bottom-right-radius: 10px;
-width: 87.2rem;
 
-
-
-.absolute{
-    min-height: 60vh;
-    position: fixed;
-    top:500px;
-    width: 87.2rem;
-}
-
-.fixed-block{
-
-    
+.container-height{
+    min-height:338,5px;
 }
 
 .tabs {
     display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 .tab, .active-tab{
@@ -92,12 +82,10 @@ width: 87.2rem;
 }
 .tab{
     background: white;
-    padding:0.5rem 1rem;
     text-align: center;
     cursor: pointer;
     position: relative;
     color: black;
-
 }
 
 .active-tab{
@@ -122,7 +110,6 @@ width: 87.2rem;
     min-height:38.65vh;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
 }
 
 p{
@@ -132,8 +119,6 @@ p{
     margin-left: 20px;
 }
 
-.content, .active-content{
-}
 .content{
     display: none;
     position: relative;

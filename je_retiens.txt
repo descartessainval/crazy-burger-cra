@@ -102,6 +102,7 @@ RAPPEL
 
 HEAD* => ma position
 git reset => revenir à un nombre de certains commits en arrière à partir de la où je suis
+
 --amend => corriger/modifier le dernier commit
 
 

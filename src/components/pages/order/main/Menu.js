@@ -22,22 +22,19 @@ const Menu = () => {
 }
 
 const MenuStyled = styled.ul`
+  border: 1.5px solid blue;
+
     margin: 0;
     background: #F5F5F7;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-row-gap: 60px;
     justify-items: center;
     padding: 50px 50px 150px;
     box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
 
-    @media screen and  (max-width: 1120px){
-        grid-template-columns: repeat(2, 1fr)
-    }
-
-    @media screen and  (max-width: 580px){
-        grid-template-columns: repeat(1, 1fr)
-    }
+    overflow-y: scroll;
 `;
 
 export default Menu

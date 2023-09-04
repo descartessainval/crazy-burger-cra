@@ -10,22 +10,27 @@ const Main = () => {
   return (
     <MainStyled >
       {/* <Basket />  */}
-      <Menu />
-      <Panel/>  
+      <div className='menu-and-admin'>
+        <Menu />
+        <Panel/>
+      </div> 
     </MainStyled>
   )
 }
 
 const MainStyled = styled.main`
-  flex: 1;
+  border: 1.5px solid green;
+  /* flex: 1; */
+  height: calc(95vh - 10vh);
+
   background: ${theme.colors.background_white};
   border-bottom-right-radius:${theme.borderRadius.extraRound};
   border-bottom-left-radius: ${theme.borderRadius.extraRound}; 
   box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
   
   display: grid;
-  grid-template-columns: 1fr;
-  overflow-y: scroll;
+  grid-template-columns: /*25%*/  1fr;
+  /* overflow-y: scroll; */
 
   &::-webkit-scrollbar{
     width: 5px;
@@ -36,7 +41,13 @@ const MainStyled = styled.main`
     border-radius: ${theme.borderRadius.round};
   }
 
-  
+  .menu-and-admin{
+    position: relative;
+    overflow-y: hidden;
+    display: grid;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
 `;
 
 export default Main

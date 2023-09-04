@@ -22,6 +22,7 @@ const Panel = () => {
     return (
         <PanelStyled>
                 <div className="container-height">
+                    {/* tabs admin */}
                     <ul className="tabs">
                         <li style={{ paddingLeft: "10rem" }}></li>
                         <li onClick={() => {clicklink(1); togglePanel();}} className={`${state === 1 ? "tab active-tab" : "tab"}`} >
@@ -36,7 +37,8 @@ const Panel = () => {
                             <a href='#'>Modifier un produit</a>
                         </li>
                     </ul>
-                    <div className="contents">
+                {/* content */}
+                    <div className="contents contents_hide">
                         <div className={`${state ===  1? "content active-content" : "content"}`}>
                         </div>
                         <div className={`${state === 2 ? "content active-content" : "content"}`}>
@@ -52,17 +54,21 @@ const Panel = () => {
 }
 
 const PanelStyled = styled.div`
-position: absolute;
+ position: absolute;
 color: black;
-top: 492px;
+/* top: 556px; */
 width: 100%;
-min-height: 31.906825568797398vh;
+height: 27.08559vh; 
 
-border-bottom-left-radius: 10px;
-border-bottom-right-radius: 10px;
 
-.container-height{
-    min-height:338,5px;
+background: red;
+
+
+bottom: 0;
+right: 0;
+left: 0;
+
+/*.container-height{
 }
 
 .tabs {
@@ -70,6 +76,7 @@ border-bottom-right-radius: 10px;
     margin: 0;
     padding: 0;
     list-style-type: none;
+    height: 2.688rem;
 }
 
 .tab, .active-tab{
@@ -79,16 +86,27 @@ border-bottom-right-radius: 10px;
     display: flex;
     justify-items: center;
     align-items: center;
+    padding: 16px; 
 }
+
 .tab{
     background: white;
     text-align: center;
     cursor: pointer;
     position: relative;
     color: black;
+
+}
+.tab a{
+    padding-left: 1rem;
+    text-decoration: none;
 }
 
-.active-tab{
+.tab a:hover{*/
+    /* text-underline-offset: 5px; */
+/* }
+
+.active-tab, .active-tab a {
     border: none;
     background: black;
     color: white;
@@ -107,7 +125,7 @@ border-bottom-right-radius: 10px;
 
 .contents{
     background: white;
-    min-height:38.65vh;
+    min-height:29.65vh;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -126,7 +144,9 @@ p{
 
 .active-content{
     display: block;
-}
+} */ 
+
+
 
 `
 export default Panel

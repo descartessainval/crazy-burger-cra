@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import { theme } from '../../../../themes';
 import Menu from './Menu';
 import Basket from './Basket';
-import Panel from './Admin/Admin';
+import Admin from './Admin/Admin';
 import AdminContext from '../../../../context/AdminContext';
 
 
@@ -14,7 +14,7 @@ const Main = () => {
       {/* <Basket />  */}
       <div className='menu-and-admin'>
         <Menu />
-        <Panel/>
+        <Admin/>
       </div>  
     </MainStyled>
   )

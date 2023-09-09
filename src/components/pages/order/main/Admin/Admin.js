@@ -8,7 +8,7 @@ import AdminContext from '../../../../../context/AdminContext';
 import { findAllByTestId } from '@testing-library/react';
 
 
-const Panel = () => {
+const Admin = () => {
     let activeBtn = true;
     const [state, setState] = useState(1)
     const[isChevronUp, setIsChevronUp] = useState(false)
@@ -151,4 +151,4 @@ p{
 }
 
 `
-export default Panel
+export default Admin

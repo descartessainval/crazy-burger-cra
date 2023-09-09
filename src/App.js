@@ -1,27 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Routes, Route} from "react-router-dom";
 import LoginPage from './components/pages/login/LoginPage'
 import './App.css'
 import OrderPage from './components/pages/order/OrderPage';
 import ErrorPage from './components/pages/error/ErrorPage';
+import AdminContext from './context/AdminContext';
 
 
 // system de routing
 const App = () => {
-  return (
-    <div className='App'>
-      {/* <div className="bg-img"></div> */}
 
-      <Routes>
-      {/* <div className='App'>    */}
-      {/* //page par défaut  qui est accéessible via la route par défaut  */}
-          <Route exact path="/" element={<LoginPage/>}/> 
-          <Route path="/order/:username" element={<OrderPage/>}/>
-          {/* c ma page error qu'on accède par la route par erreur */}
-          <Route path="/*" element={<ErrorPage/>}/>
-      {/* </div>  */}
-    </Routes>
-    </div>
+     //useContext Admin
+     const [isModeAdmin, setIsModeAdmin] = useState(false);
+     const adminContextValue = {isModeAdmin, setIsModeAdmin};
+
+  return (
+  
+    <AdminContext.Provider value={adminContextValue}>
+    <div className='App'>
+          {/* <div className="bg-img"></div> */}
+
+            <Routes>
+              {/* <div className='App'>    */}
+              {/* //page par défaut  qui est accéessible via la route par défaut  */}
+                  <Route exact path="/" element={<LoginPage/>}/> 
+                  <Route path="/order/:username" element={<OrderPage />} />
+                  {/* c ma page error qu'on accède par la route par erreur */}
+                  <Route path="/*" element={<ErrorPage/>}/>
+              {/* </div>  */}
+            </Routes>
+       </div>
+    </AdminContext.Provider>
+
   )
 }
 

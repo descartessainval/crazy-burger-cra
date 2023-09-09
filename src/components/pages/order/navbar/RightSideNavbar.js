@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { BsPersonCircle } from 'react-icons/bs';
 import { styled } from 'styled-components';
 import { theme } from '../../../../themes';
@@ -7,19 +7,21 @@ import ToggleButton from './ToggleButton';
 import { toast } from 'react-toastify';
 
 import ToastAdmin from './ToastAdmin';
+import AdminContext from '../../../../context/AdminContext';
 
 const RightSideNavbar = ({username}) => {
     
-    const [isModeAdmin, setsModeAdmin] = useState(false);
+    // const [isModeAdmin, setsModeAdmin] = useState(false);
+    const {isModeAdmin, setIsModeAdmin, state, setState, isChevronUp, setIsChevronUp} = useContext(AdminContext)
  
     // comportement
     const displayToasrNotification = () =>{
-        if(!isModeAdmin )  {
-            setsModeAdmin(true);
+        if(!isModeAdmin)  {
+            setIsModeAdmin(!isModeAdmin);
             toast.info(
                 "Mode admin activé", 
                 {
-                // icon: <FaUserSecret size={30} />,
+                    // icon: <FaUserSecret size={30} />,
                 theme: "dark",
                 position: toast.POSITION.BOTTOM_RIGHT,
                 autoClose: 5000,
@@ -29,8 +31,10 @@ const RightSideNavbar = ({username}) => {
                 draggable: true,
                 progress: undefined,
               })
+
+              //Le panel admin s'ouvre
         }
-        setsModeAdmin(!isModeAdmin);
+        setIsModeAdmin(!isModeAdmin);
     }
 
     // view

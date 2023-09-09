@@ -128,3 +128,7 @@ git fetch -> permet d'update une branche. En gros, je récupère les états de t
 
 vérifier un rebase ?
 git diff F07..origin/main
+
+
+------------------------------CONTEXT && CONDITIONNAL RENDERING--------------------------------
+

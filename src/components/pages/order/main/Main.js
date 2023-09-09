@@ -3,17 +3,19 @@ import { styled } from 'styled-components';
 import { theme } from '../../../../themes';
 import Menu from './Menu';
 import Basket from './Basket';
-import Panel from '../panel/Panel';
+import Panel from './Admin/Admin';
+import AdminContext from '../../../../context/AdminContext';
 
 
 const Main = () => {
+
   return (
     <MainStyled >
       {/* <Basket />  */}
       <div className='menu-and-admin'>
         <Menu />
         <Panel/>
-      </div> 
+      </div>  
     </MainStyled>
   )
 }
@@ -47,7 +49,25 @@ const MainStyled = styled.main`
     display: grid;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+
+    .toggle-panel-ouvert{
+      /* height: 6vh; */
+      height: 27.08559vh; 
+
+      display: block;
+    }
+
+    .toggle-panel-ferme{
+      visibility: hidden;
+    }
+
+    .toggle-panel-active{
+      height: 27.08559vh; 
+    }
+
   }
+
+
 `;
 
 export default Main

@@ -59,22 +59,20 @@ const Admin = () => {
 }
 
 const PanelStyled = styled.div`
- position: absolute;
+position: absolute;
 color: black;
-/* background: red; */
 bottom: 0;
 right: 0;
 left: 0;
-
+background: ${theme.colors.white};
+border: ${theme.colors.greyLight};
+box-shadow:${theme.shadows.subtle};
 
 .tabs {
     display: flex;
     margin: 0;
     padding: 0;
     list-style-type: none;
-   // height: 2.688rem;
-
-
 }
 
 .tab, .active-tab{

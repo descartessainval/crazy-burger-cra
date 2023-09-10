@@ -4,28 +4,19 @@ import { theme } from '../../../../../themes';
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"
 import { AiOutlinePlus } from "react-icons/ai"
 import { MdModeEditOutline } from 'react-icons/md'
-import AdminContext from '../../../../../context/AdminContext';
-import { findAllByTestId } from '@testing-library/react';
 
 
-const Admin = () => {
-    let activeBtn = true;
+const Admin = ({isModeAdmin}) => {
     const [state, setState] = useState(1)
     const[isChevronUp, setIsChevronUp] = useState(false)
 
-
-    const {isModeAdmin, setIsModeAdmin
-        /*, state, setState, isChevronUp, setIsChevronUp*/
-    } = useContext(AdminContext)
-
-
+    //comportement
    const handleClick = (index) => {
        setState(index);
     }
 
-
     return (
-        <PanelStyled  className={`${isModeAdmin == false ? "toggle-panel-ferme" :  isModeAdmin == true && state ? "toggle-panel-ouvert": isModeAdmin == true ? "toggle-panel-active" : "toggle-panel-ouvert" }`}>
+        <PanelStyled  className="toggle-panel-open">
                 <div className="container-height">
                     {/* tabs admin */}
                     <ul className="tabs">
@@ -42,7 +33,7 @@ const Admin = () => {
                             <a href='#'>Modifier un produit</a>
                         </li>
                     </ul>
-                {/* content */}
+                    {/* content */}
                     <div className="contents contents_hide">
                         <div  className={`${state ===  1? "content active-content" : "content"}`}>
                         </div>

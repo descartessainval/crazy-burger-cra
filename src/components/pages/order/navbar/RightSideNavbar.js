@@ -1,21 +1,19 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { BsPersonCircle } from 'react-icons/bs';
 import { styled } from 'styled-components';
 import { theme } from '../../../../themes';
 import Profil from './Profil';
 import ToggleButton from './ToggleButton';
 import { toast } from 'react-toastify';
-
 import ToastAdmin from './ToastAdmin';
-import AdminContext from '../../../../context/AdminContext';
+import OrderContext from '../../../../context/OrderContext';
 
-const RightSideNavbar = ({username}) => {
-    
-    // const [isModeAdmin, setsModeAdmin] = useState(false);
-    const {isModeAdmin, setIsModeAdmin, state, setState, isChevronUp, setIsChevronUp} = useContext(AdminContext)
+const RightSideNavbar = () => {
  
     // comportement
-    const displayToasrNotification = () =>{
+    const {isModeAdmin, setIsModeAdmin} = useContext(OrderContext)  
+
+    const displayToastNotification = () =>{
         if(!isModeAdmin)  {
             setIsModeAdmin(!isModeAdmin);
             toast.info(
@@ -39,14 +37,15 @@ const RightSideNavbar = ({username}) => {
 
     // view
     return (
-        <RightSideNavbarStyled >
+        <RightSideNavbarStyled>
             <ToggleButton  
-                onToggle={displayToasrNotification} 
+                onToggle={displayToastNotification} 
                 labelIfUnchecked={"activer le mode admin" } 
                 labelIfChecked={ "désactiver le mode admin"}
                 couleurDuBackground={"green"}
+                isChecked={isModeAdmin}
             />
-            <Profil username={username} />
+            <Profil/>
             <BsPersonCircle className='icon' />
             <ToastAdmin/>
         </RightSideNavbarStyled>

@@ -4,19 +4,15 @@ import LoginPage from './components/pages/login/LoginPage'
 import './App.css'
 import OrderPage from './components/pages/order/OrderPage';
 import ErrorPage from './components/pages/error/ErrorPage';
-import AdminContext from './context/AdminContext';
 
 
 // system de routing
 const App = () => {
 
-     //useContext Admin
-     const [isModeAdmin, setIsModeAdmin] = useState(false);
-     const adminContextValue = {isModeAdmin, setIsModeAdmin};
-
+  //variable
+     //view
   return (
   
-    <AdminContext.Provider value={adminContextValue}>
     <div className='App'>
           {/* <div className="bg-img"></div> */}
 
@@ -30,7 +26,6 @@ const App = () => {
               {/* </div>  */}
             </Routes>
        </div>
-    </AdminContext.Provider>
 
   )
 }

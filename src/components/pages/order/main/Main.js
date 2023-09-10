@@ -1,20 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { styled } from 'styled-components';
 import { theme } from '../../../../themes';
 import Menu from './Menu';
 import Basket from './Basket';
 import Admin from './Admin/Admin';
-import AdminContext from '../../../../context/AdminContext';
+import OrderContext from '../../../../context/OrderContext';
 
 
 const Main = () => {
+
+  const {isModeAdmin, setIsModeAdmin} = useContext(OrderContext);
 
   return (
     <MainStyled >
       {/* <Basket />  */}
       <div className='menu-and-admin'>
         <Menu />
-        <Admin/>
+      {isModeAdmin && <Admin/>}
       </div>  
     </MainStyled>
   )
@@ -32,7 +34,6 @@ const MainStyled = styled.main`
   
   display: grid;
   grid-template-columns: /*25%*/  1fr;
-  /* overflow-y: scroll; */
 
   &::-webkit-scrollbar{
     width: 5px;
@@ -50,20 +51,18 @@ const MainStyled = styled.main`
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 
-    .toggle-panel-ouvert{
-      /* height: 6vh; */
-      height: 27.08559vh; 
+  .toggle-panel-open{
+    height: 6vh;
+    display: block;
+  }
 
-      display: block;
-    }
+  .toggle-panel-close{
+    visibility: hidden;
+  }
 
-    .toggle-panel-ferme{
-      visibility: hidden;
-    }
-
-    .toggle-panel-active{
-      height: 27.08559vh; 
-    }
+  .toggle-panel-active{
+    height: 27.08559vh; 
+  }
 
   }
 

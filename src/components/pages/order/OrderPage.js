@@ -1,23 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Navbar from '../order/navbar/Navbar';
 import Main from '../order/main/Main';
 import { styled } from 'styled-components';
 import { theme } from '../../../themes';
+import OrderContext from '../../../context/OrderContext';
 
 
 const OrderPage = () => {
     //états 
-    const { username } = useParams();
-    //comportement
+    const [isModeAdmin, setIsModeAdmin] = useState(true) 
+
+    //comportement(s)
+    const orderContextValue = {
+        isModeAdmin, 
+        setIsModeAdmin
+    }
+
     //vue
     return (
+    <OrderContext.Provider value={orderContextValue}>
         <OrderPageStyled >
             <div className='container'>
-                <Navbar username={username} />
-                <Main />
+                <Navbar />
+                <Main  />
             </div>
-        </OrderPageStyled>
+        </OrderPageStyled>  
+    </OrderContext.Provider>
     )
 }
 

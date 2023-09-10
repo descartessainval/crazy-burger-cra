@@ -132,3 +132,17 @@ git diff F07..origin/main
 
 ------------------------------CONTEXT && CONDITIONNAL RENDERING--------------------------------
 
+Lorsque deux composants consomment le même state, le state sera définie 
+dans le composant parent des deux composants
+
+-> lifting state up = "faire remonter l'état"
+
+
+____CONDITIONNAL RENDERING_____
+
+Lorsque que j'ai dans une condition ternaire un null  comme ci dessous
+    -> isModeAdmin ? <Admin/> :  null 
+je peux simplifier l'écriture en 
+    -> isModeAdmin && <Admin/>    | && est un raccourci 
+        si cette expression est true &&/alors tu m'affiche le composant <Admin/>
+        sinon tu ne m'affiche rien

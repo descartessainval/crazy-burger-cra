@@ -1,10 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { theme } from '../../../../themes';
 
 
-const Profil = ({ username }) => {
+const Profil = () => {
+
+    const { username } = useParams();
+
     const deleteLocalStorage = () => {
         localStorage.clear()
     }

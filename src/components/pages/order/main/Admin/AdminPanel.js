@@ -4,18 +4,10 @@ import { styled } from 'styled-components'
 import { theme } from '../../../../../themes'
 
 const AdminPanel = () => {
-    const { state, setState } = useContext(OrderContext)
 
     return (
-        <AdminPanelStyled /*className=" contents_hide"*/>
-            {/* <div className={`${state === 1 ? "content active-content" : "content"}`}>
-            </div>
-            <div className={`${state === 2 || state === 1 ? "content active-content" : "content"}`}>
-                <p>Ajouter un produit </p>
-            </div>
-            <div className={`${state === 3 ? "content active-content" : "content"}`}>
-                <p>Modifier un produit </p>
-            </div> */}
+        <AdminPanelStyled>
+         
         </AdminPanelStyled>
     )
 }

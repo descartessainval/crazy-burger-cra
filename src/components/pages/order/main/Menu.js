@@ -22,7 +22,6 @@ const Menu = () => {
 }
 
 const MenuStyled = styled.ul`
-  border: 1.5px solid blue;
 
     margin: 0;
     background: #F5F5F7;

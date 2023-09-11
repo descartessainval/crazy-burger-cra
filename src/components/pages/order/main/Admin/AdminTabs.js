@@ -1,14 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { styled } from 'styled-components';
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"
-import { AiOutlinePlus } from "react-icons/ai"
-import { MdModeEditOutline } from 'react-icons/md'
 import Tab from '../../../../reusable-ui/Tab';
+import { theme } from '../../../../../themes';
 
-const AdminTabs = () => {
+const AdminTabs = ({isCollapse, setIsCollapse}) => {
     return (
         <AdminTabsStyled>
-            <Tab  Icon={<FiChevronDown/>}/>
+            <Tab  Icon= {isCollapse ? <FiChevronUp/> : <FiChevronDown/>}  onClick={()=>  setIsCollapse(!isCollapse)} className={isCollapse ? "is-active" : ""}/>
         </AdminTabsStyled>
     )
 }
@@ -17,6 +16,12 @@ const AdminTabsStyled = styled.div`
 
 display: flex;
 padding: 0 20px;
+
+.is-active{
+background: ${theme.colors.background_dark};
+border-color: ${theme.colors.background_dark} ;
+color: ${theme.colors.white};
+}
 
 `;
 

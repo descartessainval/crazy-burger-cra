@@ -1,18 +1,18 @@
-import React, { useContext, useState } from 'react'
+import React, {useState } from 'react'
 import { styled } from 'styled-components';
 import AdminTabs from './AdminTabs';
-import OrderContext from '../../../../../context/OrderContext';
 import AdminPanel from './AdminPanel';
 
 
 const Admin = () => {
-
+    const [isCollapse, setIsCollapse] = useState(false);
 
     return (
         <PanelStyled  >
                 <div >
-                    <AdminTabs />
-                    <AdminPanel/>
+                    <AdminTabs isCollapse={isCollapse} setIsCollapse={setIsCollapse}/>
+                  {/* quand est ce que j'affucher Panel admin quand isCollapse */}
+                    {!isCollapse && <AdminPanel/>}
                 </div>
         </PanelStyled>
     )

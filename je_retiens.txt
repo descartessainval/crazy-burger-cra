@@ -146,3 +146,10 @@ je peux simplifier l'écriture en
     -> isModeAdmin && <Admin/>    | && est un raccourci 
         si cette expression est true &&/alors tu m'affiche le composant <Admin/>
         sinon tu ne m'affiche rien
+
+
+Mnémotechnique 
+----------------
+    Quand est ce que j'affiche <Ca/>
+    Quand !isça -> sachant que isça est initialisé à false
+

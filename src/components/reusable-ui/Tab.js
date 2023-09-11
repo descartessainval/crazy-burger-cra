@@ -16,6 +16,7 @@ const TabStyled = styled.button`
   height: 43px;
   padding: 0 22px;
 
+
   display: flex;
   justify-content: center;
   align-items: center;

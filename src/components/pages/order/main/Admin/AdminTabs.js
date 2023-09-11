@@ -48,8 +48,7 @@ const AdminTabsStyled = styled.div`
 display: flex;
 position: absolute;
 top: -43px;
-  left: 5%;
-
+left: 5%;
 
 .is-active{
     background: ${theme.colors.background_dark};

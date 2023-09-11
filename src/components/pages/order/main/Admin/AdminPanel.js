@@ -26,6 +26,7 @@ box-shadow: ${theme.shadows.subtle};
 p{
     padding: 0 20px;
 }
+
 `;
 
 export default AdminPanel

@@ -1,23 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Navbar from '../order/navbar/Navbar';
 import Main from '../order/main/Main';
 import { styled } from 'styled-components';
 import { theme } from '../../../themes';
+import OrderContext from '../../../context/OrderContext';
 
 
 const OrderPage = () => {
     //états 
-    const { username } = useParams();
-    //comportement
+    const [isModeAdmin, setIsModeAdmin] = useState(false)
+    const [isCollapse, setIsCollapse] = useState(false)
+    const [currentTabSelected, setCurrentTabSelected] = useState("add")
+
+    //comportement(s)
+    const orderContextValue = {
+        isModeAdmin,
+        setIsModeAdmin,
+        isCollapse,
+        setIsCollapse,
+        currentTabSelected,
+        setCurrentTabSelected,
+
+    }
+
     //vue
     return (
-        <OrderPageStyled >
-            <div className='container'>
-                <Navbar username={username} />
-                <Main />
-            </div>
-        </OrderPageStyled>
+        <OrderContext.Provider value={orderContextValue}>
+            <OrderPageStyled >
+                <div className='container'>
+                    <Navbar />
+                    <Main />
+                </div>
+            </OrderPageStyled>
+        </OrderContext.Provider>
     )
 }
 
@@ -31,8 +47,9 @@ const OrderPageStyled = styled.div`
     padding: 1.563rem 3.5rem;
 
     .container{
+        position: relative;
         height: 94.6vh;
-        width:  87.5rem;
+        width:  87.5rem; 
         display: flex;
         flex-direction: column;
         border-radius: ${theme.borderRadius.extraRoundd};

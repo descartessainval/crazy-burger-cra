@@ -8,7 +8,9 @@ const Basket = () => {
 }
 
 const BasketStyled = styled.div`
-  background: red ;
+  background: pink ;
+border-bottom-left-radius: 10px;
+
   /* height: 1;
   width: 200px; */
 `;

@@ -1,25 +1,25 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { BsPersonCircle } from 'react-icons/bs';
 import { styled } from 'styled-components';
 import { theme } from '../../../../themes';
 import Profil from './Profil';
 import ToggleButton from './ToggleButton';
 import { toast } from 'react-toastify';
-
 import ToastAdmin from './ToastAdmin';
+import OrderContext from '../../../../context/OrderContext';
 
-const RightSideNavbar = ({username}) => {
-    
-    const [isModeAdmin, setsModeAdmin] = useState(false);
+const RightSideNavbar = () => {
  
     // comportement
-    const displayToasrNotification = () =>{
-        if(!isModeAdmin )  {
-            setsModeAdmin(true);
+    const {isModeAdmin, setIsModeAdmin} = useContext(OrderContext)  
+
+    const displayToastNotification = () =>{
+        if(!isModeAdmin)  {
+            setIsModeAdmin(!isModeAdmin);
             toast.info(
                 "Mode admin activé", 
                 {
-                // icon: <FaUserSecret size={30} />,
+                    // icon: <FaUserSecret size={30} />,
                 theme: "dark",
                 position: toast.POSITION.BOTTOM_RIGHT,
                 autoClose: 5000,
@@ -29,20 +29,23 @@ const RightSideNavbar = ({username}) => {
                 draggable: true,
                 progress: undefined,
               })
+
+              //Le panel admin s'ouvre
         }
-        setsModeAdmin(!isModeAdmin);
+        setIsModeAdmin(!isModeAdmin);
     }
 
     // view
     return (
-        <RightSideNavbarStyled >
+        <RightSideNavbarStyled>
             <ToggleButton  
-                onToggle={displayToasrNotification} 
+                onToggle={displayToastNotification} 
                 labelIfUnchecked={"activer le mode admin" } 
                 labelIfChecked={ "désactiver le mode admin"}
                 couleurDuBackground={"green"}
+                isChecked={isModeAdmin}
             />
-            <Profil username={username} />
+            <Profil/>
             <BsPersonCircle className='icon' />
             <ToastAdmin/>
         </RightSideNavbarStyled>

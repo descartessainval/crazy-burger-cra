@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Routes, Route} from "react-router-dom";
 import LoginPage from './components/pages/login/LoginPage'
 import './App.css'
@@ -8,20 +8,25 @@ import ErrorPage from './components/pages/error/ErrorPage';
 
 // system de routing
 const App = () => {
-  return (
-    <div className='App'>
-      {/* <div className="bg-img"></div> */}
 
-      <Routes>
-      {/* <div className='App'>    */}
-      {/* //page par défaut  qui est accéessible via la route par défaut  */}
-          <Route exact path="/" element={<LoginPage/>}/> 
-          <Route path="/order/:username" element={<OrderPage/>}/>
-          {/* c ma page error qu'on accède par la route par erreur */}
-          <Route path="/*" element={<ErrorPage/>}/>
-      {/* </div>  */}
-    </Routes>
-    </div>
+  //variable
+     //view
+  return (
+  
+    <div className='App'>
+          {/* <div className="bg-img"></div> */}
+
+            <Routes>
+              {/* <div className='App'>    */}
+              {/* //page par défaut  qui est accéessible via la route par défaut  */}
+                  <Route exact path="/" element={<LoginPage/>}/> 
+                  <Route path="/order/:username" element={<OrderPage />} />
+                  {/* c ma page error qu'on accède par la route par erreur */}
+                  <Route path="/*" element={<ErrorPage/>}/>
+              {/* </div>  */}
+            </Routes>
+       </div>
+
   )
 }
 

@@ -10,11 +10,14 @@ import OrderContext from '../../../context/OrderContext';
 const OrderPage = () => {
     //états 
     const [isModeAdmin, setIsModeAdmin] = useState(true) 
+    const [state, setState] = useState(1)
 
     //comportement(s)
     const orderContextValue = {
         isModeAdmin, 
-        setIsModeAdmin
+        setIsModeAdmin,
+        state,
+        setState
     }
 
     //vue

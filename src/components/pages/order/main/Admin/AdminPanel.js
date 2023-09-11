@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import OrderContext from '../../../../../context/OrderContext'
+import React from 'react'
 import { styled } from 'styled-components'
 import { theme } from '../../../../../themes'
 

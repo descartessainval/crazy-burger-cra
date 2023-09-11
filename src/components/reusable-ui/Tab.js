@@ -3,9 +3,9 @@ import { styled } from 'styled-components';
 import { theme } from '../../themes';
 
 
-const Tab = ({Icon}) => {
+const Tab = ({Icon, onClick, className}) => {
   return (
-    <TabStyled>
+    <TabStyled onClick={onClick} className={className}>
       <div className='icon'>{Icon}</div>
     </TabStyled>
   )

@@ -23,7 +23,6 @@ const Main = () => {
 }
 
 const MainStyled = styled.main`
-  border: 1.5px solid green;
   /* flex: 1; */
   height: calc(95vh - 10vh);
 

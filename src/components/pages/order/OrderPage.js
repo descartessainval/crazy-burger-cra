@@ -9,27 +9,30 @@ import OrderContext from '../../../context/OrderContext';
 
 const OrderPage = () => {
     //états 
-    const [isModeAdmin, setIsModeAdmin] = useState(true) 
-    const [state, setState] = useState(1)
+    const [isModeAdmin, setIsModeAdmin] = useState(false)
+    const [isCollapse, setIsCollapse] = useState(false)
+    const [currentTabSelected, setCurrentTabSelected] = useState("add")
 
     //comportement(s)
     const orderContextValue = {
-        isModeAdmin, 
+        isModeAdmin,
         setIsModeAdmin,
-        state,
-        setState
+        isCollapse,
+        setIsCollapse,
+        currentTabSelected,
+        setCurrentTabSelected,
     }
 
     //vue
     return (
-    <OrderContext.Provider value={orderContextValue}>
-        <OrderPageStyled >
-            <div className='container'>
-                <Navbar />
-                <Main  />
-            </div>
-        </OrderPageStyled>  
-    </OrderContext.Provider>
+        <OrderContext.Provider value={orderContextValue}>
+            <OrderPageStyled >
+                <div className='container'>
+                    <Navbar />
+                    <Main />
+                </div>
+            </OrderPageStyled>
+        </OrderContext.Provider>
     )
 }
 
@@ -45,7 +48,7 @@ const OrderPageStyled = styled.div`
     .container{
         position: relative;
         height: 94.6vh;
-        width:  87.5rem;
+        width:  87.5rem; 
         display: flex;
         flex-direction: column;
         border-radius: ${theme.borderRadius.extraRoundd};

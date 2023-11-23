@@ -21,13 +21,12 @@ const OrderPage = () => {
         setIsCollapse,
         currentTabSelected,
         setCurrentTabSelected,
-
     }
 
     //vue
     return (
         <OrderContext.Provider value={orderContextValue}>
-            <OrderPageStyled >
+            <OrderPageStyled>
                 <div className='container'>
                     <Navbar />
                     <Main />

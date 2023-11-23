@@ -16,6 +16,7 @@ const Admin = () => {
 }
 
 const AdminStyled = styled.div`
+    /* border: blue solid 1px; */
     position: absolute;
     bottom: 0;
     right: 0;

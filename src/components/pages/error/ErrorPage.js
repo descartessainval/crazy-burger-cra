@@ -10,7 +10,8 @@ const ErrorPage = () => {
     return (
         <div>
             <h1>ErrorPage</h1>
-            <button onClick={handleClick}>Retour page d'accueil</button></div>
+            <button onClick={handleClick}>Retour page d'accueil</button>
+        </div>
     )
 }
 

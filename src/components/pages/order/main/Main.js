@@ -50,22 +50,19 @@ const MainStyled = styled.main`
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 
-  .toggle-panel-open{
-    height: 6vh;
-    display: block;
-  }
+    .toggle-panel-open{
+      height: 6vh;
+      display: block;
+    }
 
-  .toggle-panel-close{
-    visibility: hidden;
-  }
+    .toggle-panel-close{
+      visibility: hidden;
+    }
 
-  .toggle-panel-active{
-    height: 27.08559vh; 
-  }
-
-  }
-
-
+    .toggle-panel-active{
+      height: 27.08559vh; 
+    }
+  } 
 `;
 
 export default Main

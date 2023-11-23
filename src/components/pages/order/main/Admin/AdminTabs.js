@@ -31,12 +31,12 @@ const AdminTabs = () => {
             />
             {tabs.map((tab) => (
                 <Tab
-                    key={tab.index}
-                    index={tab.index}
-                    label={tab.label}
-                    Icon={tab.Icon}
-                    onClick={() => selectTab(tab.index)}
-                    className={currentTabSelected === tab.index ? "is-active" : ""}
+                     key={tab.index}
+                     index={tab.index}
+                     label={tab.label}
+                     Icon={tab.Icon}
+                     onClick={() => selectTab(tab.index)}
+                     className={currentTabSelected === tab.index ? "is-active" : ""}
                 />
             ))}
         </AdminTabsStyled>

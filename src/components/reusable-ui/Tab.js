@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import { theme } from '../../themes';
 
 
-const Tab = ({label, Icon, onClick, className}) => {
+const  Tab = ({label, Icon, onClick, className}) => {
   return (
     <TabStyled onClick={onClick} className={className}>
         <div className='icon'>{Icon}</div>
@@ -15,7 +15,6 @@ const Tab = ({label, Icon, onClick, className}) => {
 const TabStyled = styled.button`
   height: 43px;
   padding: 0 22px;
-
 
   display: flex;
   justify-content: center;

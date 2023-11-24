@@ -1,18 +1,12 @@
 import React, { useContext } from 'react'
 import { styled } from 'styled-components'
 import { theme } from '../../../../../themes'
-import OrderContext from '../../../../../context/OrderContext'
-import { getTabSelected, tabsConfig } from './tabConfig'
+import InputField from '../../../../reusable-ui/InputField'
 
 const AdminPanel = () => {
-  const {currentTabSelected } = useContext(OrderContext)
-
-    const tabs = tabsConfig;
-    const tabSelected = getTabSelected(tabs, currentTabSelected)
-  
     return (
         <AdminPanelStyled>
-            <p>{tabSelected && tabSelected.label}</p>
+            <InputField />
         </AdminPanelStyled>
     )
 }

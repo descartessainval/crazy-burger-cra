@@ -41,6 +41,7 @@ const LoginForm = () => {
         type={"text"}
         required
         Icon={<BsPersonCircle className='icon' />}
+        className={'container_loginForm'}
       />
       <PrimaryButton 
          className={'btn-form'}
@@ -81,6 +82,27 @@ const LoginFormStyled = styled.form`
   border-radius: ${theme.borderRadius.round};
   font-family:  "Amatic SC", cursive;
 
+  .container_loginForm{
+      background-color: ${theme.colors.white};
+      border-radius: ${theme.borderRadius.round};
+      display: flex;
+      align-items: center;
+      padding: 18px 24px;
+      margin: 18px 0;
+  }
+
+  input{ 
+      border: none;
+      font-size: ${theme.fonts.size.SM};
+      color: ${theme.colors.dark};
+      width: 100%;
+      
+      &::placeholder{
+        background: ${theme.colors.white};
+        color: ${theme.colors.greyMedium};
+      }
+    }
+
   hr{
     border: 1.5px solid ${theme.colors.loginLine};
     margin: ${theme.gridUnit * 5}px;
@@ -97,13 +119,13 @@ const LoginFormStyled = styled.form`
     font-size: ${theme.fonts.size.P4};
   }
 
-  .icon{
+  /* .icon{
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: ${theme.fonts.size.SM};
       margin-left: 10px;
-    }  
+    }   */
 
   //these properties are specific to the loginForm button
   .btn-form{

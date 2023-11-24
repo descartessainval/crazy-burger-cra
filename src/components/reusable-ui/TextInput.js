@@ -2,45 +2,38 @@ import React from 'react'
 import { styled } from 'styled-components'
 import { theme } from '../../themes'
 
-const TextInput = ({ Icon, value, handleChange, ...extraProps }) => {
+const TextInput = ({ Icon, value, handleChange, className, ...extraProps }) => {
 
   return (
     <InputStyled >
-      {/* si y 'a une icon alors, je mets une icon */}
-      {Icon && Icon}
-      <input
-        onChange={handleChange}
-        {...extraProps}
-      />
+      <div className={className}>
+        {/* si y 'a une icon alors, je mets une icon */}
+        {Icon && Icon}
+        <input
+          onChange={handleChange}
+          {...extraProps}
+        />
+      </div>
     </InputStyled>
   )
 }
 
 const InputStyled = styled.div`
-     background-color: ${theme.colors.white};
-     border-radius: ${theme.borderRadius.round};
-     display: flex;
-     align-items: center;
-     padding: 18px 24px;
-     margin: 18px 0;
 
-     .icon{
+    .icon{
       font-size: ${theme.fonts.size.SM};
       margin-right: 8px;
       color: ${theme.colors.greySemiDark};
-     }
-
-     input{ 
-      border: none;
-      font-size: ${theme.fonts.size.SM};
-      color: ${theme.colors.dark};
-      width: 100%;
-      /* display: flex; */
-      
-      &::placeholder{
-        background: ${theme.colors.white};
-        color: ${theme.colors.greyMedium};
-      }
     }
+
+    /* .icon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: ${theme.fonts.size.SM};
+      margin-left: 10px;
+    }    */
+
+
 `
 export default TextInput

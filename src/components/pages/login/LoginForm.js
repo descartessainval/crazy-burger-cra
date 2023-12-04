@@ -14,7 +14,7 @@ import { theme } from '../../../themes';
 
 const LoginForm = () => {
 
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("Descartes");
   // const [mdp, setMdp] = useState("");
 
   const navigate = useNavigate();

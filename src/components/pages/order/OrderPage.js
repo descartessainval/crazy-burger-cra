@@ -5,6 +5,7 @@ import Main from '../order/main/Main';
 import { styled } from 'styled-components';
 import { theme } from '../../../themes';
 import OrderContext from '../../../context/OrderContext';
+import { fakeMenu } from '../../../fakeData/fakeMenu';
 
 
 const OrderPage = () => {
@@ -12,16 +13,40 @@ const OrderPage = () => {
     const [isModeAdmin, setIsModeAdmin] = useState(true) // j'initialise le mode admin à true pour travailler dans le panel pour le rendre disponible tour le long de la prod
     const [isCollapse, setIsCollapse] = useState(false)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")
+    const [products, setProducts] = useState(fakeMenu.MEDIUM);
+
 
     //comportement(s)
+    const handleAdd = (newProduct) => {
+   
+        //  1 copie du tableau
+        const menuCopy = [...products];
+
+        //  2 manipulation de la copie du tableau
+        const menuUpdated = [newProduct, ...menuCopy]
+
+        //  3 update du state
+        setProducts(menuUpdated)
+    }
+
+
+
     const orderContextValue = {
         isModeAdmin,
         setIsModeAdmin,
+
         isCollapse,
         setIsCollapse,
+        
         currentTabSelected,
         setCurrentTabSelected,
+
+        products,
+        handleAdd
+
     }
+
+
 
     //vue
     return (

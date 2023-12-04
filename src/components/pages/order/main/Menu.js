@@ -1,21 +1,25 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { styled } from 'styled-components';
 import { formatPrice } from '../../../../utils/maths'
 import Card from '../../../reusable-ui/Card';
-import { fakeMenu } from '../../../../fakeData/fakeMenu';
+import OrderContext from '../../../../context/OrderContext';
 
 const Menu = () => {
-    const [products, setProducts] = useState(fakeMenu.LARGE);
+    
+const   {products} = useContext(OrderContext);
+    //comportements
+  
 
+    //affichage
     return (
         <MenuStyled>
-            {products.map(({id, title, imageSource, price}) => (
+            {products.map(({ id, title, imageSource, price }) => (
                 <Card
-                 imageSource={imageSource} 
-                 key={id} 
-                 infoId={id} 
-                 title={title} 
-                 leftDescription={formatPrice(price)} /*j'utilise le spread opérator dans ce cas on préférera la premièr eméthode {...product}*/
+                    imageSource={imageSource}
+                    key={id}
+                    infoId={id}
+                    title={title}
+                    leftDescription={formatPrice(price)} /*j'utilise le spread opérator dans ce cas on préférera la premièr eméthode {...product}*/
                 />
             ))}
         </MenuStyled>

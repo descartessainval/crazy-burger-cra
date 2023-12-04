@@ -9,7 +9,7 @@ import OrderContext from '../../../context/OrderContext';
 
 const OrderPage = () => {
     //états 
-    const [isModeAdmin, setIsModeAdmin] = useState(false)
+    const [isModeAdmin, setIsModeAdmin] = useState(true) // j'initialise le mode admin à true pour travailler dans le panel pour le rendre disponible tour le long de la prod
     const [isCollapse, setIsCollapse] = useState(false)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")
 

@@ -7,15 +7,15 @@ import OrderContext from '../../../../../../context/OrderContext'
 
 const AdminPanel = () => {
 
-    const {currentTabSelected} = useContext(OrderContext)
- 
+    const { currentTabSelected } = useContext(OrderContext)
+
     const tabs = tabsConfig;
-    const tabSelected  = getTabSelected(tabs, currentTabSelected)
+    const tabSelected = getTabSelected(tabs, currentTabSelected)
 
     return (
         <AdminPanelStyled>
             {/* <InputField /> */}
-            <p>{tabSelected && tabSelected.Content}</p>
+            {tabSelected && tabSelected.Content}
         </AdminPanelStyled>
     )
 }
@@ -25,10 +25,11 @@ background: ${theme.colors.white};
 height: 250px;
 border: 1px solid ${theme.colors.greyLight};
 box-shadow: ${theme.shadows.subtle};
+padding: 30px 5%;
 
-p{
+/* p{
     padding: 0 20px;
-}
+} */
 
 `;
 

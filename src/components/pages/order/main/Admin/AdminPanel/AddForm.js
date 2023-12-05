@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import OrderContext from '../../../../../../context/OrderContext'
 import { theme } from '../../../../../../themes'
+import { CiCircleCheck } from 'react-icons/ci'
 
 const EMPTY_PRODUCT = {
   id: "",
@@ -16,6 +17,7 @@ const AddForm = () => {
   const { handleAdd } = useContext(OrderContext);
 
   const [newProduct, setNewPeoduct] = useState(EMPTY_PRODUCT);
+  const [isSubmitted, setisSubmitted] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +29,10 @@ const AddForm = () => {
 
     handleAdd(newProductToAdd);
     setNewPeoduct(EMPTY_PRODUCT);
-
+    setisSubmitted(true);
+    setTimeout(() => {
+      setisSubmitted(false);
+    }, 2000);
   }
 
   //comportements
@@ -47,7 +52,15 @@ const AddForm = () => {
         <input name='imageSource' value={newProduct.imageSource} onChange={handleChange} type="text" placeholder="Lien URL d\'une image(ex: https://photo-de-mon-produit.png" />
         <input name='price' value={newProduct.price ? newProduct.price : ""} onChange={handleChange} type="text" placeholder="Price" />
       </div>
-      <button className="submit-preview">Submit button</button>
+      <div className="submit">
+        <button className='submit-btn'>Submit button</button>
+        {
+          isSubmitted && <div className="submit-msg">
+            <CiCircleCheck />
+            <span> Ajouté avec succès</span>
+          </div>
+        }
+      </div>
     </AddFormStyled>
   )
 }
@@ -76,19 +89,25 @@ const AddFormStyled = styled.form`
     }
   }
   .input-fields{
-    background: blue;
+    /* background: blue; */
     grid-area: 1/2/4/2;
 
     display: grid;
 
 }
-  .submit-preview{
-    background: grey;
+  .submit{
+    /* background: grey; */
     grid-area:4/2/5/3;
-    display: grid;
-    width: 50%;
-
-
+    display: flex;
+    align-items: center;
+    .submit-btn{
+      width: 50%;
+    }
+    .submit-msg{
+      color: #60BD4F;
+      span{
+        }
+}
   }
 
 `;

@@ -43,7 +43,6 @@ const OrderPage = () => {
 
         products,
         handleAdd
-
     }
 
 

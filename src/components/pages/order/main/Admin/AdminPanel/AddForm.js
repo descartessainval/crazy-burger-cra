@@ -1,40 +1,54 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import OrderContext from '../../../../../../context/OrderContext'
 
+const EMPTY_PRODUCT = {
+  id: new Date().getTime(),
+  title: "Nouveeau produit",
+  imageSource: "",
+  price: 14
+}
+
 const AddForm = () => {
 
+  //State
   const { handleAdd } = useContext(OrderContext);
 
-  const newProduct = {
-    id: new Date().getTime(),
-    title: "Nouveau Produit",
-    imageSource: "https://images.unsplash.com/photo-1547584370-2cc98b8b8dc8?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: 2.5
-}
+  const [newProduct, setNewPeoduct] = useState(EMPTY_PRODUCT);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleAdd(newProduct);
+
+    const newProductToAdd = {
+      ...newProduct,
+      id: new Date().getTime(),
+    }
+
+    handleAdd(newProductToAdd);
   }
 
+  //comportements
+  const handleChange = (e) => {    
+    const newValue =  e.target.value;
+    const name = e.target.name;
 
+    setNewPeoduct({...newProduct, [name] :  newValue})
+  };
+
+  // vue
   return (
     <AddFormStyled onSubmit={handleSubmit}>
       <div className="img-preview">Image preview</div>
       <div className="input-fields">
-        <input type="text" placeholder="Nom" />
-
-        <input type="text" placeholder="Image URL" />
-
-        <input type="text" placeholder="Price" />
+        <input name='title' value={newProduct.title} onChange={handleChange} type="text" placeholder="Nom" />
+        <input name='imageSource' value={newProduct.imageSource} onChange={handleChange} type="text" placeholder="Image URL" />
+        <input name='price' value={newProduct.price ? newProduct.price : ""} onChange={handleChange} type="text" placeholder="Price" />
       </div>
       <button className="submit-preview">Submit button</button>
-
-
     </AddFormStyled>
   )
 }
+
 const AddFormStyled = styled.form`
   border: pink solid 1px;
   display: grid;

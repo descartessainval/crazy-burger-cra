@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import OrderContext from '../../../../../../context/OrderContext'
+import { theme } from '../../../../../../themes'
 
 const EMPTY_PRODUCT = {
   id: "",
@@ -25,6 +26,8 @@ const AddForm = () => {
     }
 
     handleAdd(newProductToAdd);
+    setNewPeoduct(EMPTY_PRODUCT);
+
   }
 
   //comportements
@@ -40,8 +43,8 @@ const AddForm = () => {
         {newProduct.imageSource ? <img src={newProduct.imageSource} alt={newProduct.title} /> : <div>Aucune Image</div>}
       </div>
       <div className="input-fields">
-        <input name='title' value={newProduct.title} onChange={handleChange} type="text" placeholder="Nom" />
-        <input name='imageSource' value={newProduct.imageSource} onChange={handleChange} type="text" placeholder="Image URL" />
+        <input name='title' value={newProduct.title} onChange={handleChange} type="text" placeholder={"Nom du produit (ex: Super Burger)"} />
+        <input name='imageSource' value={newProduct.imageSource} onChange={handleChange} type="text" placeholder="Lien URL d\'une image(ex: https://photo-de-mon-produit.png" />
         <input name='price' value={newProduct.price ? newProduct.price : ""} onChange={handleChange} type="text" placeholder="Price" />
       </div>
       <button className="submit-preview">Submit button</button>
@@ -50,7 +53,7 @@ const AddForm = () => {
 }
 
 const AddFormStyled = styled.form`
-  border: pink solid 1px;
+  /* border: pink solid 1px; */
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: repeat(4, 1fr) ;
@@ -59,11 +62,12 @@ const AddFormStyled = styled.form`
   
   .img-preview{ 
     grid-area: 1/1/4/2;
-    background:red;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    border: ${theme.colors.greyMedium} solid 1px;
+    border-radius: ${theme.borderRadius.extraRound};
+    margin: 5px;
     img{
       height: 100%;
       width: 100%;

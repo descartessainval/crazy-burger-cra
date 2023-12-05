@@ -21,18 +21,16 @@ const AddForm = () => {
 
     const newProductToAdd = {
       ...newProduct,
-      id: new Date().getTime(),
+      id: crypto.randomUUID(),
     }
 
     handleAdd(newProductToAdd);
   }
 
   //comportements
-  const handleChange = (e) => {    
-    const newValue =  e.target.value;
-    const name = e.target.name;
-
-    setNewPeoduct({...newProduct, [name] :  newValue})
+  const handleChange = (e) => {   
+    const {name, value} = e.target;
+    setNewPeoduct({...newProduct, [name] : value})
   };
 
   // vue

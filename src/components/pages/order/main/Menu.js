@@ -4,18 +4,20 @@ import { formatPrice } from '../../../../utils/maths'
 import Card from '../../../reusable-ui/Card';
 import OrderContext from '../../../../context/OrderContext';
 
+const IMAGE_BY_DEFAULT = "/images/coming-soon.png";
+
 const Menu = () => {
-    
-const   {products} = useContext(OrderContext);
+
+    const { products } = useContext(OrderContext);
     //comportements
-  
+
 
     //affichage
     return (
         <MenuStyled>
             {products.map(({ id, title, imageSource, price }) => (
                 <Card
-                    imageSource={imageSource}
+                    imageSource={imageSource ? imageSource : IMAGE_BY_DEFAULT}
                     key={id}
                     infoId={id}
                     title={title}

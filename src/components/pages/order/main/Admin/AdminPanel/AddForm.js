@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import OrderContext from '../../../../../../context/OrderContext'
 
 const EMPTY_PRODUCT = {
-  id: new Date().getTime(),
-  title: "Nouveeau produit",
+  id: "",
+  title: "",
   imageSource: "",
-  price: 14
+  price: 0
 }
 
 const AddForm = () => {

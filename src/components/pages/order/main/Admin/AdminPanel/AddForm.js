@@ -28,15 +28,17 @@ const AddForm = () => {
   }
 
   //comportements
-  const handleChange = (e) => {   
-    const {name, value} = e.target;
-    setNewPeoduct({...newProduct, [name] : value})
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewPeoduct({ ...newProduct, [name]: value })
   };
 
   // vue
   return (
     <AddFormStyled onSubmit={handleSubmit}>
-      <div className="img-preview">Image preview</div>
+      <div className="img-preview">
+        {newProduct.imageSource ? <img src={newProduct.imageSource} alt={newProduct.title} /> : <div>Aucune Image</div>}
+      </div>
       <div className="input-fields">
         <input name='title' value={newProduct.title} onChange={handleChange} type="text" placeholder="Nom" />
         <input name='imageSource' value={newProduct.imageSource} onChange={handleChange} type="text" placeholder="Image URL" />
@@ -56,8 +58,18 @@ const AddFormStyled = styled.form`
   width: 70%;
   
   .img-preview{ 
-    background: red;
     grid-area: 1/1/4/2;
+    background:red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
   }
   .input-fields{
     background: blue;
@@ -71,6 +83,8 @@ const AddFormStyled = styled.form`
     grid-area:4/2/5/3;
     display: grid;
     width: 50%;
+
+
   }
 
 `;

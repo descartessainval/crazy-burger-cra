@@ -28,11 +28,13 @@ const AddForm = () => {
     }
 
     handleAdd(newProductToAdd);
-    setNewPeoduct(EMPTY_PRODUCT);
-    setisSubmitted(true);
-    setTimeout(() => {
-      setisSubmitted(false);
-    }, 2000);
+      setNewPeoduct(EMPTY_PRODUCT);
+      
+      setisSubmitted(true);
+
+      setTimeout(() => {
+        setisSubmitted(false);
+      }, 2000);
   }
 
   //comportements
@@ -66,7 +68,8 @@ const AddForm = () => {
 }
 
 const AddFormStyled = styled.form`
-  /* border: pink solid 1px; */
+  border: black solid 3px;
+
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: repeat(4, 1fr) ;
@@ -74,13 +77,15 @@ const AddFormStyled = styled.form`
   width: 70%;
   
   .img-preview{ 
+    background: red;
+
     grid-area: 1/1/4/2;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: ${theme.colors.greyMedium} solid 1px;
+    /* border: ${theme.colors.greyMedium} solid 1px;
     border-radius: ${theme.borderRadius.extraRound};
-    margin: 5px;
+    margin: 5px; */
     img{
       height: 100%;
       width: 100%;
@@ -89,14 +94,13 @@ const AddFormStyled = styled.form`
     }
   }
   .input-fields{
-    /* background: blue; */
     grid-area: 1/2/4/2;
 
     display: grid;
 
 }
   .submit{
-    /* background: grey; */
+    background: green;
     grid-area:4/2/5/3;
     display: flex;
     align-items: center;

@@ -2,22 +2,35 @@ import React from 'react'
 import { styled } from 'styled-components';
 import { theme } from '../../themes/index';
 import PrimaryButton from '../reusable-ui/PrimaryButton';
+import { TiDelete } from "react-icons/ti";
 
 const Card = ({ infoId, imageSource, title, leftDescription }) => {
 
     //test handel's button  
     const handleClic = () => {
         console.log(`j'ai cliqué sur ${infoId}`);
+        //nClick={handleClic}
+    }
+
+
+    const onDelete =()=>{
+        console.log(`j'ai supprime sur ${infoId}`);
     }
 
     return (
-        <CardStyled onClick={handleClic}>
+        <CardStyled >
+        
+            {/* si panel admin actif faire apparaitre le logo */}
+            <button className='delete-btn' area-lang='delete-btn'>
+                <TiDelete className='icon' />
+            </button>
+      
             <div className='image'><img src={`${imageSource}`} alt="" /></div>
             <div className="info-text">
                 <div className='title'>{title}</div>
                 <div className='description'>
-                    <p>{leftDescription}</p>
-                    <PrimaryButton label={"Ajouter"} />
+                    <p>{leftDescription}</p> 
+                    <PrimaryButton label={"Ajouter"}   />
                 </div>
             </div>
 
@@ -25,9 +38,9 @@ const Card = ({ infoId, imageSource, title, leftDescription }) => {
     )
 }
 
-const CardStyled = styled.li`   
+const CardStyled = styled.div`   
     display: grid;
-    grid-template-rows: 65% 1fr;
+    grid-template-rows:  65% 1fr; // step avant 65% 1%
     border-radius: 20px;
     width: 200px;
     height: 300px;
@@ -35,6 +48,36 @@ const CardStyled = styled.li`
     padding-bottom: 10px;
     box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
     background:  ${theme.colors.white};
+    position: relative;
+    
+    .delete-btn{
+        border: 1px solid red;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        color: ${theme.colors.primary};
+        z-index: 2;
+        padding: 0;
+        border: none;
+        background: none;
+
+        .icon{
+            height: 100%;
+            width: 100%;
+        }
+
+        &:hover{
+            color: ${theme.colors.red};
+        }
+
+        &:active{
+            color: ${theme.colors.PrimaryButton};
+        }
+    }
+
 
     .image{
         width: 100%;
@@ -89,6 +132,8 @@ const CardStyled = styled.li`
           color: ${theme.colors.primary};
         }
     }
+
+  
 
 `;
 export default Card

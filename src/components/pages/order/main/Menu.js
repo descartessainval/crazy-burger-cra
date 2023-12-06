@@ -8,7 +8,7 @@ const IMAGE_BY_DEFAULT = "/images/coming-soon.png";
 
 const Menu = () => {
 
-    const { products } = useContext(OrderContext);
+    const { products, isModeAdmin } = useContext(OrderContext);
     //comportements
 
 
@@ -22,7 +22,8 @@ const Menu = () => {
                     infoId={id}
                     title={title}
                     leftDescription={formatPrice(price)} /*j'utilise le spread opérator dans ce cas on préférera la premièr eméthode {...product}*/
-                />
+                    hasDeleteButton = {isModeAdmin}
+                    />
             ))}
         </MenuStyled>
     )

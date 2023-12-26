@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react'
 import { styled } from 'styled-components';
-import { formatPrice } from '../../../../utils/maths'
-import Card from '../../../reusable-ui/Card';
-import OrderContext from '../../../../context/OrderContext';
+import { formatPrice } from '../../../../../utils/maths'
+import Card from '../../../../reusable-ui/Card';
+import OrderContext from '../../../../../context/OrderContext';
+import { EmptyMenuAdmin } from './EmptyMenuAdmin';
+import { EmptyMenuClient } from './EmptyMenuClient';
 
 const IMAGE_BY_DEFAULT = "/images/coming-soon.png";
 
@@ -45,18 +47,17 @@ const Menu = () => {
 
     //snippet nfn
 
-const reloadMenu = () => { 
-    resetMenu();
- }
+
 
  //affichage
     if (products.length == 0) {
-        return <div className=''> 
-                    <span>Pas de produit</span>
-                    <button onClick={reloadMenu}>Regenere Products</button>
-                </div>
+        if (!isModeAdmin) {
+            return (<EmptyMenuClient/>)
+        }
+        return (<EmptyMenuAdmin resetMenu={resetMenu}/>)
     }
-
+    
+  
     return (
         <MenuStyled>
             {products.map(({ id, title, imageSource, price }) => (

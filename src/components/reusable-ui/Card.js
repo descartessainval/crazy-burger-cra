@@ -4,24 +4,18 @@ import { theme } from '../../themes/index';
 import PrimaryButton from '../reusable-ui/PrimaryButton';
 import { TiDelete } from "react-icons/ti";
 
-const Card = ({ infoId, imageSource, title, leftDescription , hasDeleteButton}) => {
+const Card = ({ infoId, imageSource, title, leftDescription , hasDeleteButton, onDelete}) => {
 
     //test handel's button  
     const handleClic = () => {
         console.log(`j'ai cliqué sur ${infoId}`);
         //nClick={handleClic}
     }
-
-
-    const onDelete =()=>{
-        console.log(`j'ai supprime sur ${infoId}`);
-    }
-
     return (
         <CardStyled >
         
             {/* si panel admin actif faire apparaitre le logo */}
-           {hasDeleteButton &&  (<button className='delete-btn' area-lang='delete-btn'>
+           {hasDeleteButton &&  (<button className='delete-btn' area-lang='delete-btn' onClick={onDelete}>
                 <TiDelete className='icon' />
             </button>)}
             
@@ -133,8 +127,5 @@ const CardStyled = styled.div`
           color: ${theme.colors.primary};
         }
     }
-
-  
-
 `;
 export default Card

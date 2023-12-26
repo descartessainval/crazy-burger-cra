@@ -18,7 +18,7 @@ const OrderPage = () => {
 
     //comportement(s)
     const handleAdd = (newProduct) => {
-   
+
         //  1 copie du tableau
         const menuCopy = [...products];
 
@@ -30,6 +30,17 @@ const OrderPage = () => {
     }
 
 
+    const handleDelete = (IdOfProductToDelete) => {
+        // 1. copy du state 
+        const menuCopy = [...products];
+
+        // 2. manip de la copie du state
+        const menuUpdated = menuCopy.filter((indexToDelete) => indexToDelete.id !== IdOfProductToDelete);
+
+        // 3. update state 
+        setProducts(menuUpdated);
+    }
+
 
     const orderContextValue = {
         isModeAdmin,
@@ -37,12 +48,16 @@ const OrderPage = () => {
 
         isCollapse,
         setIsCollapse,
-        
+
         currentTabSelected,
         setCurrentTabSelected,
 
         products,
-        handleAdd
+        //En observation => je n'ai pas accès au setter 
+        //puisqu'ils sont tous définis dans les comportement
+        //également pas de setter dans le context
+        handleAdd,
+        handleDelete
     }
 
 

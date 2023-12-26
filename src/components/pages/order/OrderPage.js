@@ -6,14 +6,15 @@ import { styled } from 'styled-components';
 import { theme } from '../../../themes';
 import OrderContext from '../../../context/OrderContext';
 import { fakeMenu } from '../../../fakeData/fakeMenu';
+import { MdSentimentNeutral } from 'react-icons/md';
 
 
 const OrderPage = () => {
     //états 
     const [isModeAdmin, setIsModeAdmin] = useState(true) // j'initialise le mode admin à true pour travailler dans le panel pour le rendre disponible tour le long de la prod
-    const [isCollapse, setIsCollapse] = useState(false)
+    const [isCollapse, setIsCollapse] = useState(true)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")
-    const [products, setProducts] = useState(fakeMenu.MEDIUM);
+    const [products, setProducts] = useState(fakeMenu.SMALL);
 
 
     //comportement(s)
@@ -41,6 +42,9 @@ const OrderPage = () => {
         setProducts(menuUpdated);
     }
 
+    /*nfn*/ const resetMenu = () => {
+        setProducts(fakeMenu.SMALL);
+    }
 
     const orderContextValue = {
         isModeAdmin,
@@ -54,10 +58,11 @@ const OrderPage = () => {
 
         products,
         //En observation => je n'ai pas accès au setter 
-        //puisqu'ils sont tous définis dans les comportement
-        //également pas de setter dans le context
+        //puisqu'ils sont tous définis dans les comportement.
+        //Egalement pas de setter dans le context
         handleAdd,
-        handleDelete
+        handleDelete,
+        resetMenu
     }
 
 

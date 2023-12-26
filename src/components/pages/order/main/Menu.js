@@ -9,7 +9,7 @@ const IMAGE_BY_DEFAULT = "/images/coming-soon.png";
 const Menu = () => {
 
 
-    const { products, isModeAdmin, handleDelete } = useContext(OrderContext);
+    const { products, isModeAdmin, handleDelete, resetMenu } = useContext(OrderContext);
 
 
     //comportements
@@ -41,9 +41,22 @@ const Menu = () => {
 
     // }
 
-    //affichage
    
-   
+
+    //snippet nfn
+
+const reloadMenu = () => { 
+    resetMenu();
+ }
+
+ //affichage
+    if (products.length == 0) {
+        return <div className=''> 
+                    <span>Pas de produit</span>
+                    <button onClick={reloadMenu}>Regenere Products</button>
+                </div>
+    }
+
     return (
         <MenuStyled>
             {products.map(({ id, title, imageSource, price }) => (

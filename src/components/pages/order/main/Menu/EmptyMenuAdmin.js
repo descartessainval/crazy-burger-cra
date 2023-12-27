@@ -1,6 +1,3 @@
-
-
-
 export const EmptyMenuAdmin = ({resetMenu}) => {
     return (
         <div>

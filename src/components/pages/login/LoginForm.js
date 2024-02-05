@@ -40,36 +40,19 @@ const LoginForm = () => {
         placeholder={'Entrez votre prénom'}
         type={"text"}
         required
-        Icon={<BsPersonCircle className='icon' />}
+        Icon={<BsPersonCircle />}
         className={'container_loginForm'}
       />
       <PrimaryButton 
          className={'btn-form'}
-         Icon={<IoChevronForward className='icon' />}  
+         Icon={<IoChevronForward />}  
          label={<span >Accéder à mon espace</span>}
       />
     </LoginFormStyled>
   )
 }
 
-//  TEST DE LA REUTISABILITE D UN INPUT 
-//AJOUT D UN NOUVEL INPUT
-/*
-Dans ala partie COMPORTEMENTS
-  
-const handleChangeMdp = (e) => {
-setMdp(e.target.value);
-}
-*/
-// <TextInput 
-    // -> Ici, j'hydrate mon composant
-//   value={mdp} 
-//   handleChange={handleChangeMdp}
-//   placeholder={"Entrez ton mot-de-passe"}
-//   type={"password"}
-//   Icon={<RiLockPasswordLine className='icon'/>}
-//   required
-// /> 
+
 
 //dans tous les projets en entrepr ise qui utilise styled components
 const LoginFormStyled = styled.form`
@@ -78,7 +61,7 @@ const LoginFormStyled = styled.form`
   max-width: 500px;
   min-width: 400px;
   margin: 0px auto;
-  padding: /*2.5rem 2rem*/ 40px ${theme.spacing.lg};
+  padding: 40px ${theme.spacing.lg};
   border-radius: ${theme.borderRadius.round};
   font-family:  "Amatic SC", cursive;
 
@@ -90,18 +73,6 @@ const LoginFormStyled = styled.form`
       padding: 18px 24px;
       margin: 18px 0;
   }
-
-  input{ 
-      border: none;
-      font-size: ${theme.fonts.size.SM};
-      color: ${theme.colors.dark};
-      width: 100%;
-      
-      &::placeholder{
-        background: ${theme.colors.white};
-        color: ${theme.colors.greyMedium};
-      }
-    }
 
   hr{
     border: 1.5px solid ${theme.colors.loginLine};
@@ -119,21 +90,6 @@ const LoginFormStyled = styled.form`
     font-size: ${theme.fonts.size.P4};
   }
 
-  /* .icon{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: ${theme.fonts.size.SM};
-      margin-left: 10px;
-    }   */
-
-  //these properties are specific to the loginForm button
-  .btn-form{
-    width: 100%; 
-    padding: 18px 24px;
-    font-size: ${theme.fonts.size.SM};
-    font-weight: ${theme.fonts.weights.heavy};
-  }
 `
 
 export default LoginForm

@@ -6,15 +6,9 @@ import { TiDelete } from "react-icons/ti";
 
 const Card = ({ infoId, imageSource, title, leftDescription , hasDeleteButton, onDelete}) => {
 
-    //test handel's button  
-    const handleClic = () => {
-        console.log(`j'ai cliqué sur ${infoId}`);
-        //nClick={handleClic}
-    }
     return (
         <CardStyled >
         
-            {/* si panel admin actif faire apparaitre le logo */}
            {hasDeleteButton &&  (<button className='delete-btn' area-lang='delete-btn' onClick={onDelete}>
                 <TiDelete className='icon' />
             </button>)}
@@ -24,8 +18,10 @@ const Card = ({ infoId, imageSource, title, leftDescription , hasDeleteButton, o
             <div className="info-text">
                 <div className='title'>{title}</div>
                 <div className='description'>
-                    <p>{leftDescription}</p> 
-                    <PrimaryButton label={"Ajouter"}   />
+                    <div className="left-description">{leftDescription}</div>
+                    <div className="right-description">
+                        <PrimaryButton className="primary-button" label={"Ajouter"}   />
+                    </div>
                 </div>
             </div>
 
@@ -35,7 +31,7 @@ const Card = ({ infoId, imageSource, title, leftDescription , hasDeleteButton, o
 
 const CardStyled = styled.div`   
     display: grid;
-    grid-template-rows:  65% 1fr; // step avant 65% 1%
+    grid-template-rows:  65% 1fr; 
     border-radius: 20px;
     width: 200px;
     height: 300px;
@@ -88,44 +84,57 @@ const CardStyled = styled.div`
 
     .info-text {
         display: grid;
+        grid-template-rows: 40%  60%;
         
         .title{
             font-family:  "Amatic SC", cursive;
             font-size:  ${theme.fonts.size.P4};
             font-weight: ${theme.fonts.weights.bold};
+            color: black;
             line-height: 45.4px;
             margin: 0;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
         }
-
+        
         &, .description{
             width: 190px;
         }
-      
+        
         .description{
           display: flex;
           justify-content: space-between;
+          align-items: center;
           color: ${theme.colors.primary};
+            
+          
+            .leftDescription{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                font-weight: ${theme.fonts.weights.medium};
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-weight: ${theme.fonts.weights.medium};
+                color: ${theme.colors.primary};
+            }          
+
+            .right-description{
+                justify-content: flex-end;
+                align-items: center;
+                font-size: ${theme.fonts.size.P1};
+          
+                .primary-button{
+                  font-size: ${theme.fonts.size.XS};
+                  cursor: pointer;
+                  /* padding:12px; */
+                }
+          }
+
         }
-      
-        button{
-          margin: 6px 0px;
-          padding: 0px 30px;
-          border-radius: ${theme.borderRadius.round};
-          border: 0;
-          background: ${theme.colors.primary}; 
-          color: white;
-          letter-spacing: 1px;
-          cursor: pointer;
-        }
-    
-        button:hover{
-          background: ${theme.colors.white}; 
-          border: ${theme.colors.primary} solid 1px;
-          color: ${theme.colors.primary};
-        }
+  
     }
 `;
 export default Card

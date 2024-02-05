@@ -5,35 +5,39 @@ import { theme } from '../../themes'
 const TextInput = ({ Icon, value, handleChange, className, ...extraProps }) => {
 
   return (
-    <InputStyled >
+    <TextInputStyled >
       <div className={className}>
-        {/* si y 'a une icon alors, je mets une icon */}
-        {Icon && Icon}
+        <div className='icon'>{Icon && Icon}</div>
         <input
+          value={value}
           onChange={handleChange}
           {...extraProps}
         />
       </div>
-    </InputStyled>
+    </TextInputStyled>
   )
 }
 
-const InputStyled = styled.div`
-
+const TextInputStyled = styled.div`
     .icon{
-      font-size: ${theme.fonts.size.SM};
-      margin-right: 8px;
-      color: ${theme.colors.greySemiDark};
-    }
-
-    /* .icon{
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: ${theme.fonts.size.SM};
-      margin-left: 10px;
-    }    */
+      margin:0 8px 0 10px;
+      color: ${theme.colors.greySemiDark};
+    }
 
-
+    input{ 
+      border: none;
+      font-size: ${theme.fonts.size.SM};
+      color: ${theme.colors.dark};
+      width: 100%;
+      
+      &::placeholder{
+        background: ${theme.colors.white};
+        color: ${theme.colors.greyMedium};
+      }
+    }
 `
 export default TextInput

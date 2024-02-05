@@ -16,39 +16,6 @@ const Menu = () => {
 
     //comportements
 
-    // STEP 1 AVANT USAGE DU CONTEXT
-    // const handleDelete = (IdOfProductToDelete) => {
-
-    //     step 1 SANS CONTEXT
-    //     alert(`handleclickbutton IdOfProductToDelete = ${products.filter((index) => index.id == id)} `);
-
-
-    //     1. copy du state
-    //     const menuCopy = [...products];
-
-    //     2. manip de la copie du state
-    //     Méthode filtrer => c'est filter out je prends et je le dégage ou
-    //     filter in , je prends l'élément et je le conserve 
-    //                             dans norte cas ce qu'on va conserver 
-    //                             pour chaq product de mon menu,
-    //         je veux concerver uniquement le product dont l'id est différent 
-    //                             de l'IdOfProductToDelete
-    //     const menuUpdated = menuCopy.filter((indexToDelete) => indexToDelete.id !== IdOfProductToDelete);
-
-
-    //     setProducts(menuUpdated);
-    //     3. update state
-    //     setProducts(newMenu)
-
-
-    // }
-
-   
-
-    //snippet nfn
-
-
-
  //affichage
     if (products.length == 0) {
         if (!isModeAdmin) {
@@ -66,10 +33,8 @@ const Menu = () => {
                     key={id}
                     infoId={id}
                     title={title}
-                    leftDescription={formatPrice(price)} /*j'utilise le spread opérator dans ce cas on préférera la premièr eméthode {...product}*/
-                    hasDeleteButton={isModeAdmin}  //Affichage conditionnel du bouton delete
-                    //je dois definir une fonction fléché pour qu'elle appelle
-                    //mon comportement handledelete auquelle j'affiche mon id
+                    leftDescription={formatPrice(price)} 
+                    hasDeleteButton={isModeAdmin} 
                     onDelete={() => handleDelete(id)}
                 />
             ))}

@@ -13,15 +13,15 @@ import { theme } from '../../../themes';
 
 
 const LoginForm = () => {
-
+  // State
   const [username, setUsername] = useState("Descartes");
-  // const [mdp, setMdp] = useState("");
 
   const navigate = useNavigate();
 
-  const handleSubmit/* ou RedirectOrderPage */ = (e) => {
+  // Comportements
+  const handleSubmit= (e) => {
     e.preventDefault();
-    if (username /*&& mdp == "1234"*/) {
+    if (username == 'Descartes') {
       navigate(`/order/${username}`);
       localStorage.setItem("username", username);
     }
@@ -31,30 +31,32 @@ const LoginForm = () => {
     setUsername(e.target.value);
   }
 
+  // Affichage
   return (
     <LoginFormStyled action="submit" onSubmit={handleSubmit}>
       <Welcome />
-      <TextInput
-        value={username}
-        handleChange={handleChange}
-        placeholder={'Entrez votre prénom'}
-        type={"text"}
-        required
-        Icon={<BsPersonCircle />}
-        className={'container_loginForm'}
-      />
-      <PrimaryButton 
-         className={'btn-form'}
-         Icon={<IoChevronForward />}  
-         label={<span >Accéder à mon espace</span>}
-      />
+    
+           
+        <div > 
+          <TextInput
+            value={username}
+            onChange={handleChange}
+            placeholder={'Entrez votre prénom'}
+            type={"text"}
+            required
+            Icon={<BsPersonCircle/>}
+            className='input-login'
+          />
+        </div>
+        <PrimaryButton
+           Icon={<IoChevronForward />}
+           label={<span >Accéder à mon espace</span>}
+        />
+      
     </LoginFormStyled>
   )
 }
 
-
-
-//dans tous les projets en entrepr ise qui utilise styled components
 const LoginFormStyled = styled.form`
 
   text-align: center;
@@ -64,15 +66,6 @@ const LoginFormStyled = styled.form`
   padding: 40px ${theme.spacing.lg};
   border-radius: ${theme.borderRadius.round};
   font-family:  "Amatic SC", cursive;
-
-  .container_loginForm{
-      background-color: ${theme.colors.white};
-      border-radius: ${theme.borderRadius.round};
-      display: flex;
-      align-items: center;
-      padding: 18px 24px;
-      margin: 18px 0;
-  }
 
   hr{
     border: 1.5px solid ${theme.colors.loginLine};
@@ -90,6 +83,9 @@ const LoginFormStyled = styled.form`
     font-size: ${theme.fonts.size.P4};
   }
 
+  .input-login{
+    margin: 18px 0;
+  }
 `
 
 export default LoginForm

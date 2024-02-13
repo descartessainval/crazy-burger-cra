@@ -2,7 +2,11 @@ import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import OrderContext from '../../../../../../context/OrderContext'
 import { theme } from '../../../../../../themes'
-import { CiCircleCheck } from 'react-icons/ci'
+import { FaHamburger } from "react-icons/fa";
+import { BsFillCameraFill } from "react-icons/bs";
+import { MdOutlineEuro } from "react-icons/md";
+import { FiCheck } from "react-icons/fi";
+import TextInput from '../../../../../reusable-ui/TextInput';
 
 const EMPTY_PRODUCT = {
   id: "",
@@ -50,15 +54,15 @@ const AddForm = () => {
         {newProduct.imageSource ? <img src={newProduct.imageSource} alt={newProduct.title} /> : <div className='empty-img'>Aucune Image</div>}
       </div>
       <div className="input-fields">
-        <input name='title' value={newProduct.title} onChange={handleChange} type="text" placeholder={"Nom du produit (ex: Super Burger)"} />
-        <input name='imageSource' value={newProduct.imageSource} onChange={handleChange} type="text" placeholder="Lien URL d\'une image(ex: https://photo-de-mon-produit.png" />
-        <input name='price' value={newProduct.price ? newProduct.price : ""} onChange={handleChange} type="text" placeholder="Price" />
+        <TextInput Icon={<FaHamburger/>} name='title' value={newProduct.title} onChange={handleChange} type="text" placeholder={"Nom du produit (ex: Super Burger)"} />
+        <TextInput Icon={<BsFillCameraFill/>} name='imageSource' value={newProduct.imageSource} onChange={handleChange} type="text" placeholder="Lien URL d\'une image(ex: https://photo-de-mon-produit.png" />
+        <TextInput Icon={<MdOutlineEuro/>} name='price' value={newProduct.price ? newProduct.price : ""} onChange={handleChange} type="text" placeholder="Price" />
       </div>
       <div className="submit">
         <button className='submit-btn'>Submit button</button>
         {
           isSubmitted && <div className="submit-msg">
-            <CiCircleCheck />
+            <FiCheck />
             <span> Ajouté avec succès</span>
           </div>
         }
@@ -68,7 +72,6 @@ const AddForm = () => {
 }
 
 const AddFormStyled = styled.form`
-  /* border: black solid 3px; */
 
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -78,9 +81,9 @@ const AddFormStyled = styled.form`
   grid-column-gap: 20px;
   grid-row-gap: 8px;
   
-  .img-preview{ 
-    /* background: red; */
 
+
+  .img-preview{ 
     grid-area: 1/1/4/2;
     display: flex;
     justify-content: center;
@@ -109,10 +112,13 @@ const AddFormStyled = styled.form`
   }
   .input-fields{
     grid-area: 1/2/4/2;
-
     display: grid;
 
-}
+    * {
+      padding: 0;
+    }
+  }
+
   .submit{
     background: green;
     grid-area:4/2/5/3;

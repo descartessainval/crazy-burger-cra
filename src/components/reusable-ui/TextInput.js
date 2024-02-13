@@ -5,26 +5,31 @@ import { theme } from '../../themes'
 const TextInput = ({ Icon, value, handleChange, className, ...extraProps }) => {
 
   return (
-    <TextInputStyled >
-      <div className={className}>
+    <TextInputStyled  className={className}>
         <div className='icon'>{Icon && Icon}</div>
         <input
           value={value}
           onChange={handleChange}
           {...extraProps}
-        />
-      </div>
-    </TextInputStyled>
+         />
+      </TextInputStyled>
   )
 }
 
 const TextInputStyled = styled.div`
+      background-color: ${theme.colors.white};
+      border-radius: ${theme.borderRadius.round};
+      display: flex;
+      align-items: center;
+      
+      padding: 18px 24px;
+  
     .icon{
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: ${theme.fonts.size.SM};
-      margin:0 8px 0 10px;
+      margin-right: 8px;
       color: ${theme.colors.greySemiDark};
     }
 

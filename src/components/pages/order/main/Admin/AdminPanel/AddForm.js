@@ -54,9 +54,9 @@ const AddForm = () => {
         {newProduct.imageSource ? <img src={newProduct.imageSource} alt={newProduct.title} /> : <div className='empty-img'>Aucune Image</div>}
       </div>
       <div className="input-fields">
-        <TextInput Icon={<FaHamburger/>} name='title' value={newProduct.title} onChange={handleChange} type="text" placeholder={"Nom du produit (ex: Super Burger)"} />
-        <TextInput Icon={<BsFillCameraFill/>} name='imageSource' value={newProduct.imageSource} onChange={handleChange} type="text" placeholder="Lien URL d\'une image(ex: https://photo-de-mon-produit.png" />
-        <TextInput Icon={<MdOutlineEuro/>} name='price' value={newProduct.price ? newProduct.price : ""} onChange={handleChange} type="text" placeholder="Price" />
+        <TextInput Icon={<FaHamburger/>} name='title' value={newProduct.title} onChange={handleChange} type="text" placeholder={"Nom du produit (ex: Super Burger)"} version='minimalist' />
+        <TextInput Icon={<BsFillCameraFill/>} name='imageSource' value={newProduct.imageSource} onChange={handleChange} type="text" placeholder="Lien URL d\'une image(ex: https://photo-de-mon-produit.png" version='minimalist'  />
+        <TextInput Icon={<MdOutlineEuro/>} name='price' value={newProduct.price ? newProduct.price : ""} onChange={handleChange} type="text" placeholder="Price"version='minimalist'  />
       </div>
       <div className="submit">
         <button className='submit-btn'>Submit button</button>
@@ -72,7 +72,6 @@ const AddForm = () => {
 }
 
 const AddFormStyled = styled.form`
-
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: repeat(4, 1fr) ;
@@ -81,8 +80,6 @@ const AddFormStyled = styled.form`
   grid-column-gap: 20px;
   grid-row-gap: 8px;
   
-
-
   .img-preview{ 
     grid-area: 1/1/4/2;
     display: flex;
@@ -113,10 +110,7 @@ const AddFormStyled = styled.form`
   .input-fields{
     grid-area: 1/2/4/2;
     display: grid;
-
-    * {
-      padding: 0;
-    }
+    grid-row-gap: 8px;
   }
 
   .submit{
@@ -129,9 +123,7 @@ const AddFormStyled = styled.form`
     }
     .submit-msg{
       color: #60BD4F;
-      span{
-        }
-}
+    }
   }
 
 `;

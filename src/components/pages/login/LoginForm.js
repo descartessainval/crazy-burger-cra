@@ -46,6 +46,7 @@ const LoginForm = () => {
             required
             Icon={<BsPersonCircle/>}
             className='input-login'
+            version='normal'
           />
         </div>
         <PrimaryButton

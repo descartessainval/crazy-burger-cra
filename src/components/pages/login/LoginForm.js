@@ -2,13 +2,11 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { BsPersonCircle } from "react-icons/bs";
 import { IoChevronForward } from "react-icons/io5";
-// import { RiLockPasswordLine } from "react-icons/ri";
 
 import styled from 'styled-components'// ou import styled from 'styled-components/macro' -> permet d'afficher les noms de class attribuer à nos balises
-// import { theme } from '../../../themes';
 import Welcome from './Welcome';
 import TextInput from '../../reusable-ui/TextInput';
-import PrimaryButton from '../../reusable-ui/PrimaryButton';
+import Button from '../../reusable-ui/Button';
 import { theme } from '../../../themes';
 
 
@@ -49,9 +47,10 @@ const LoginForm = () => {
             version='normal'
           />
         </div>
-        <PrimaryButton
+        <Button
            Icon={<IoChevronForward />}
            label={<span >Accéder à mon espace</span>}
+           version='normal'
         />
       
     </LoginFormStyled>

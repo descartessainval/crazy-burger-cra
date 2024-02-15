@@ -81,12 +81,14 @@ const extraMinimalistStyle = css`
   
   input{
     background-color: ${theme.colors.background_white};
-    color: ${theme.colors.background_white};
-  }
+    color: ${theme.colors.greyBlue};
 
-  &:focus{
+    &:focus{
    outline : 0;
   }
+  }
+
+
 `
 
 const extraStyle = {

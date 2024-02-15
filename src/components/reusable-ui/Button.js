@@ -1,13 +1,13 @@
 import React from 'react'
-import { styled } from 'styled-components';
+import {css, styled } from 'styled-components';
 import { theme } from '../../themes';
 
-const PrimaryButton = ({ label, Icon, className }) => {
+const Button = ({ label, Icon, className, version = 'normal' }) => {
 
 
 
   return (
-    <PrimaryButtonStyled className={className} >
+    <PrimaryButtonStyled className={className}  version={version}>
       <span>{label}</span>
       <div className='icon'>{Icon && Icon}</div>
     </PrimaryButtonStyled>
@@ -16,6 +16,13 @@ const PrimaryButton = ({ label, Icon, className }) => {
 
 const PrimaryButtonStyled = styled.button`
    
+
+
+  ${({version} )=> extraStyleButton[version]}
+  `;
+
+
+const extraStylePrimary = css`
   width: 100%;
   border: 1px solid red;
   display: inline-flex;
@@ -68,6 +75,35 @@ const PrimaryButtonStyled = styled.button`
       color: ${theme.colors.primary};
     }
   }
-  `;
+`
+const extraStyleSuccess = css`
+cursor: pointer;
+color: ${theme.colors.white};
+background-color: ${theme.colors.success};
+border: 1px solid ${theme.colors.success};
+border-radius: ${theme.borderRadius.round};
+height: 35px;
+padding: 0 1.5em;
+font-weight: ${theme.fonts.weights.semiBold};
 
-export default PrimaryButton
+&:hover{
+  color:${theme.colors.success}; 
+  background: ${theme.colors.white};
+  border: 1px solid ${theme.colors.success};
+  transition: all 200ms ease-out;
+}
+
+&:active{
+  color : ${theme.colors.white};
+  background: ${theme.colors.success};
+  border: 1px solid ${theme.colors.success};
+}
+`
+
+const extraStyleButton ={
+  normal: extraStylePrimary,
+  success: extraStyleSuccess,
+}
+
+
+export default Button;

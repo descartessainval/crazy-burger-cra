@@ -7,6 +7,7 @@ import { BsFillCameraFill } from "react-icons/bs";
 import { MdOutlineEuro } from "react-icons/md";
 import { FiCheck } from "react-icons/fi";
 import TextInput from '../../../../../reusable-ui/TextInput';
+import Button from '../../../../../reusable-ui/Button';
 
 const EMPTY_PRODUCT = {
   id: "",
@@ -59,7 +60,8 @@ const AddForm = () => {
         <TextInput Icon={<MdOutlineEuro/>} name='price' value={newProduct.price ? newProduct.price : ""} onChange={handleChange} type="text" placeholder="Price"version='minimalist'  />
       </div>
       <div className="submit">
-        <button className='submit-btn'>Submit button</button>
+        {/* <button className='submit-btn'>Submit button</button> */}
+        <Button /*className='submit-btn' */label="Ajouter un nouveau produit au menu" version="success"/>
         {
           isSubmitted && <div className="submit-msg">
             <FiCheck />
@@ -114,7 +116,7 @@ const AddFormStyled = styled.form`
   }
 
   .submit{
-    background: green;
+    /* background: green; */
     grid-area:4/2/5/3;
     display: flex;
     align-items: center;
@@ -123,8 +125,9 @@ const AddFormStyled = styled.form`
     }
     .submit-msg{
       color: #60BD4F;
+      padding-left: 1rem;
     }
   }
 
 `;
-export default AddForm
+export default AddForm  

@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from 'styled-components';
 import { theme } from '../../themes/index';
-import PrimaryButton from '../reusable-ui/PrimaryButton';
+import Button from '../reusable-ui/Button';
 import { TiDelete } from "react-icons/ti";
 
 const Card = ({ infoId, imageSource, title, leftDescription , hasDeleteButton, onDelete}) => {
@@ -20,7 +20,7 @@ const Card = ({ infoId, imageSource, title, leftDescription , hasDeleteButton, o
                 <div className='description'>
                     <div className="left-description">{leftDescription}</div>
                     <div className="right-description">
-                        <PrimaryButton className="primary-button" label={"Ajouter"}   />
+                        <Button className="primary-button" label={"Ajouter"} version="normal"  />
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@ const CardStyled = styled.div`
         }
 
         &:active{
-            color: ${theme.colors.PrimaryButton};
+            color: ${theme.colors.Button};
         }
     }
 

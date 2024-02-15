@@ -60,12 +60,11 @@ const AddForm = () => {
         <TextInput Icon={<MdOutlineEuro/>} name='price' value={newProduct.price ? newProduct.price : ""} onChange={handleChange} type="text" placeholder="Price"version='minimalist'  />
       </div>
       <div className="submit">
-        {/* <button className='submit-btn'>Submit button</button> */}
-        <Button /*className='submit-btn' */label="Ajouter un nouveau produit au menu" version="success"/>
+        <Button className='submit-btn' label="Ajouter un nouveau produit au menu!" version="success"/>
         {
           isSubmitted && <div className="submit-msg">
-            <FiCheck />
-            <span> Ajouté avec succès</span>
+            <FiCheck className='icon' />
+            <span className='msg'> Ajouté avec succès</span>
           </div>
         }
       </div>
@@ -87,9 +86,7 @@ const AddFormStyled = styled.form`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: ${theme.colors.greyMedium} solid 1px;
-    border-radius: ${theme.borderRadius.extraRound};
-    margin: 5px; */
+ 
     img{
       height: 100%;
       width: 100%;
@@ -116,16 +113,38 @@ const AddFormStyled = styled.form`
   }
 
   .submit{
-    /* background: green; */
     grid-area:4/2/5/3;
     display: flex;
     align-items: center;
+    position: relative;
+    top:3px;
+
     .submit-btn{
       width: 50%;
     }
     .submit-msg{
-      color: #60BD4F;
-      padding-left: 1rem;
+      margin-left: 5px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      .icon{
+        color: ${theme.colors.success};
+        margin-left: 10px;
+        width: 1em;
+        height: 1em;
+        border:1px solid ${theme.colors.success};
+        border-radius: 50% ;
+        vertical-align: middle; 
+      }
+
+      .msg{
+        margin-left:5px;
+        font-size: ${theme.fonts.size.P0};
+        color: ${theme.colors.success};
+      }
+
     }
   }
 

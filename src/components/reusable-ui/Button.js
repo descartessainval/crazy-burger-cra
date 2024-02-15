@@ -41,6 +41,12 @@ const extraStylePrimary = css`
   background-color: #ff9f1b;
   border: 1px solid #ff9f1b;
 
+  .icon{
+      display :flex;
+      justify-content: center;
+      align-items: center;
+  }
+
   &:hover:not([disabled]){
           background-color:  ${theme.colors.white};
           color:  ${theme.colors.primary};
@@ -75,6 +81,8 @@ const extraStylePrimary = css`
       color: ${theme.colors.primary};
     }
   }
+
+
 `
 const extraStyleSuccess = css`
 cursor: pointer;

@@ -40,12 +40,15 @@ const TextInputStyled = styled.div`
     }
   }
   
-  
+  /* step 3 => usage d'un dictionnaire */
+  //${(props)=> extraStyle[props.version]} //façon standard
+  ${({version})=> extraStyle[version]} //façon destructurée
+
   //step2
-  ${(props)=>{
+  /* ${(props)=>{
     if(props.version === "normal") return extraNormalStyle;
     if(props.version === "minimalist") return extraMinimalistStyle;
-  }}
+  }} */
 
 /* step 1 */
 /* ${(props) => (props.version === 'normal' && extraNormalStyle )}; //bien penser à ponctuer l'interpolation avec un ";"
@@ -53,14 +56,11 @@ ${(props) => (props.version === 'minimalist' && extraMinimalistStyle)}; // err n
 `
 export default TextInput
 
-
-
-
 const extraNormalStyle = css`
   border-radius: ${theme.borderRadius.round};
-
   background-color: ${theme.colors.white};
   padding: 12px 24px;  
+
   input{
      color: ${theme.colors.greySemiDark};
   }
@@ -68,7 +68,10 @@ const extraNormalStyle = css`
   &::placeholder{
       background: ${theme.colors.white};
   }
-
+  
+  &:focus{
+   outline : 0;
+  }
 `;
 
 const extraMinimalistStyle = css`
@@ -85,3 +88,8 @@ const extraMinimalistStyle = css`
    outline : 0;
   }
 `
+
+const extraStyle = {
+  normal: extraNormalStyle,
+  minimalist: extraMinimalistStyle
+}

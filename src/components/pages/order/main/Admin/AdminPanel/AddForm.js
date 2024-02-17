@@ -56,6 +56,7 @@ const AddForm = () => {
             return (
               <TextInput 
                     {...input} 
+                    key={input.id}
                     onChange={handleChange}
                     version={input.version} 
                    

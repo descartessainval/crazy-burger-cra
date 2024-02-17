@@ -13,10 +13,10 @@ import { EMPTY_PRODUCT } from './main/Admin/AdminPanel/AddForm';
 
 const OrderPage = () => {
     //états 
-    const [isModeAdmin, setIsModeAdmin] = useState(false) // j'initialise le mode admin à true pour travailler dans le panel pour le rendre disponible tour le long de la prod
-    const [isCollapse, setIsCollapse] = useState(true)
+    const [isModeAdmin, setIsModeAdmin] = useState(false) 
+    const [isCollapse, setIsCollapse] = useState(false)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")
-    const [products, setProducts] = useState(fakeMenu.SMALL);
+    const [products, setProducts] = useState(fakeMenu.MEDIUM);
     const [newProduct, setNewPeoduct] = useState(EMPTY_PRODUCT);
 
     //comportement(s)
@@ -45,7 +45,7 @@ const OrderPage = () => {
     }
 
     /*nfn*/ const resetMenu = () => {
-        setProducts(fakeMenu.SMALL);
+        setProducts(fakeMenu.MEDIUM);
     }
 
     const orderContextValue = {

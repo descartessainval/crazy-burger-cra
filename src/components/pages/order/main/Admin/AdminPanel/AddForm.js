@@ -8,6 +8,7 @@ import { MdOutlineEuro } from "react-icons/md";
 import { FiCheck } from "react-icons/fi";
 import TextInput from '../../../../../reusable-ui/TextInput';
 import Button from '../../../../../reusable-ui/Button';
+import ImgPreview from './ImgPreview';
 
 
 export const EMPTY_PRODUCT = {
@@ -53,9 +54,8 @@ const AddForm = () => {
   // vue
   return (
     <AddFormStyled onSubmit={handleSubmit}>
-      <div className="img-preview">
-        {newProduct.imageSource ? <img src={newProduct.imageSource} alt={newProduct.title} /> : <div className='empty-img'>Aucune Image</div>}
-      </div>
+      <ImgPreview  imageSource={newProduct.imageSource} title={newProduct.title}/>
+
       <div className="input-fields">
         <TextInput Icon={<FaHamburger/>} name='title' value={newProduct.title} onChange={handleChange} type="text" placeholder={"Nom du produit (ex: Super Burger)"} version='minimalist' />
         <TextInput Icon={<BsFillCameraFill/>} name='imageSource' value={newProduct.imageSource} onChange={handleChange} type="text" placeholder="Lien URL d\'une image(ex: https://photo-de-mon-produit.png" version='minimalist'  />
@@ -83,31 +83,7 @@ const AddFormStyled = styled.form`
   grid-column-gap: 20px;
   grid-row-gap: 8px;
   
-  .img-preview{ 
-    grid-area: 1/1/4/2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- 
-    img{
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
 
-    .empty-img{
-      height: 100%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items:center;
-      border : 1px solid ${theme.colors.greyLight};
-      line-height: 1.5;
-      color: ${theme.colors.greyDark};
-      border-radius: ${theme.borderRadius.round};
-    }
-  }
   .input-fields{
     grid-area: 1/2/4/2;
     display: grid;

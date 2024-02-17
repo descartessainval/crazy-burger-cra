@@ -4,9 +4,9 @@ import { theme } from '../../../../../../themes'
 
 const ImgPreview = ({imageSource, title}) => {
   return (
-    <div >
+    <ImagePreviewStyled >
     {imageSource ? <img src={imageSource} alt={title} /> : <div className='empty-img'>Aucune Image</div>}
-    </div>
+    </ImagePreviewStyled>
   )
 }
 const ImagePreviewStyled = styled.div`

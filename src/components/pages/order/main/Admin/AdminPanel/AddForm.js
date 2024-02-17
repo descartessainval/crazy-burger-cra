@@ -1,14 +1,13 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import OrderContext from '../../../../../../context/OrderContext'
-import { theme } from '../../../../../../themes'
 import { FaHamburger } from "react-icons/fa";
 import { BsFillCameraFill } from "react-icons/bs";
 import { MdOutlineEuro } from "react-icons/md";
-import { FiCheck } from "react-icons/fi";
 import TextInput from '../../../../../reusable-ui/TextInput';
 import Button from '../../../../../reusable-ui/Button';
 import ImgPreview from './ImgPreview';
+import SubmitMessage from './SubmitMessage';
 
 
 export const EMPTY_PRODUCT = {
@@ -64,10 +63,7 @@ const AddForm = () => {
       <div className="submit">
         <Button className='submit-btn' label="Ajouter un nouveau produit au menu!" version="success"/>
         {
-          isSubmitted && <div className="submit-msg">
-            <FiCheck className='icon' />
-            <span className='msg'> Ajouté avec succès</span>
-          </div>
+          isSubmitted && <SubmitMessage/>
         }
       </div>
     </AddFormStyled>
@@ -100,30 +96,7 @@ const AddFormStyled = styled.form`
     .submit-btn{
       width: 50%;
     }
-    .submit-msg{
-      margin-left: 5px;
-      
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-      .icon{
-        color: ${theme.colors.success};
-        margin-left: 10px;
-        width: 1em;
-        height: 1em;
-        border:1px solid ${theme.colors.success};
-        border-radius: 50% ;
-        vertical-align: middle; 
-      }
-
-      .msg{
-        margin-left:5px;
-        font-size: ${theme.fonts.size.P0};
-        color: ${theme.colors.success};
-      }
-
-    }
+   
   }
 
 `;

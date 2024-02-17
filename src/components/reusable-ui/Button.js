@@ -2,12 +2,12 @@ import React from 'react'
 import {css, styled } from 'styled-components';
 import { theme } from '../../themes';
 
-const Button = ({ label, Icon, className, version = 'normal' }) => {
+const Button = ({ label, Icon, className, version = 'normal', onClick }) => {
 
 
 
   return (
-    <PrimaryButtonStyled className={className}  version={version}>
+    <PrimaryButtonStyled className={className}  version={version} onClick={onClick}>
       <span>{label}</span>
       <div className='icon'>{Icon && Icon}</div>
     </PrimaryButtonStyled>
@@ -68,7 +68,7 @@ const extraStylePrimary = css`
   &.with-focus {
     border: 1px solid white;
     background-color: ${theme.colors.white};
-    color: ${theme.colors.primary};
+    /* color: ${theme.colors.primary}; */
 
     :hover {
       color: ${theme.colors.white};

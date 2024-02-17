@@ -24,7 +24,6 @@ const Menu = () => {
         return (<EmptyMenuAdmin resetMenu={resetMenu}/>)
     }
     
-  
     return (
         <MenuStyled>
             {products.map(({ id, title, imageSource, price }) => (

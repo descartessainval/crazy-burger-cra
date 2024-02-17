@@ -12,9 +12,9 @@ import { MdSentimentNeutral } from 'react-icons/md';
 const OrderPage = () => {
     //états 
     const [isModeAdmin, setIsModeAdmin] = useState(true) // j'initialise le mode admin à true pour travailler dans le panel pour le rendre disponible tour le long de la prod
-    const [isCollapse, setIsCollapse] = useState(false)
+    const [isCollapse, setIsCollapse] = useState(true)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")
-    const [products, setProducts] = useState(fakeMenu.SMALL);
+    const [products, setProducts] = useState(fakeMenu.EMPTY);
 
 
     //comportement(s)

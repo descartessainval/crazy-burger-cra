@@ -24,7 +24,6 @@ const PrimaryButtonStyled = styled.button`
 
 const extraStylePrimary = css`
   width: 100%;
-  border: 1px solid red;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -55,8 +54,8 @@ const extraStylePrimary = css`
   }
 
   :active {
-    background-color: ${theme.colors.primary};
-    color: ${theme.colors.white};
+    /* background-color: ${theme.colors.primary}; */
+    color: ${theme.colors.primary};
   }
 
   &.is-disabled {
@@ -102,8 +101,7 @@ font-weight: ${theme.fonts.weights.semiBold};
 }
 
 &:active{
-  color : ${theme.colors.white};
-  background: ${theme.colors.success};
+  color: ${theme.colors.success}; 
   border: 1px solid ${theme.colors.success};
 }
 `

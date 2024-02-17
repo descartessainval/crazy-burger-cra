@@ -7,24 +7,26 @@ import { theme } from '../../../themes';
 import OrderContext from '../../../context/OrderContext';
 import { fakeMenu } from '../../../fakeData/fakeMenu';
 import { MdSentimentNeutral } from 'react-icons/md';
+import { EMPTY_PRODUCT } from './main/Admin/AdminPanel/AddForm';
+
 
 
 const OrderPage = () => {
     //états 
-    const [isModeAdmin, setIsModeAdmin] = useState(true) // j'initialise le mode admin à true pour travailler dans le panel pour le rendre disponible tour le long de la prod
+    const [isModeAdmin, setIsModeAdmin] = useState(false) // j'initialise le mode admin à true pour travailler dans le panel pour le rendre disponible tour le long de la prod
     const [isCollapse, setIsCollapse] = useState(true)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")
-    const [products, setProducts] = useState(fakeMenu.EMPTY);
-
+    const [products, setProducts] = useState(fakeMenu.SMALL);
+    const [newProduct, setNewPeoduct] = useState(EMPTY_PRODUCT);
 
     //comportement(s)
-    const handleAdd = (newProduct) => {
+    const handleAdd = (product) => {
 
         //  1 copie du tableau
         const menuCopy = [...products];
 
         //  2 manipulation de la copie du tableau
-        const menuUpdated = [newProduct, ...menuCopy]
+        const menuUpdated = [product, ...menuCopy]
 
         //  3 update du state
         setProducts(menuUpdated)
@@ -62,7 +64,11 @@ const OrderPage = () => {
         //Egalement pas de setter dans le context
         handleAdd,
         handleDelete,
-        resetMenu
+        resetMenu,
+
+
+        newProduct,
+        setNewPeoduct
     }
 
 

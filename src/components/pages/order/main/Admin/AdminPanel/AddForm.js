@@ -9,19 +9,21 @@ import { FiCheck } from "react-icons/fi";
 import TextInput from '../../../../../reusable-ui/TextInput';
 import Button from '../../../../../reusable-ui/Button';
 
-const EMPTY_PRODUCT = {
+
+export const EMPTY_PRODUCT = {
   id: "",
   title: "",
   imageSource: "",
   price: 0
 }
 
+
 const AddForm = () => {
 
   //State
-  const { handleAdd } = useContext(OrderContext);
+  const { handleAdd, newProduct, setNewPeoduct } = useContext(OrderContext);
 
-  const [newProduct, setNewPeoduct] = useState(EMPTY_PRODUCT);
+  // const [newProduct, setNewPeoduct] = useState(EMPTY_PRODUCT);
   const [isSubmitted, setisSubmitted] = useState(false)
 
   const handleSubmit = (e) => {

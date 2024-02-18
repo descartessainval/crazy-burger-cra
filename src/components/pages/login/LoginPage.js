@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import LoginForm from './LoginForm';
 import Logo from '../../reusable-ui/Logo';

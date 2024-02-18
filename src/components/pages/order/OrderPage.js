@@ -5,23 +5,73 @@ import Main from '../order/main/Main';
 import { styled } from 'styled-components';
 import { theme } from '../../../themes';
 import OrderContext from '../../../context/OrderContext';
+import { fakeMenu } from '../../../fakeData/fakeMenu';
+import { MdSentimentNeutral } from 'react-icons/md';
+import { EMPTY_PRODUCT } from './main/Admin/AdminPanel/AddForm';
+
 
 
 const OrderPage = () => {
     //états 
-    const [isModeAdmin, setIsModeAdmin] = useState(false)
+    const [isModeAdmin, setIsModeAdmin] = useState(false) 
     const [isCollapse, setIsCollapse] = useState(false)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")
+    const [products, setProducts] = useState(fakeMenu.MEDIUM);
+    const [newProduct, setNewPeoduct] = useState(EMPTY_PRODUCT);
 
     //comportement(s)
+    const handleAdd = (product) => {
+
+        //  1 copie du tableau
+        const menuCopy = [...products];
+
+        //  2 manipulation de la copie du tableau
+        const menuUpdated = [product, ...menuCopy]
+
+        //  3 update du state
+        setProducts(menuUpdated)
+    }
+
+
+    const handleDelete = (IdOfProductToDelete) => {
+        // 1. copy du state 
+        const menuCopy = [...products];
+
+        // 2. manip de la copie du state
+        const menuUpdated = menuCopy.filter((indexToDelete) => indexToDelete.id !== IdOfProductToDelete);
+
+        // 3. update state 
+        setProducts(menuUpdated);
+    }
+
+    /*nfn*/ const resetMenu = () => {
+        setProducts(fakeMenu.MEDIUM);
+    }
+
     const orderContextValue = {
         isModeAdmin,
         setIsModeAdmin,
+
         isCollapse,
         setIsCollapse,
+
         currentTabSelected,
         setCurrentTabSelected,
+
+        products,
+        //En observation => je n'ai pas accès au setter 
+        //puisqu'ils sont tous définis dans les comportement.
+        //Egalement pas de setter dans le context
+        handleAdd,
+        handleDelete,
+        resetMenu,
+
+
+        newProduct,
+        setNewPeoduct
     }
+
+
 
     //vue
     return (
@@ -47,8 +97,8 @@ const OrderPageStyled = styled.div`
 
     .container{
         position: relative;
-        height: 94.6vh;
-        width:  87.5rem; 
+        height: /*94.6vh*/ 833px;
+        width:  /*87.5rem*/ 1400px; 
         display: flex;
         flex-direction: column;
         border-radius: ${theme.borderRadius.extraRoundd};

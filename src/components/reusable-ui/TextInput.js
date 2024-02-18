@@ -19,6 +19,8 @@ const TextInput = ({ Icon, value, handleChange, className, version="normal", ...
 const TextInputStyled = styled.div`
   display: flex;  
   align-items: center;
+  padding-left: 9px;
+
   
   .icon{
     display: flex;

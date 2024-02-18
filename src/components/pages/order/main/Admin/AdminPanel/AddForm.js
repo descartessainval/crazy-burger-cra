@@ -99,7 +99,7 @@ const AddFormStyled = styled.form`
     top:3px;
 
     .submit-btn{
-      width: 50%;
+      height: 100%;
     }
    
   }

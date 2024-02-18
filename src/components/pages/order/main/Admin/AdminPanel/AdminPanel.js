@@ -20,10 +20,12 @@ const AdminPanel = () => {
 
 const AdminPanelStyled = styled.div`
 background: ${theme.colors.white};
-height: 250px;
+height: 240px;
 border: 1px solid ${theme.colors.greyLight};
 box-shadow: ${theme.shadows.subtle};
+box-sizing: border-box;
 padding: 30px 5%;
+
 
 
 `;

@@ -14,15 +14,12 @@ const Button = ({ label, Icon, className, version = 'normal', onClick }) => {
   )
 }
 
-const PrimaryButtonStyled = styled.button`
-   
-
-
+const PrimaryButtonStyled = styled.button`   
   ${({version} )=> extraStyleButton[version]}
-  `;
+`;
 
 
-const extraStylePrimary = css`
+const extraStyleNormal = css`
   width: 100%;
   display: inline-flex;
   justify-content: center;
@@ -80,8 +77,6 @@ const extraStylePrimary = css`
       color: ${theme.colors.primary};
     }
   }
-
-
 `
 const extraStyleSuccess = css`
 cursor: pointer;
@@ -106,8 +101,8 @@ font-weight: ${theme.fonts.weights.semiBold};
 }
 `
 
-const extraStyleButton ={
-  normal: extraStylePrimary,
+const extraStyleButton =  {
+  normal: extraStyleNormal,
   success: extraStyleSuccess,
 }
 

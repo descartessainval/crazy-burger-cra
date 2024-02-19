@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef, css} from 'react'
 import { styled } from 'styled-components';
 import { theme } from '../../themes/index';
 import Button from '../reusable-ui/Button';
@@ -6,14 +6,21 @@ import { TiDelete } from "react-icons/ti";
 
 const Card = ({ infoId, imageSource, title, leftDescription , hasDeleteButton, onDelete}) => {
 
+    const cardRef = useRef();
+
+    //comportement
+    //fonction qui au click sur la card 
+    //QUESTION EST CE QUE LA FONCTION EST BIEN A SA PLACE
+    const handleClick = () => {
+        cardRef.current.style.backgroundColor = "orange";
+        console.log(cardRef.current);
+    }
+
     return (
-        <CardStyled >
-        
+        <CardStyled ref={cardRef} onClick={handleClick}>
            {hasDeleteButton &&  (<button className='delete-btn' area-lang='delete-btn' onClick={onDelete}>
                 <TiDelete className='icon' />
             </button>)}
-            
-      
             <div className='image'><img src={`${imageSource}`} alt="" /></div>
             <div className="info-text">
                 <div className='title'>{title}</div>
@@ -24,7 +31,6 @@ const Card = ({ infoId, imageSource, title, leftDescription , hasDeleteButton, o
                     </div>
                 </div>
             </div>
-
         </CardStyled>
     )
 }
@@ -54,12 +60,12 @@ const CardStyled = styled.div`
         padding: 0;
         border: none;
         background: none;
-
+        
         .icon{
             height: 100%;
             width: 100%;
         }
-
+        
         &:hover{
             color: ${theme.colors.red};
         }
@@ -68,20 +74,20 @@ const CardStyled = styled.div`
             color: ${theme.colors.Button};
         }
     }
-
-
+    
+    
     .image{
         width: 100%;
         height: auto;
         margin-top: 30px;
-
+        
         img{
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
     }
-
+    
     .info-text {
         display: grid;
         grid-template-rows: 40%  60%;
@@ -103,12 +109,12 @@ const CardStyled = styled.div`
         }
         
         .description{
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: ${theme.colors.primary};
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: ${theme.colors.primary};
             
-          
+            
             .leftDescription{
                 display: flex;
                 justify-content: flex-start;
@@ -120,21 +126,21 @@ const CardStyled = styled.div`
                 font-weight: ${theme.fonts.weights.medium};
                 color: ${theme.colors.primary};
             }          
-
+            
             .right-description{
                 justify-content: flex-end;
                 align-items: center;
                 font-size: ${theme.fonts.size.P1};
-          
+                
                 .primary-button{
                   font-size: ${theme.fonts.size.XS};
                   cursor: pointer;
                   padding: 13px 24px;
                 }
-          }
-
+            }
+            
         }
-  
+        
     }
 `;
 export default Card

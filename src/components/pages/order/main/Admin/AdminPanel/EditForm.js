@@ -37,12 +37,7 @@ const EditForm = () => {
       }, 2000);
     }
   
-    //fonction qui au click sur la card 
-    //QUESTION EST CE QUE LA FONCTION EST BIEN A SA PLACE
-    const handleClick = (key) => { 
-      //permet d'afficher les proppriété de la card dans les inputs correspondants
-      //et modifie le propréités css de la card 
-     }
+
   
     const handleChange = (e) => {
       const { name, value } = e.target;

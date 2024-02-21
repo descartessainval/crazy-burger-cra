@@ -45,12 +45,11 @@ const EditForm = () => {
     };
   
     const inputTexts = getInputConfig(newProduct);
-  
 
   return (
     <EditFormStyled>
       <div className="content-edit">
-        <span className="description">editer un produit en temps réel</span>
+        <span className="description">Cliquer sur un produit du menu pour le modifier</span>
       </div>
       <form onSubmit={handleSubmit} className='form-edit'>
          <ImgPreview  imageSource={newProduct.imageSource} title={newProduct.title}/>
